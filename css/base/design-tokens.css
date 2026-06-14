@@ -1,0 +1,210 @@
+```css
+/* ==========================================
+   LIFEOS DESIGN TOKENS
+   ------------------------------------------
+   Single source of truth for:
+   - Breakpoints
+   - Containers
+   - Z-Index
+   - Animations
+   - Opacity
+   - Blur
+   - Gradients
+   - Icon Sizes
+   - Sidebar/Navbar dimensions
+========================================== */
+
+:root {
+
+    /* ==========================
+       BREAKPOINTS
+    ========================== */
+
+    --bp-xs: 480px;
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+    --bp-2xl: 1536px;
+
+    /* ==========================
+       CONTAINER WIDTHS
+    ========================== */
+
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+
+    /* ==========================
+       LAYOUT
+    ========================== */
+
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 88px;
+
+    --navbar-height: 72px;
+
+    --content-max-width: 1600px;
+
+    /* ==========================
+       ICONS
+    ========================== */
+
+    --icon-xs: 14px;
+    --icon-sm: 16px;
+    --icon-md: 20px;
+    --icon-lg: 24px;
+    --icon-xl: 32px;
+
+    /* ==========================
+       AVATARS
+    ========================== */
+
+    --avatar-sm: 32px;
+    --avatar-md: 40px;
+    --avatar-lg: 56px;
+    --avatar-xl: 72px;
+
+    /* ==========================
+       OPACITY
+    ========================== */
+
+    --opacity-disabled: .45;
+    --opacity-muted: .65;
+    --opacity-overlay: .75;
+
+    /* ==========================
+       BLUR
+    ========================== */
+
+    --blur-sm: 6px;
+    --blur-md: 12px;
+    --blur-lg: 24px;
+
+    /* ==========================
+       ANIMATION DURATIONS
+    ========================== */
+
+    --duration-fast: 120ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+    --duration-extra: 700ms;
+
+    /* ==========================
+       EASING
+    ========================== */
+
+    --ease-default: ease;
+
+    --ease-out:
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+
+    --ease-in-out:
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        );
+
+    /* ==========================
+       BORDER WIDTH
+    ========================== */
+
+    --border-thin: 1px;
+    --border-medium: 2px;
+    --border-thick: 3px;
+
+    /* ==========================
+       Z-INDEX
+    ========================== */
+
+    --z-base: 1;
+
+    --z-dropdown: 100;
+
+    --z-sticky: 200;
+
+    --z-sidebar: 300;
+
+    --z-navbar: 400;
+
+    --z-overlay: 800;
+
+    --z-modal: 900;
+
+    --z-toast: 1000;
+
+    --z-loader: 1100;
+
+    --z-tooltip: 1200;
+
+    /* ==========================
+       GRADIENTS
+    ========================== */
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1
+        );
+
+    --gradient-success:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    --gradient-warning:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #d97706
+        );
+
+    --gradient-danger:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    /* ==========================
+       DASHBOARD GRID
+    ========================== */
+
+    --dashboard-gap: 24px;
+
+    --dashboard-columns: 12;
+
+    /* ==========================
+       CARD
+    ========================== */
+
+    --card-min-height: 160px;
+
+    --card-padding: 24px;
+
+    /* ==========================
+       INPUT
+    ========================== */
+
+    --input-height: 48px;
+
+    /* ==========================
+       BUTTON
+    ========================== */
+
+    --button-height: 48px;
+
+}
+```
