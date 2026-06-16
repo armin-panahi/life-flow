@@ -1,0 +1,144 @@
+```css
+/* ==========================================
+   LIFEOS THEME SYSTEM
+   ------------------------------------------
+   Theme switching based on:
+   html[data-theme="dark"]
+   html[data-theme="light"]
+========================================== */
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+html[data-theme="dark"] {
+
+    color-scheme: dark;
+
+    --bg-main: #0f172a;
+
+    --bg-card: #1e293b;
+
+    --bg-sidebar: #111827;
+
+    --bg-hover: #334155;
+
+    --text-primary: #f8fafc;
+
+    --text-secondary: #cbd5e1;
+
+    --text-muted: #94a3b8;
+
+    --border-color: #334155;
+
+}
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+html[data-theme="light"] {
+
+    color-scheme: light;
+
+    --bg-main: #f8fafc;
+
+    --bg-card: #ffffff;
+
+    --bg-sidebar: #ffffff;
+
+    --bg-hover: #f1f5f9;
+
+    --text-primary: #0f172a;
+
+    --text-secondary: #475569;
+
+    --text-muted: #64748b;
+
+    --border-color: #e2e8f0;
+
+}
+
+/* ==========================================
+   GLOBAL TRANSITION
+========================================== */
+
+html,
+body,
+aside,
+main,
+section,
+article,
+div,
+button,
+input,
+textarea,
+select,
+nav,
+header,
+footer {
+
+    transition:
+
+        background-color var(--duration-normal) var(--ease-default),
+
+        color var(--duration-normal) var(--ease-default),
+
+        border-color var(--duration-normal) var(--ease-default),
+
+        box-shadow var(--duration-normal) var(--ease-default);
+
+}
+
+/* ==========================================
+   CARD DEFAULT
+========================================== */
+
+.card,
+.chart-card,
+.kpi-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+
+}
+
+/* ==========================================
+   INPUT DEFAULT
+========================================== */
+
+input,
+textarea,
+select {
+
+    background: var(--bg-card);
+
+    color: var(--text-primary);
+
+    border: 1px solid var(--border-color);
+
+}
+
+/* ==========================================
+   SIDEBAR DEFAULT
+========================================== */
+
+#sidebar {
+
+    background: var(--bg-sidebar);
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+
+    background: var(--bg-main);
+
+    color: var(--text-primary);
+
+}
+```
