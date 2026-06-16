@@ -1,67 +1,69 @@
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
-<head>
+  <head>
     <!-- ==========================
          META
     =========================== -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Life Flow | Personal Productivity Dashboard</title>
 
     <!-- ==========================
          GOOGLE FONT
     =========================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-        rel="stylesheet"
-    >
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ==========================
          FONT AWESOME
     =========================== -->
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    >
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
     <!-- ==========================
          CSS
     =========================== -->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/sidebar.css">
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <link rel="stylesheet" href="./css/cards.css">
-    <link rel="stylesheet" href="./css/buttons.css">
-    <link rel="stylesheet" href="./css/forms.css">
-    <link rel="stylesheet" href="./css/modal.css">
-    <link rel="stylesheet" href="./css/animations.css">
-    <link rel="stylesheet" href="./css/utilities.css">
-    <link rel="stylesheet" href="./css/responsive.css">
-    <link rel="stylesheet" href="./css/theme.css">
-</head>
+    <link rel="stylesheet" href="./css/base/reset.css" />
+    <link rel="stylesheet" href="./css/base/variables.css" />
+    <link rel="stylesheet" href="./css/base/design-tokens.css" />
+    <link rel="stylesheet" href="./css/base/typography.css" />
 
-<body>
+    <link rel="stylesheet" href="./css/layout/layout.css" />
+    <link rel="stylesheet" href="./css/layout/sidebar.css" />
+    <link rel="stylesheet" href="./css/layout/navbar.css" />
 
+    <link rel="stylesheet" href="./css/components/buttons.css" />
+    <link rel="stylesheet" href="./css/components/cards.css" />
+    <link rel="stylesheet" href="./css/components/forms.css" />
+    <link rel="stylesheet" href="./css/components/modal.css" />
+
+    <link rel="stylesheet" href="./css/pages/dashboard.css" />
+
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/theme.css" />
+  </head>
+
+  <body>
     <!-- ==========================
          PAGE LOADER
     =========================== -->
 
     <div id="page-loader">
+      <div class="loader-spinner"></div>
 
-        <div class="loader-spinner"></div>
-
-        <p>Loading LifeOS...</p>
-
+      <p>Loading LifeOS...</p>
     </div>
 
     <!-- ==========================
@@ -69,305 +71,233 @@
     =========================== -->
 
     <div id="app">
-
-        <!-- ======================
+      <!-- ======================
              SIDEBAR
         ======================= -->
 
-        <aside id="sidebar">
+      <aside id="sidebar">
+        <div class="sidebar-top">
+          <div class="logo">
+            <i class="fa-solid fa-layer-group"></i>
 
-            <div class="sidebar-top">
+            <span>LifeOS</span>
+          </div>
+        </div>
 
-                <div class="logo">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
 
-                    <i class="fa-solid fa-layer-group"></i>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tasks</span>
+              </a>
+            </li>
 
-                    <span>LifeOS</span>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-fire"></i>
+                <span>Habits</span>
+              </a>
+            </li>
 
-                </div>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Finance</span>
+              </a>
+            </li>
 
-            </div>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>Goals</span>
+              </a>
+            </li>
 
-            <nav class="sidebar-nav">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Calendar</span>
+              </a>
+            </li>
 
-                <ul>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+              </a>
+            </li>
 
-                    <li>
-                        <a href="#" class="active">
-                            <i class="fa-solid fa-house"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-book"></i>
+                <span>Journal</span>
+              </a>
+            </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-list-check"></i>
-                            <span>Tasks</span>
-                        </a>
-                    </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Achievements</span>
+              </a>
+            </li>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-fire"></i>
-                            <span>Habits</span>
-                        </a>
-                    </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-wallet"></i>
-                            <span>Finance</span>
-                        </a>
-                    </li>
+        <div class="sidebar-footer">
+          <button id="profile-button">
+            <i class="fa-solid fa-user"></i>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-bullseye"></i>
-                            <span>Goals</span>
-                        </a>
-                    </li>
+            <span>Profile</span>
+          </button>
+        </div>
+      </aside>
 
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>Calendar</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span>Analytics</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-book"></i>
-                            <span>Journal</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-trophy"></i>
-                            <span>Achievements</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-gear"></i>
-                            <span>Settings</span>
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-            <div class="sidebar-footer">
-
-                <button id="profile-button">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    <span>Profile</span>
-
-                </button>
-
-            </div>
-
-        </aside>
-
-        <!-- ======================
+      <!-- ======================
              MAIN
         ======================= -->
 
-        <main id="main-content">
-
-            <!-- ==================
+      <main id="main-content">
+        <!-- ==================
                  NAVBAR
             =================== -->
 
-            <header id="navbar">
+        <header id="navbar">
+          <div class="navbar-left">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
 
-                <div class="navbar-left">
+              <input type="text" placeholder="Search anything..." />
+            </div>
+          </div>
 
-                    <div class="search-box">
+          <div class="navbar-right">
+            <button id="theme-toggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
 
-                        <i class="fa-solid fa-magnifying-glass"></i>
+            <button id="notification-button">
+              <i class="fa-solid fa-bell"></i>
+            </button>
 
-                        <input
-                            type="text"
-                            placeholder="Search anything..."
-                        >
+            <button id="user-avatar">
+              <img src="./assets/images/avatar.png" alt="User Avatar" />
+            </button>
+          </div>
+        </header>
 
-                    </div>
-
-                </div>
-
-                <div class="navbar-right">
-
-                    <button id="theme-toggle">
-
-                        <i class="fa-solid fa-moon"></i>
-
-                    </button>
-
-                    <button id="notification-button">
-
-                        <i class="fa-solid fa-bell"></i>
-
-                    </button>
-
-                    <button id="user-avatar">
-
-                        <img
-                            src="./assets/images/avatar.png"
-                            alt="User Avatar"
-                        >
-
-                    </button>
-
-                </div>
-
-            </header>
-
-            <!-- ==================
+        <!-- ==================
                  DASHBOARD
             =================== -->
 
-            <section id="dashboard">
+        <section id="dashboard">
+          <!-- HERO -->
 
-                <!-- HERO -->
+          <section id="hero-section">
+            <div>
+              <h1>Good Morning 👋</h1>
 
-                <section id="hero-section">
+              <p>Welcome back to your productivity dashboard.</p>
+            </div>
 
-                    <div>
+            <div class="today-score">
+              <span>Today's Score</span>
 
-                        <h1>
-                            Good Morning 👋
-                        </h1>
+              <h2 id="daily-score">0%</h2>
+            </div>
+          </section>
 
-                        <p>
-                            Welcome back to your productivity dashboard.
-                        </p>
+          <!-- KPI -->
 
-                    </div>
+          <section id="kpi-grid">
+            <article class="kpi-card" id="tasks-card">
+              <h3>Tasks</h3>
+              <p>0</p>
+            </article>
 
-                    <div class="today-score">
+            <article class="kpi-card" id="habits-card">
+              <h3>Habits</h3>
+              <p>0</p>
+            </article>
 
-                        <span>Today's Score</span>
+            <article class="kpi-card" id="income-card">
+              <h3>Income</h3>
+              <p>$0</p>
+            </article>
 
-                        <h2 id="daily-score">
-                            0%
-                        </h2>
+            <article class="kpi-card" id="expense-card">
+              <h3>Expense</h3>
+              <p>$0</p>
+            </article>
 
-                    </div>
+            <article class="kpi-card" id="balance-card">
+              <h3>Balance</h3>
+              <p>$0</p>
+            </article>
 
-                </section>
+            <article class="kpi-card" id="focus-card">
+              <h3>Focus</h3>
+              <p>0h</p>
+            </article>
+          </section>
 
-                <!-- KPI -->
+          <!-- CHARTS -->
 
-                <section id="kpi-grid">
+          <section id="charts-section">
+            <div class="chart-card">
+              <h2>Weekly Progress</h2>
 
-                    <article class="kpi-card" id="tasks-card">
-                        <h3>Tasks</h3>
-                        <p>0</p>
-                    </article>
+              <canvas id="weeklyChart"></canvas>
+            </div>
 
-                    <article class="kpi-card" id="habits-card">
-                        <h3>Habits</h3>
-                        <p>0</p>
-                    </article>
+            <div class="chart-card">
+              <h2>Habit Overview</h2>
 
-                    <article class="kpi-card" id="income-card">
-                        <h3>Income</h3>
-                        <p>$0</p>
-                    </article>
+              <canvas id="habitChart"></canvas>
+            </div>
 
-                    <article class="kpi-card" id="expense-card">
-                        <h3>Expense</h3>
-                        <p>$0</p>
-                    </article>
+            <div class="chart-card">
+              <h2>Finance Overview</h2>
 
-                    <article class="kpi-card" id="balance-card">
-                        <h3>Balance</h3>
-                        <p>$0</p>
-                    </article>
+              <canvas id="financeChart"></canvas>
+            </div>
+          </section>
 
-                    <article class="kpi-card" id="focus-card">
-                        <h3>Focus</h3>
-                        <p>0h</p>
-                    </article>
+          <!-- CONTENT GRID -->
 
-                </section>
+          <section id="dashboard-grid">
+            <article id="goals-widget">
+              <h2>Goals</h2>
+            </article>
 
-                <!-- CHARTS -->
+            <article id="calendar-widget">
+              <h2>Calendar</h2>
+            </article>
 
-                <section id="charts-section">
+            <article id="activity-widget">
+              <h2>Recent Activity</h2>
+            </article>
 
-                    <div class="chart-card">
-
-                        <h2>Weekly Progress</h2>
-
-                        <canvas id="weeklyChart"></canvas>
-
-                    </div>
-
-                    <div class="chart-card">
-
-                        <h2>Habit Overview</h2>
-
-                        <canvas id="habitChart"></canvas>
-
-                    </div>
-
-                    <div class="chart-card">
-
-                        <h2>Finance Overview</h2>
-
-                        <canvas id="financeChart"></canvas>
-
-                    </div>
-
-                </section>
-
-                <!-- CONTENT GRID -->
-
-                <section id="dashboard-grid">
-
-                    <article id="goals-widget">
-
-                        <h2>Goals</h2>
-
-                    </article>
-
-                    <article id="calendar-widget">
-
-                        <h2>Calendar</h2>
-
-                    </article>
-
-                    <article id="activity-widget">
-
-                        <h2>Recent Activity</h2>
-
-                    </article>
-
-                    <article id="journal-widget">
-
-                        <h2>Journal Preview</h2>
-
-                    </article>
-
-                </section>
-
-            </section>
-
-        </main>
-
+            <article id="journal-widget">
+              <h2>Journal Preview</h2>
+            </article>
+          </section>
+        </section>
+      </main>
     </div>
 
     <!-- ==========================
@@ -392,11 +322,7 @@
          APP ENTRY
     =========================== -->
 
-    <script
-        type="module"
-        src="./js/app.js"
-    ></script>
-
-</body>
+    <script type="module" src="./js/app.js"></script>
+  </body>
 </html>
 ```
