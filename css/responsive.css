@@ -1,0 +1,158 @@
+/* ==========================================
+   LIFEOS RESPONSIVE SYSTEM
+   ------------------------------------------
+   Mobile First Strategy
+========================================== */
+
+/* ==========================================
+   VISIBILITY UTILITIES
+========================================== */
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+/* Mobile */
+
+.hide-mobile {
+    display: none !important;
+}
+
+.show-mobile {
+    display: block !important;
+}
+
+/* Tablet & Desktop */
+
+.show-tablet,
+.show-desktop {
+    display: none !important;
+}
+
+/* ==========================================
+   TABLET
+   >= 768px
+========================================== */
+
+@media (min-width: 768px) {
+
+    .hide-mobile {
+        display: inherit !important;
+    }
+
+    .show-mobile {
+        display: none !important;
+    }
+
+    .show-tablet {
+        display: block !important;
+    }
+
+}
+
+/* ==========================================
+   LAPTOP
+   >= 1024px
+========================================== */
+
+@media (min-width: 1024px) {
+
+    .show-desktop {
+        display: block !important;
+    }
+
+}
+
+/* ==========================================
+   DASHBOARD GRID
+========================================== */
+
+@media (max-width: 1023px) {
+
+    .dashboard-grid {
+
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   CONTAINER PADDING
+========================================== */
+
+@media (max-width: 767px) {
+
+    #dashboard {
+
+        padding: var(--space-lg);
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #dashboard {
+
+        padding: var(--space-md);
+
+    }
+
+}
+
+/* ==========================================
+   TYPOGRAPHY SCALE
+========================================== */
+
+@media (max-width: 767px) {
+
+    h1 {
+
+        font-size: 2rem;
+
+    }
+
+    h2 {
+
+        font-size: 1.75rem;
+
+    }
+
+    h3 {
+
+        font-size: 1.25rem;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+
+        font-size: 1.75rem;
+
+    }
+
+    h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+}
