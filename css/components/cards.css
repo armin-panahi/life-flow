@@ -1,0 +1,425 @@
+/* ==================================================
+   LIFEOS DESIGN SYSTEM - CARDS
+================================================== */
+
+/* ===========================
+   BASE CARD
+=========================== */
+
+.card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition:
+
+        transform var(--duration-fast) var(--ease-default),
+
+        box-shadow var(--duration-fast) var(--ease-default),
+
+        border-color var(--duration-fast) var(--ease-default);
+
+}
+
+.card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-lg);
+
+}
+
+/* ===========================
+   PADDING
+=========================== */
+
+.card-body {
+
+    padding: 24px;
+
+}
+
+.card-header {
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.card-footer {
+
+    padding: 18px 24px;
+
+    border-top: 1px solid var(--border-color);
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.card-title {
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+}
+
+.card-subtitle {
+
+    margin-top: 6px;
+
+    font-size: .9rem;
+
+    color: var(--text-muted);
+
+}
+
+/* ===========================
+   KPI CARD
+=========================== */
+
+.kpi-card {
+
+    min-height: 170px;
+
+}
+
+.kpi-value {
+
+    margin-top: 18px;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    color: var(--text-primary);
+
+}
+
+.kpi-label {
+
+    margin-top: 8px;
+
+    font-size: .9rem;
+
+    color: var(--text-muted);
+
+}
+
+.kpi-change {
+
+    margin-top: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+}
+
+.kpi-positive {
+
+    color: #10b981;
+
+}
+
+.kpi-negative {
+
+    color: #ef4444;
+
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.card-icon {
+
+    width: 54px;
+
+    height: 54px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(99,102,241,.12);
+
+    color: var(--primary-color);
+
+    font-size: 22px;
+
+}
+
+/* ===========================
+   CHART CARD
+=========================== */
+
+.chart-card {
+
+    min-height: 380px;
+
+}
+
+.chart-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 300px;
+
+}
+
+/* ===========================
+   TASK CARD
+=========================== */
+
+.task-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 18px 22px;
+
+    border-radius: 18px;
+
+    background: var(--bg-main);
+
+    transition: .25s;
+
+}
+
+.task-card:hover {
+
+    background: var(--bg-hover);
+
+}
+
+.task-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+.task-title {
+
+    font-weight: 600;
+
+    color: var(--text-primary);
+
+}
+
+.task-meta {
+
+    margin-top: 4px;
+
+    font-size: .82rem;
+
+    color: var(--text-muted);
+
+}
+
+/* ===========================
+   HABIT CARD
+=========================== */
+
+.habit-progress {
+
+    width: 100%;
+
+    height: 10px;
+
+    margin-top: 18px;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.08);
+
+}
+
+.habit-progress-fill {
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--gradient-primary);
+
+}
+
+/* ===========================
+   FINANCE CARD
+=========================== */
+
+.finance-income {
+
+    color: #10b981;
+
+    font-weight: 700;
+
+}
+
+.finance-expense {
+
+    color: #ef4444;
+
+    font-weight: 700;
+
+}
+
+/* ===========================
+   MINI CARD
+=========================== */
+
+.card-mini {
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+}
+
+/* ===========================
+   GLASS
+=========================== */
+
+.card-glass {
+
+    backdrop-filter: blur(20px);
+
+    background:
+
+        rgba(255,255,255,.04);
+
+}
+
+/* ===========================
+   OUTLINE
+=========================== */
+
+.card-outline {
+
+    background: transparent;
+
+}
+
+/* ===========================
+   GRADIENT
+=========================== */
+
+.card-gradient {
+
+    background:
+
+        var(--gradient-primary);
+
+    color: white;
+
+}
+
+.card-gradient * {
+
+    color: inherit;
+
+}
+
+/* ===========================
+   BADGE
+=========================== */
+
+.card-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: .75rem;
+
+    font-weight: 600;
+
+    background:
+
+        rgba(99,102,241,.12);
+
+    color:
+
+        var(--primary-color);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    .card-header{
+
+        padding:18px;
+
+    }
+
+    .card-body{
+
+        padding:18px;
+
+    }
+
+    .card-footer{
+
+        padding:18px;
+
+    }
+
+    .kpi-value{
+
+        font-size:1.6rem;
+
+    }
+
+}
