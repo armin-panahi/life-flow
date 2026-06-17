@@ -2,11 +2,17 @@
    LIFEOS SIDEBAR
 ========================================== */
 
-/* ==========================
-   SIDEBAR
-========================== */
-
 #sidebar {
+
+    position: fixed;
+
+    top: 16px;
+
+    left: 16px;
+
+    bottom: 16px;
+
+    width: var(--sidebar-width);
 
     display: flex;
 
@@ -14,49 +20,47 @@
 
     justify-content: space-between;
 
-    width: var(--sidebar-width);
-
     background: var(--bg-sidebar);
 
-    border-right:
+    border: 1px solid var(--border-color);
 
-        1px solid var(--border-color);
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-lg);
+
+    overflow: hidden;
 
     transition:
+        width var(--duration-normal) var(--ease-default),
+        transform var(--duration-normal) var(--ease-default);
 
-        width var(--duration-normal)
-
-        var(--ease-out);
+    z-index: 1000;
 
 }
 
-/* ==========================
+/* ==========================================
    COLLAPSED
-========================== */
+========================================== */
 
 #sidebar.collapsed {
 
-    width:
-
-        var(--sidebar-collapsed-width);
+    width: var(--sidebar-collapsed-width);
 
 }
 
-/* ==========================
+/* ==========================================
    TOP
-========================== */
+========================================== */
 
 .sidebar-top {
 
-    padding:
-
-        var(--space-xl);
+    padding: 28px 20px 12px;
 
 }
 
-/* ==========================
+/* ==========================================
    LOGO
-========================== */
+========================================== */
 
 .logo {
 
@@ -64,57 +68,59 @@
 
     align-items: center;
 
-    gap:
-
-        var(--space-md);
+    gap: 14px;
 
 }
 
 .logo-icon {
 
-    width: 42px;
+    width: 48px;
 
-    height: 42px;
+    height: 48px;
 
-    display: grid;
+    border-radius: 16px;
 
-    place-items: center;
+    display: flex;
 
-    border-radius:
+    align-items: center;
 
-        var(--radius-md);
+    justify-content: center;
 
-    background:
+    background: var(--gradient-primary);
 
-        var(--gradient-primary);
-
-    color: white;
+    color: #fff;
 
     font-size: 20px;
+
+    flex-shrink: 0;
 
 }
 
 .logo-text {
 
-    font-size: 1.4rem;
+    font-size: 1.35rem;
 
     font-weight: 800;
 
+    color: var(--text-primary);
+
     white-space: nowrap;
+
+    transition: .25s;
 
 }
 
-/* ==========================
-   NAV
-========================== */
+/* ==========================================
+   NAVIGATION
+========================================== */
 
 .sidebar-nav {
 
     flex: 1;
 
-    padding:
+    padding: 18px 14px;
 
-        var(--space-md);
+    overflow-y: auto;
 
 }
 
@@ -124,9 +130,13 @@
 
     flex-direction: column;
 
-    gap:
+    gap: 8px;
 
-        var(--space-xs);
+}
+
+.sidebar-nav li {
+
+    width: 100%;
 
 }
 
@@ -136,35 +146,39 @@
 
     align-items: center;
 
-    gap:
+    gap: 14px;
 
-        var(--space-md);
+    height: 54px;
 
-    padding:
+    padding: 0 16px;
 
-        14px 16px;
+    border-radius: 16px;
 
-    border-radius:
+    color: var(--text-secondary);
 
-        var(--radius-md);
-
-    color:
-
-        var(--text-secondary);
-
-    transition:
-
-        all
-
-        var(--duration-fast)
-
-        var(--ease-default);
+    transition: all .25s ease;
 
 }
 
-/* ==========================
-   ICON
-========================== */
+.sidebar-nav a:hover {
+
+    background: var(--bg-hover);
+
+    color: var(--text-primary);
+
+    transform: translateX(4px);
+
+}
+
+.sidebar-nav a.active {
+
+    background: var(--gradient-primary);
+
+    color: #fff;
+
+    box-shadow: var(--shadow-md);
+
+}
 
 .nav-icon {
 
@@ -174,71 +188,51 @@
 
     justify-content: center;
 
+    align-items: center;
+
+    flex-shrink: 0;
+
     font-size: 18px;
 
 }
-
-/* ==========================
-   LABEL
-========================== */
 
 .nav-label {
 
     white-space: nowrap;
 
-}
-
-/* ==========================
-   HOVER
-========================== */
-
-.sidebar-nav a:hover {
-
-    background:
-
-        var(--bg-hover);
-
-    color:
-
-        var(--text-primary);
+    transition: opacity .2s;
 
 }
 
-/* ==========================
-   ACTIVE
-========================== */
-
-.sidebar-nav a.active {
-
-    background:
-
-        var(--gradient-primary);
-
-    color:
-
-        white;
-
-}
-
-/* ==========================
+/* ==========================================
    FOOTER
-========================== */
+========================================== */
 
 .sidebar-footer {
 
-    padding:
+    padding: 18px;
 
-        var(--space-lg);
+    border-top: 1px solid var(--border-color);
 
 }
 
-/* ==========================
+/* ==========================================
    PROFILE BUTTON
-========================== */
+========================================== */
 
 #profile-button {
 
     width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: var(--bg-main);
+
+    color: var(--text-primary);
 
     display: flex;
 
@@ -246,39 +240,37 @@
 
     justify-content: center;
 
-    gap:
+    gap: 10px;
 
-        var(--space-sm);
+    cursor: pointer;
 
-    height:
-
-        var(--button-height);
-
-    border-radius:
-
-        var(--radius-md);
-
-    background:
-
-        var(--bg-hover);
-
-    color:
-
-        var(--text-primary);
+    transition: .25s;
 
 }
 
-/* ==========================
-   COLLAPSED MODE
-========================== */
+#profile-button:hover {
 
-#sidebar.collapsed .logo-text,
+    background: var(--bg-hover);
+
+}
+
+/* ==========================================
+   COLLAPSED MODE
+========================================== */
+
+#sidebar.collapsed .logo-text {
+
+    opacity: 0;
+
+    width: 0;
+
+    overflow: hidden;
+
+}
 
 #sidebar.collapsed .nav-label {
 
     opacity: 0;
-
-    pointer-events: none;
 
     width: 0;
 
@@ -290,10 +282,32 @@
 
     justify-content: center;
 
+    padding: 0;
+
 }
 
 #sidebar.collapsed #profile-button span {
 
     display: none;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 992px) {
+
+    #sidebar {
+
+        transform: translateX(-120%);
+
+    }
+
+    #sidebar.open {
+
+        transform: translateX(0);
+
+    }
 
 }
