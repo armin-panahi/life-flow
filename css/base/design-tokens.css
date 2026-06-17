@@ -1,210 +1,261 @@
-```css
-/* ==========================================
+/* ==================================================
    LIFEOS DESIGN TOKENS
-   ------------------------------------------
-   Single source of truth for:
-   - Breakpoints
-   - Containers
-   - Z-Index
-   - Animations
-   - Opacity
-   - Blur
-   - Gradients
-   - Icon Sizes
-   - Sidebar/Navbar dimensions
+   ================================================== */
+
+/* ==========================================
+   SURFACE TOKENS
 ========================================== */
 
 :root {
 
-    /* ==========================
-       BREAKPOINTS
-    ========================== */
+    --surface-primary: var(--bg-main);
 
-    --bp-xs: 480px;
-    --bp-sm: 640px;
-    --bp-md: 768px;
-    --bp-lg: 1024px;
-    --bp-xl: 1280px;
-    --bp-2xl: 1536px;
+    --surface-secondary: var(--bg-card);
 
-    /* ==========================
-       CONTAINER WIDTHS
-    ========================== */
+    --surface-sidebar: var(--bg-sidebar);
 
-    --container-sm: 640px;
-    --container-md: 768px;
-    --container-lg: 1024px;
-    --container-xl: 1280px;
-    --container-2xl: 1440px;
+    --surface-hover: var(--bg-hover);
 
-    /* ==========================
-       LAYOUT
-    ========================== */
-
-    --sidebar-width: 280px;
-    --sidebar-collapsed-width: 88px;
-
-    --navbar-height: 72px;
-
-    --content-max-width: 1600px;
-
-    /* ==========================
-       ICONS
-    ========================== */
-
-    --icon-xs: 14px;
-    --icon-sm: 16px;
-    --icon-md: 20px;
-    --icon-lg: 24px;
-    --icon-xl: 32px;
-
-    /* ==========================
-       AVATARS
-    ========================== */
-
-    --avatar-sm: 32px;
-    --avatar-md: 40px;
-    --avatar-lg: 56px;
-    --avatar-xl: 72px;
-
-    /* ==========================
-       OPACITY
-    ========================== */
-
-    --opacity-disabled: .45;
-    --opacity-muted: .65;
-    --opacity-overlay: .75;
-
-    /* ==========================
-       BLUR
-    ========================== */
-
-    --blur-sm: 6px;
-    --blur-md: 12px;
-    --blur-lg: 24px;
-
-    /* ==========================
-       ANIMATION DURATIONS
-    ========================== */
-
-    --duration-fast: 120ms;
-    --duration-normal: 250ms;
-    --duration-slow: 400ms;
-    --duration-extra: 700ms;
-
-    /* ==========================
-       EASING
-    ========================== */
-
-    --ease-default: ease;
-
-    --ease-out:
-        cubic-bezier(
-            0.22,
-            1,
-            0.36,
-            1
-        );
-
-    --ease-in-out:
-        cubic-bezier(
-            0.65,
-            0,
-            0.35,
-            1
-        );
-
-    /* ==========================
-       BORDER WIDTH
-    ========================== */
-
-    --border-thin: 1px;
-    --border-medium: 2px;
-    --border-thick: 3px;
-
-    /* ==========================
-       Z-INDEX
-    ========================== */
-
-    --z-base: 1;
-
-    --z-dropdown: 100;
-
-    --z-sticky: 200;
-
-    --z-sidebar: 300;
-
-    --z-navbar: 400;
-
-    --z-overlay: 800;
-
-    --z-modal: 900;
-
-    --z-toast: 1000;
-
-    --z-loader: 1100;
-
-    --z-tooltip: 1200;
-
-    /* ==========================
-       GRADIENTS
-    ========================== */
-
-    --gradient-primary:
-        linear-gradient(
-            135deg,
-            #4f46e5,
-            #6366f1
-        );
-
-    --gradient-success:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #16a34a
-        );
-
-    --gradient-warning:
-        linear-gradient(
-            135deg,
-            #f59e0b,
-            #d97706
-        );
-
-    --gradient-danger:
-        linear-gradient(
-            135deg,
-            #ef4444,
-            #dc2626
-        );
-
-    /* ==========================
-       DASHBOARD GRID
-    ========================== */
-
-    --dashboard-gap: 24px;
-
-    --dashboard-columns: 12;
-
-    /* ==========================
-       CARD
-    ========================== */
-
-    --card-min-height: 160px;
-
-    --card-padding: 24px;
-
-    /* ==========================
-       INPUT
-    ========================== */
-
-    --input-height: 48px;
-
-    /* ==========================
-       BUTTON
-    ========================== */
-
-    --button-height: 48px;
+    --surface-overlay: var(--bg-overlay);
 
 }
-```
+
+/* ==========================================
+   TEXT TOKENS
+========================================== */
+
+:root {
+
+    --heading-color: var(--text-primary);
+
+    --body-color: var(--text-secondary);
+
+    --caption-color: var(--text-muted);
+
+    --inverse-color: var(--text-inverse);
+
+}
+
+/* ==========================================
+   BORDER TOKENS
+========================================== */
+
+:root {
+
+    --border-default: var(--border-color);
+
+    --border-focus: var(--primary-color);
+
+    --border-success: var(--success-color);
+
+    --border-danger: var(--danger-color);
+
+}
+
+/* ==========================================
+   RADIUS TOKENS
+========================================== */
+
+:root {
+
+    --radius-button: var(--radius-md);
+
+    --radius-input: var(--radius-md);
+
+    --radius-card: var(--radius-xl);
+
+    --radius-modal: var(--radius-xl);
+
+    --radius-avatar: var(--radius-full);
+
+}
+
+/* ==========================================
+   SHADOW TOKENS
+========================================== */
+
+:root {
+
+    --elevation-1: var(--shadow-xs);
+
+    --elevation-2: var(--shadow-sm);
+
+    --elevation-3: var(--shadow-md);
+
+    --elevation-4: var(--shadow-lg);
+
+}
+
+/* ==========================================
+   TYPOGRAPHY TOKENS
+========================================== */
+
+:root {
+
+    --font-size-xs: .75rem;
+
+    --font-size-sm: .875rem;
+
+    --font-size-md: 1rem;
+
+    --font-size-lg: 1.125rem;
+
+    --font-size-xl: 1.25rem;
+
+    --font-size-2xl: 1.5rem;
+
+    --font-size-3xl: 2rem;
+
+    --font-weight-regular: 400;
+
+    --font-weight-medium: 500;
+
+    --font-weight-semibold: 600;
+
+    --font-weight-bold: 700;
+
+    --font-weight-extrabold: 800;
+
+    --line-height-tight: 1.2;
+
+    --line-height-normal: 1.5;
+
+    --line-height-relaxed: 1.8;
+
+}
+
+/* ==========================================
+   SPACING TOKENS
+========================================== */
+
+:root {
+
+    --layout-gap-xs: var(--space-xs);
+
+    --layout-gap-sm: var(--space-sm);
+
+    --layout-gap-md: var(--space-md);
+
+    --layout-gap-lg: var(--space-lg);
+
+    --layout-gap-xl: var(--space-xl);
+
+    --layout-gap-2xl: var(--space-2xl);
+
+    --layout-gap-3xl: var(--space-3xl);
+
+}
+
+/* ==========================================
+   CONTAINER TOKENS
+========================================== */
+
+:root {
+
+    --container-sm: 640px;
+
+    --container-md: 768px;
+
+    --container-lg: 1024px;
+
+    --container-xl: 1280px;
+
+    --container-2xl: 1440px;
+
+    --container-max: 1800px;
+
+}
+
+/* ==========================================
+   GRID TOKENS
+========================================== */
+
+:root {
+
+    --grid-columns: 12;
+
+    --grid-gap: 20px;
+
+}
+
+/* ==========================================
+   ICON TOKENS
+========================================== */
+
+:root {
+
+    --icon-xs: 14px;
+
+    --icon-sm: 16px;
+
+    --icon-md: 20px;
+
+    --icon-lg: 24px;
+
+    --icon-xl: 32px;
+
+}
+
+/* ==========================================
+   OPACITY TOKENS
+========================================== */
+
+:root {
+
+    --opacity-disabled: .5;
+
+    --opacity-muted: .75;
+
+    --opacity-hover: .92;
+
+}
+
+/* ==========================================
+   BLUR TOKENS
+========================================== */
+
+:root {
+
+    --blur-sm: 6px;
+
+    --blur-md: 12px;
+
+    --blur-lg: 20px;
+
+}
+
+/* ==========================================
+   ANIMATION TOKENS
+========================================== */
+
+:root {
+
+    --animation-fast: 150ms;
+
+    --animation-normal: 300ms;
+
+    --animation-slow: 500ms;
+
+}
+
+/* ==========================================
+   LAYER TOKENS
+========================================== */
+
+:root {
+
+    --layer-base: 1;
+
+    --layer-dropdown: 100;
+
+    --layer-navbar: 900;
+
+    --layer-sidebar: 1000;
+
+    --layer-modal: 5000;
+
+    --layer-toast: 6000;
+
+    --layer-tooltip: 7000;
+
+}
