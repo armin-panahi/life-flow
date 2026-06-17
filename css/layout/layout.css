@@ -1,206 +1,174 @@
 /* ==========================================
-   LIFEOS LAYOUT
-   ------------------------------------------
-   Global application layout
-========================================== */
+   LIFEOS LAYOUT SYSTEM
+   ========================================== */
 
-/* ==========================
-   BODY
-========================== */
+/* ==========================================
+   APP
+   ========================================== */
 
-body {
+#app {
+
+    position: relative;
 
     min-height: 100vh;
 
     background: var(--bg-main);
 
-    color: var(--text-primary);
-
-    overflow-x: hidden;
-
 }
 
-/* ==========================
-   APP WRAPPER
-========================== */
-
-#app {
-
-    display: flex;
-
-    width: 100%;
-
-    min-height: 100vh;
-
-}
-
-/* ==========================
-   SIDEBAR PLACEHOLDER
-========================== */
-
-#sidebar {
-
-    flex-shrink: 0;
-
-    width: var(--sidebar-width);
-
-    min-height: 100vh;
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: var(--z-sidebar);
-
-}
-
-/* ==========================
+/* ==========================================
    MAIN CONTENT
-========================== */
+   ========================================== */
 
 #main-content {
 
-    flex: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
     min-height: 100vh;
 
-    min-width: 0;
+    margin-left: calc(var(--sidebar-width) + 32px);
+
+    transition:
+
+        margin-left var(--duration-normal) var(--ease-default);
 
 }
 
-/* ==========================
-   NAVBAR OFFSET
-========================== */
+/* ==========================================
+   AUTO COLLAPSE SUPPORT
+   ========================================== */
 
-#navbar {
+#sidebar.collapsed ~ #main-content {
 
-    height: var(--navbar-height);
+    margin-left:
 
-    flex-shrink: 0;
+        calc(var(--sidebar-collapsed-width) + 32px);
 
 }
 
-/* ==========================
-   DASHBOARD ROOT
-========================== */
+/* ==========================================
+   DASHBOARD
+   ========================================== */
 
 #dashboard {
 
-    flex: 1;
-
-    width: 100%;
-
-    padding: var(--space-xl);
+    padding: 32px;
 
 }
 
-/* ==========================
-   PAGE CONTAINER
-========================== */
-
-.container {
-
-    width: 100%;
-
-    max-width: var(--content-max-width);
-
-    margin-inline: auto;
-
-}
-
-/* ==========================
-   SECTION SPACING
-========================== */
-
-section {
-
-    margin-bottom: var(--space-xl);
-
-}
-
-/* ==========================
-   GRID HELPERS
-========================== */
-
-.dashboard-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
-
-    gap: var(--dashboard-gap);
-
-}
-
-.col-12 {
-
-    grid-column: span 12;
-
-}
-
-.col-8 {
-
-    grid-column: span 8;
-
-}
-
-.col-6 {
-
-    grid-column: span 6;
-
-}
-
-.col-4 {
-
-    grid-column: span 4;
-
-}
-
-.col-3 {
-
-    grid-column: span 3;
-
-}
-
-/* ==========================
+/* ==========================================
    CONTENT WRAPPER
-========================== */
+   ========================================== */
 
 .content-wrapper {
 
     width: 100%;
 
-    max-width: var(--content-max-width);
+    max-width: 1800px;
 
-    margin-inline: auto;
+    margin: 0 auto;
 
-}
+    display: flex;
 
-/* ==========================
-   SCROLLABLE AREA
-========================== */
+    flex-direction: column;
 
-.scroll-y {
-
-    overflow-y: auto;
+    gap: 24px;
 
 }
 
-.scroll-x {
+/* ==========================================
+   HERO
+   ========================================== */
 
-    overflow-x: auto;
+#hero-section {
+
+    width: 100%;
 
 }
 
-/* ==========================
-   PAGE TITLE BLOCK
-========================== */
+/* ==========================================
+   KPI GRID
+   ========================================== */
 
-.page-header {
+#kpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 20px;
+
+}
+
+/* ==========================================
+   CHARTS
+   ========================================== */
+
+#charts-section {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(420px, 1fr));
+
+    gap: 20px;
+
+}
+
+/* ==========================================
+   DASHBOARD GRID
+   ========================================== */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(12, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+/* ==========================================
+   COMMON CARD
+   ========================================== */
+
+.dashboard-card {
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+
+        transform var(--duration-fast) var(--ease-default),
+
+        box-shadow var(--duration-fast) var(--ease-default);
+
+}
+
+.dashboard-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+/* ==========================================
+   SECTION TITLE
+   ========================================== */
+
+.section-title {
 
     display: flex;
 
@@ -208,52 +176,132 @@ section {
 
     justify-content: space-between;
 
-    gap: var(--space-lg);
-
-    margin-bottom: var(--space-xl);
+    margin-bottom: 20px;
 
 }
 
-/* ==========================
-   STACK
-========================== */
+.section-title h2 {
 
-.stack {
+    font-size: 1.25rem;
 
-    display: flex;
+    font-weight: 700;
 
-    flex-direction: column;
-
-    gap: var(--space-lg);
+    color: var(--text-primary);
 
 }
 
-/* ==========================
-   CLUSTER
-========================== */
+/* ==========================================
+   XXL
+   ========================================== */
 
-.cluster {
+@media (min-width: 1800px) {
 
-    display: flex;
+    .content-wrapper {
 
-    flex-wrap: wrap;
+        max-width: 1920px;
 
-    align-items: center;
-
-    gap: var(--space-md);
+    }
 
 }
 
-/* ==========================
-   DIVIDER
-========================== */
+/* ==========================================
+   DESKTOP
+   ========================================== */
 
-.divider {
+@media (max-width: 1200px) {
 
-    width: 100%;
+    .dashboard-grid {
 
-    height: 1px;
+        grid-template-columns:
 
-    background: var(--border-color);
+            repeat(6, minmax(0, 1fr));
+
+    }
+
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 992px) {
+
+    #main-content {
+
+        margin-left: 0;
+
+    }
+
+    #sidebar.collapsed ~ #main-content {
+
+        margin-left: 0;
+
+    }
+
+    #dashboard {
+
+        padding: 24px;
+
+    }
+
+    #charts-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    #dashboard {
+
+        padding: 18px;
+
+    }
+
+    .content-wrapper {
+
+        gap: 18px;
+
+    }
+
+    #kpi-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 480px) {
+
+    #dashboard {
+
+        padding: 14px;
+
+    }
+
+    .dashboard-card {
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+    }
 
 }
