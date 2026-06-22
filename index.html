@@ -76,6 +76,7 @@
     ====================================== -->
 
     <link rel="stylesheet" href="./css/pages/dashboard.css" />
+    <link rel="stylesheet" href="./css/pages/tasks.css">
 
     <!-- =====================================
                 GLOBAL CSS
@@ -273,10 +274,7 @@
             </button>
 
             <button id="user-menu" class="user-button">
-              <img
-                src="./assets/images/armin-panahi.jpg"
-                alt="User Avatar"
-              />
+              <img src="./assets/images/armin-panahi.jpg" alt="User Avatar" />
 
               <div class="user-info">
                 <span class="user-name"> Armin Panahi </span>
@@ -310,6 +308,30 @@
             <!-- Dashboard Grid -->
 
             <section id="dashboard-grid" class="dashboard-grid"></section>
+          </div>
+        </section>
+
+        <!-- =================================
+                        TASKS PAGE
+            ================================== -->
+
+        <section id="tasks-page" class="page-view hidden">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <div>
+                <h2>Tasks</h2>
+
+                <p>Manage your daily tasks</p>
+              </div>
+
+              <button id="add-task-btn" class="btn btn--primary">
+                <i class="fa-solid fa-plus"></i>
+
+                New Task
+              </button>
+            </div>
+
+            <div id="tasks-container"></div>
           </div>
         </section>
       </main>

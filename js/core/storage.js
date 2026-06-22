@@ -1,26 +1,40 @@
 /* ==========================================================
-   LIFEOS STORAGE SERVICE
+   LIFEOS STORAGE ENGINE
    ========================================================== */
 
-import CONFIG from "../config.js";
-
-class StorageService {
-
-    constructor() {
-
-        this.prefix = CONFIG.storage.prefix;
-
-        this.version = CONFIG.storage.version;
-
-    }
+class Storage {
 
     /* ======================================================
-       BUILD KEY
+       GET
     ====================================================== */
 
-    buildKey(key) {
+    get(key, fallback = null) {
 
-        return `${this.prefix}${key}`;
+        try {
+
+            const data = localStorage.getItem(key);
+
+            if (!data) {
+
+                return fallback;
+
+            }
+
+            return JSON.parse(data);
+
+        } catch (error) {
+
+            console.error(
+
+                `[Storage] Failed to get "${key}"`,
+
+                error
+
+            );
+
+            return fallback;
+
+        }
 
     }
 
@@ -32,65 +46,27 @@ class StorageService {
 
         try {
 
-            const payload = {
-
-                version: this.version,
-
-                updatedAt: Date.now(),
-
-                data: value
-
-            };
-
             localStorage.setItem(
 
-                this.buildKey(key),
+                key,
 
-                JSON.stringify(payload)
+                JSON.stringify(value)
 
             );
 
             return true;
 
-        }
+        } catch (error) {
 
-        catch (error) {
+            console.error(
 
-            console.error(error);
+                `[Storage] Failed to save "${key}"`,
 
-            return false;
-
-        }
-
-    }
-
-    /* ======================================================
-       GET
-    ====================================================== */
-
-    get(key, defaultValue = null) {
-
-        try {
-
-            const raw = localStorage.getItem(
-
-                this.buildKey(key)
+                error
 
             );
 
-            if (!raw) {
-
-                return defaultValue;
-
-            }
-
-            return JSON.parse(raw).data;
-
-        }
-
-        catch {
-
-            return defaultValue;
+            return false;
 
         }
 
@@ -102,203 +78,21 @@ class StorageService {
 
     remove(key) {
 
-        localStorage.removeItem(
-
-            this.buildKey(key)
-
-        );
-
-    }
-
-    /* ======================================================
-       EXISTS
-    ====================================================== */
-
-    has(key) {
-
-        return localStorage.getItem(
-
-            this.buildKey(key)
-
-        ) !== null;
-
-    }
-
-    /* ======================================================
-       CLEAR APP STORAGE
-    ====================================================== */
-
-    clear() {
-
-        const keys = [];
-
-        for (
-
-            let i = 0;
-
-            i < localStorage.length;
-
-            i++
-
-        ) {
-
-            const key = localStorage.key(i);
-
-            if (
-
-                key.startsWith(this.prefix)
-
-            ) {
-
-                keys.push(key);
-
-            }
-
-        }
-
-        keys.forEach(
-
-            key => localStorage.removeItem(key)
-
-        );
-
-    }
-
-    /* ======================================================
-       GET RAW PAYLOAD
-    ====================================================== */
-
-    getPayload(key) {
-
-        const raw = localStorage.getItem(
-
-            this.buildKey(key)
-
-        );
-
-        if (!raw) {
-
-            return null;
-
-        }
-
-        return JSON.parse(raw);
-
-    }
-
-    /* ======================================================
-       LAST UPDATE
-    ====================================================== */
-
-    lastUpdated(key) {
-
-        const payload = this.getPayload(key);
-
-        return payload
-
-            ? payload.updatedAt
-
-            : null;
-
-    }
-
-    /* ======================================================
-       EXPORT ALL APP DATA
-    ====================================================== */
-
-    exportData() {
-
-        const backup = {
-
-            version: this.version,
-
-            exportedAt: Date.now(),
-
-            data: {}
-
-        };
-
-        for (
-
-            let i = 0;
-
-            i < localStorage.length;
-
-            i++
-
-        ) {
-
-            const key = localStorage.key(i);
-
-            if (
-
-                key.startsWith(this.prefix)
-
-            ) {
-
-                backup.data[key] =
-
-                    JSON.parse(
-
-                        localStorage.getItem(key)
-
-                    );
-
-            }
-
-        }
-
-        return backup;
-
-    }
-
-    /* ======================================================
-       IMPORT BACKUP
-    ====================================================== */
-
-    importData(backup) {
-
         try {
 
-            if (
-
-                !backup ||
-
-                !backup.data
-
-            ) {
-
-                return false;
-
-            }
-
-            Object.entries(
-
-                backup.data
-
-            ).forEach(
-
-                ([key, value]) => {
-
-                    localStorage.setItem(
-
-                        key,
-
-                        JSON.stringify(value)
-
-                    );
-
-                }
-
-            );
+            localStorage.removeItem(key);
 
             return true;
 
-        }
+        } catch (error) {
 
-        catch (error) {
+            console.error(
 
-            console.error(error);
+                `[Storage] Failed to remove "${key}"`,
+
+                error
+
+            );
 
             return false;
 
@@ -307,45 +101,45 @@ class StorageService {
     }
 
     /* ======================================================
-       STORAGE SIZE
+       CLEAR
     ====================================================== */
 
-    size() {
+    clear() {
 
-        let bytes = 0;
+        try {
 
-        for (
+            localStorage.clear();
 
-            let key in localStorage
+            return true;
 
-        ) {
+        } catch (error) {
 
-            if (
+            console.error(
 
-                Object.prototype.hasOwnProperty.call(
+                "[Storage] Failed to clear storage",
 
-                    localStorage,
+                error
 
-                    key
+            );
 
-                )
-
-            ) {
-
-                bytes +=
-
-                    localStorage[key].length;
-
-            }
+            return false;
 
         }
 
-        return bytes;
+    }
+
+    /* ======================================================
+       EXISTS
+    ====================================================== */
+
+    exists(key) {
+
+        return localStorage.getItem(key) !== null;
 
     }
 
 }
 
-const storage = new StorageService();
+const storage = new Storage();
 
 export default storage;
