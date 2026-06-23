@@ -4,11 +4,11 @@
 
 import modal from "../../components/modal.js";
 
+import taskService from "./task.service.js";
+
 import createTaskForm from "./taskForm.js";
 
-import taskController from "./task.controller.js";
-
-import createTaskCard from "./components/taskCard.js";
+import createTaskCard from "./taskCard.js";
 
 /* ==========================================================
    TASK UI
@@ -36,12 +36,6 @@ class TaskUI {
 
         if (!this.container) {
 
-            console.warn(
-
-                "[TaskUI] #tasks-container not found"
-
-            );
-
             return;
 
         }
@@ -60,7 +54,7 @@ class TaskUI {
 
     render() {
 
-        const tasks = taskController.getTasks();
+        const tasks = taskService.getAll();
 
         if (!tasks.length) {
 
@@ -71,9 +65,7 @@ class TaskUI {
                     <h3>No Tasks Yet</h3>
 
                     <p>
-
                         Create your first task to get started.
-
                     </p>
 
                 </div>
@@ -107,7 +99,6 @@ class TaskUI {
                 const button = event.target.closest(
 
                     "[data-action]"
-
                 );
 
                 if (!button) {
@@ -119,7 +110,6 @@ class TaskUI {
                 const card = event.target.closest(
 
                     "[data-task-id]"
-
                 );
 
                 if (!card) {
@@ -138,24 +128,10 @@ class TaskUI {
 
                 switch (action) {
 
-                    case "toggle":
-
-                        this.handleToggle(taskId);
-                        break;
-
                     case "delete":
 
-                        this.handleDelete(taskId);
-                        break;
+                        this.deleteTask(taskId);
 
-                    case "pin":
-
-                        this.handlePin(taskId);
-                        break;
-
-                    case "edit":
-
-                        this.handleEdit(taskId);
                         break;
 
                 }
@@ -167,27 +143,14 @@ class TaskUI {
     }
 
     /* ======================================================
-       TOGGLE COMPLETE
-    ====================================================== */
-
-    handleToggle(taskId) {
-
-        taskController.toggleComplete(taskId);
-
-        this.render();
-
-    }
-
-    /* ======================================================
        DELETE
     ====================================================== */
 
-    handleDelete(taskId) {
+    deleteTask(taskId) {
 
         const confirmed = confirm(
 
             "Delete this task?"
-
         );
 
         if (!confirmed) {
@@ -196,94 +159,42 @@ class TaskUI {
 
         }
 
-        taskController.deleteTask(taskId);
+        taskService.delete(taskId);
 
         this.render();
 
     }
 
     /* ======================================================
-       PIN
+       CREATE
     ====================================================== */
 
-    handlePin(taskId) {
+    createTask(task) {
 
-        const task =
-
-            taskController.getTask(taskId);
-
-        if (!task) {
-
-            return;
-
-        }
-
-        if (task.pinned) {
-
-            taskController.unpinTask(taskId);
-
-        } else {
-
-            taskController.pinTask(taskId);
-
-        }
+        taskService.create(task);
 
         this.render();
 
     }
 
     /* ======================================================
-       EDIT
-    ====================================================== */
-
-    handleEdit(taskId) {
-
-        console.log(
-
-            "Edit Task:",
-
-            taskId
-
-        );
-
-        /*
-            Modal Integration
-            Next Step
-        */
-
-    }
-
-    /* ======================================================
-       CREATE TASK
-    ====================================================== */
-
-    createTask(data) {
-
-        taskController.createTask(data);
-
-        this.render();
-
-    }
-
-    /* ======================================================
-        GLOBAL EVENTS
+       GLOBAL EVENTS
     ====================================================== */
 
     bindGlobalEvents() {
 
-        const addTaskButton = document.querySelector(
+        const button = document.querySelector(
 
             "#add-task-btn"
-
         );
 
-        if (!addTaskButton) {
+        if (!button) {
 
             return;
 
         }
 
-        addTaskButton.addEventListener(
+        button.addEventListener(
 
             "click",
 
@@ -298,7 +209,7 @@ class TaskUI {
     }
 
     /* ======================================================
-        CREATE TASK MODAL
+       MODAL
     ====================================================== */
 
     openCreateTaskModal() {
@@ -316,7 +227,7 @@ class TaskUI {
     }
 
     /* ======================================================
-        TASK FORM
+       FORM
     ====================================================== */
 
     bindTaskForm() {
@@ -324,7 +235,6 @@ class TaskUI {
         const form = document.querySelector(
 
             "#task-form"
-
         );
 
         if (!form) {
@@ -341,7 +251,9 @@ class TaskUI {
 
                 event.preventDefault();
 
-                const formData = new FormData(form);
+                const formData =
+
+                    new FormData(form);
 
                 const task = {
 
@@ -368,13 +280,9 @@ class TaskUI {
                     estimatedMinutes:
 
                         Number(
-
                             formData.get(
-
                                 "estimatedMinutes"
-
                             )
-
                         ),
 
                     color:

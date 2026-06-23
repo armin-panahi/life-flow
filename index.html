@@ -76,7 +76,7 @@
     ====================================== -->
 
     <link rel="stylesheet" href="./css/pages/dashboard.css" />
-    <link rel="stylesheet" href="./css/pages/tasks.css">
+    <link rel="stylesheet" href="./css/pages/tasks.css" />
 
     <!-- =====================================
                 GLOBAL CSS
@@ -295,19 +295,256 @@
           <div class="content-wrapper">
             <!-- Hero Section -->
 
-            <section id="hero-section"></section>
+            <section id="hero-section">
+              <div class="hero-content">
+                <div class="hero-badge">✨ Productivity Dashboard</div>
+
+                <h2 class="hero-title">Good Morning Armin 👋</h2>
+
+                <p class="hero-description">
+                  Stay focused, track your goals, manage your tasks and build
+                  better habits every day.
+                </p>
+
+                <div class="hero-actions">
+                  <button class="btn btn-primary">New Task</button>
+
+                  <button class="btn btn-secondary">View Analytics</button>
+                </div>
+              </div>
+            </section>
 
             <!-- KPI Section -->
 
-            <section id="kpi-grid"></section>
+            <section id="kpi-grid">
+              <!-- KPI 1 -->
+
+              <div class="card kpi-card">
+                <div class="card-body">
+                  <div class="kpi-top">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <span class="card-badge"> +12% </span>
+                  </div>
+
+                  <div class="kpi-number">24</div>
+
+                  <div class="kpi-text">Active Tasks</div>
+                </div>
+              </div>
+
+              <!-- KPI 2 -->
+
+              <div class="card kpi-card">
+                <div class="card-body">
+                  <div class="kpi-top">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <span class="card-badge"> 14 Days </span>
+                  </div>
+
+                  <div class="kpi-number">87%</div>
+
+                  <div class="kpi-text">Habit Consistency</div>
+                </div>
+              </div>
+
+              <!-- KPI 3 -->
+
+              <div class="card kpi-card">
+                <div class="card-body">
+                  <div class="kpi-top">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <span class="card-badge"> 3 Goals </span>
+                  </div>
+
+                  <div class="kpi-number">68%</div>
+
+                  <div class="kpi-text">Goal Progress</div>
+                </div>
+              </div>
+
+              <!-- KPI 4 -->
+
+              <div class="card kpi-card">
+                <div class="card-body">
+                  <div class="kpi-top">
+                    <div class="card-icon">
+                      <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <span class="card-badge"> +8.4% </span>
+                  </div>
+
+                  <div class="kpi-number">$4,250</div>
+
+                  <div class="kpi-text">Monthly Income</div>
+                </div>
+              </div>
+            </section>
 
             <!-- Charts Section -->
 
-            <section id="charts-section"></section>
+            <section id="charts-section">
+              <!-- Productivity Chart -->
+
+              <div class="card chart-card">
+                <div class="card-header">
+                  <div>
+                    <h3 class="card-title">Productivity Overview</h3>
+
+                    <p class="card-subtitle">Last 7 days performance</p>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="productivity-chart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Focus Score -->
+
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Focus Score</h3>
+                </div>
+
+                <div class="card-body">
+                  <div
+                    style="
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      height: 100%;
+                    "
+                  >
+                    <div style="font-size: 4rem; font-weight: 800">86%</div>
+
+                    <p class="text-muted">Excellent consistency this week</p>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             <!-- Dashboard Grid -->
 
-            <section id="dashboard-grid" class="dashboard-grid"></section>
+            <section id="dashboard-grid">
+              <!-- Recent Tasks -->
+
+              <div class="card widget">
+                <div class="card-header">
+                  <h3 class="card-title">Recent Tasks</h3>
+                </div>
+
+                <div class="card-body">
+                  <div class="widget-list">
+                    <div class="widget-item">
+                      <span>Design Dashboard UI</span>
+
+                      <span class="card-badge"> High </span>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Create Task Module</span>
+
+                      <span class="card-badge"> Medium </span>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Build Finance Page</span>
+
+                      <span class="card-badge"> Low </span>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Analytics Integration</span>
+
+                      <span class="card-badge"> High </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Goals -->
+
+              <div class="card widget">
+                <div class="card-header">
+                  <h3 class="card-title">Goals Progress</h3>
+                </div>
+
+                <div class="card-body">
+                  <div class="goal-item">
+                    <div class="goal-top">
+                      <span>Launch LifeOS</span>
+
+                      <span>80%</span>
+                    </div>
+
+                    <div class="habit-progress">
+                      <div class="habit-progress-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+
+                  <div class="goal-item">
+                    <div class="goal-top">
+                      <span>100 Active Users</span>
+
+                      <span>55%</span>
+                    </div>
+
+                    <div class="habit-progress">
+                      <div class="habit-progress-fill" style="width: 55%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Habits -->
+
+              <div class="card widget">
+                <div class="card-header">
+                  <h3 class="card-title">Habit Tracker</h3>
+                </div>
+
+                <div class="card-body">
+                  <div class="widget-list">
+                    <div class="widget-item">
+                      <span>Workout</span>
+
+                      <strong>🔥 14</strong>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Reading</span>
+
+                      <strong>🔥 8</strong>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Meditation</span>
+
+                      <strong>🔥 22</strong>
+                    </div>
+
+                    <div class="widget-item">
+                      <span>Journaling</span>
+
+                      <strong>🔥 17</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 

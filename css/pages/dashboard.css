@@ -1,0 +1,339 @@
+/* ==================================================
+   LIFEOS DASHBOARD PAGE
+================================================== */
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+#dashboard {
+
+    padding: 24px;
+
+}
+
+.content-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+#hero-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 240px;
+
+    padding: 32px;
+
+    border:
+
+        1px solid var(--border-color);
+
+    border-radius: 28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.25),
+            rgba(139,92,246,.12)
+        );
+
+    backdrop-filter: blur(20px);
+
+}
+
+#hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+
+    right: -80px;
+
+    width: 260px;
+
+    height: 260px;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(99,102,241,.15);
+
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background:
+
+        rgba(255,255,255,.06);
+
+    font-size: .85rem;
+
+}
+
+.hero-title {
+
+    margin-top: 18px;
+
+    font-size: 2.4rem;
+
+    font-weight: 800;
+
+}
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin-top: 12px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+.hero-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+}
+
+/* ==========================================
+   KPI GRID
+========================================== */
+
+#kpi-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap: 20px;
+
+}
+
+.kpi-card {
+
+    min-height: 180px;
+
+}
+
+.kpi-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.kpi-number {
+
+    margin-top: 24px;
+
+    font-size: 2.4rem;
+
+    font-weight: 800;
+
+}
+
+.kpi-text {
+
+    margin-top: 8px;
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================
+   CHART SECTION
+========================================== */
+
+#charts-section {
+
+    display: grid;
+
+    grid-template-columns:
+
+        2fr 1fr;
+
+    gap: 20px;
+
+}
+
+/* ==========================================
+   DASHBOARD GRID
+========================================== */
+
+#dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+        2fr 1fr 1fr;
+
+    gap: 20px;
+
+}
+
+.widget {
+
+    min-height: 320px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px) {
+
+    #kpi-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+    #dashboard-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    #dashboard {
+
+        padding: 16px;
+
+    }
+
+    #kpi-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+    #charts-section {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+    .hero-title {
+
+        font-size: 1.9rem;
+
+    }
+
+}
+
+
+/* ==========================================
+   DASHBOARD WIDGETS
+========================================== */
+
+.widget-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.widget-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid var(--border-color);
+
+}
+
+.goal-item {
+
+    margin-bottom: 24px;
+
+}
+
+.goal-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+}
+
