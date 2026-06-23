@@ -1,453 +1,512 @@
 /* ==================================================
-   LIFEOS DESIGN SYSTEM - BUTTONS
+LIFEOS DESIGN SYSTEM - BUTTONS
 ================================================== */
 
 /* ===========================
-   BASE BUTTON
+BASE BUTTON
 =========================== */
 
 .btn {
 
-    display: inline-flex;
 
-    align-items: center;
+display: inline-flex;
 
-    justify-content: center;
+align-items: center;
 
-    gap: 10px;
+justify-content: center;
 
-    border: none;
+gap: 10px;
 
-    outline: none;
+border: none;
 
-    cursor: pointer;
+outline: none;
 
-    user-select: none;
+cursor: pointer;
 
-    text-decoration: none;
+user-select: none;
 
-    white-space: nowrap;
+text-decoration: none;
 
-    font-family: inherit;
+white-space: nowrap;
 
-    font-weight: 600;
+font-family: inherit;
 
-    transition:
+font-weight: 600;
 
-        all var(--duration-fast) var(--ease-default);
+transition: all .25s ease;
+
+position: relative;
+
+overflow: hidden;
+
 
 }
 
 /* ===========================
-   SIZES
+SIZES
 =========================== */
 
 .btn-sm {
 
-    height: 38px;
 
-    padding: 0 16px;
+height: 40px;
 
-    font-size: .85rem;
+padding: 0 18px;
 
-    border-radius: 10px;
+font-size: .85rem;
+
+border-radius: 12px;
+
 
 }
 
 .btn-md {
 
-    height: 46px;
 
-    padding: 0 22px;
+height: 48px;
 
-    font-size: .95rem;
+padding: 0 24px;
 
-    border-radius: 14px;
+font-size: .95rem;
+
+border-radius: 14px;
+
 
 }
 
 .btn-lg {
 
-    height: 54px;
 
-    padding: 0 28px;
+height: 56px;
 
-    font-size: 1rem;
+padding: 0 30px;
 
-    border-radius: 16px;
+font-size: 1rem;
+
+border-radius: 16px;
+
 
 }
 
 /* ===========================
-   PRIMARY
+PRIMARY
 =========================== */
 
 .btn-primary {
 
-    background: var(--gradient-primary);
 
-    color: #fff;
+background: var(--gradient-primary);
 
-    box-shadow:
+color: #fff;
 
-        0 8px 20px rgba(99,102,241,.25);
+box-shadow:
+    0 10px 30px rgba(99,102,241,.25);
+
 
 }
 
 .btn-primary:hover {
 
-    transform: translateY(-2px);
+
+transform: translateY(-3px);
+
+box-shadow:
+    0 18px 40px rgba(99,102,241,.35);
+
 
 }
 
 .btn-primary:active {
 
-    transform: scale(.98);
+
+transform: scale(.98);
+
 
 }
 
 /* ===========================
-   SECONDARY
+SECONDARY
 =========================== */
 
 .btn-secondary {
 
-    background: var(--bg-card);
 
-    color: var(--text-primary);
+background: rgba(255,255,255,.05);
 
-    border: 1px solid var(--border-color);
+color: var(--text-primary);
+
+border: 1px solid rgba(255,255,255,.08);
+
+backdrop-filter: blur(12px);
+
 
 }
 
 .btn-secondary:hover {
 
-    background: var(--bg-hover);
+
+transform: translateY(-2px);
+
+background: rgba(255,255,255,.08);
+
+border-color: rgba(255,255,255,.12);
+
 
 }
 
 /* ===========================
-   OUTLINE
+OUTLINE
 =========================== */
 
 .btn-outline {
 
-    background: transparent;
 
-    border: 1px solid var(--primary-color);
+background: transparent;
 
-    color: var(--primary-color);
+border: 1px solid var(--primary-color);
+
+color: var(--primary-color);
+
 
 }
 
 .btn-outline:hover {
 
-    background: rgba(99,102,241,.08);
+
+background: rgba(99,102,241,.10);
+
 
 }
 
 /* ===========================
-   GHOST
+GHOST
 =========================== */
 
 .btn-ghost {
 
-    background: transparent;
 
-    color: var(--text-primary);
+background: transparent;
+
+color: var(--text-primary);
+
 
 }
 
 .btn-ghost:hover {
 
-    background: var(--bg-hover);
+
+background: var(--bg-hover);
+
 
 }
 
 /* ===========================
-   SUCCESS
+SUCCESS
 =========================== */
 
 .btn-success {
 
-    background: #10b981;
 
-    color: white;
+background: #10b981;
+
+color: white;
+
 
 }
 
 .btn-success:hover {
 
-    filter: brightness(1.05);
+
+filter: brightness(1.08);
+
 
 }
 
 /* ===========================
-   DANGER
+DANGER
 =========================== */
 
 .btn-danger {
 
-    background: #ef4444;
 
-    color: white;
+background: #ef4444;
+
+color: white;
+
 
 }
 
 .btn-danger:hover {
 
-    filter: brightness(1.05);
+
+filter: brightness(1.08);
+
 
 }
 
 /* ===========================
-   WARNING
+WARNING
 =========================== */
 
 .btn-warning {
 
-    background: #f59e0b;
 
-    color: white;
+background: #f59e0b;
+
+color: white;
+
 
 }
 
 /* ===========================
-   INFO
+INFO
 =========================== */
 
 .btn-info {
 
-    background: #3b82f6;
 
-    color: white;
+background: #3b82f6;
+
+color: white;
+
 
 }
 
 /* ===========================
-   ICON BUTTON
+ICON BUTTON
 =========================== */
 
 .btn-icon {
 
-    width: 46px;
 
-    height: 46px;
+width: 48px;
 
-    padding: 0;
+height: 48px;
 
-    border-radius: 14px;
+padding: 0;
+
+border-radius: 14px;
+
 
 }
 
 .btn-icon i {
 
-    font-size: 18px;
+
+font-size: 18px;
+
 
 }
 
 /* ===========================
-   FAB
+FAB
 =========================== */
 
 .btn-fab {
 
-    position: fixed;
 
-    right: 28px;
+position: fixed;
 
-    bottom: 28px;
+right: 28px;
 
-    width: 62px;
+bottom: 28px;
 
-    height: 62px;
+width: 64px;
 
-    border-radius: 50%;
+height: 64px;
 
-    background: var(--gradient-primary);
+border-radius: 50%;
 
-    color: white;
+background: var(--gradient-primary);
 
-    display: flex;
+color: white;
 
-    align-items: center;
+display: flex;
 
-    justify-content: center;
+align-items: center;
 
-    box-shadow:
+justify-content: center;
 
-        0 18px 40px rgba(99,102,241,.35);
+box-shadow:
+    0 20px 45px rgba(99,102,241,.35);
 
-    z-index: 999;
+z-index: 999;
+
 
 }
 
 .btn-fab:hover {
 
-    transform:
 
-        translateY(-3px)
+transform:
+    translateY(-3px)
+    scale(1.04);
 
-        scale(1.04);
 
 }
 
 /* ===========================
-   FULL WIDTH
+FULL WIDTH
 =========================== */
 
 .btn-block {
 
-    width: 100%;
+
+width: 100%;
+
 
 }
 
 /* ===========================
-   DISABLED
+DISABLED
 =========================== */
 
 .btn:disabled,
 
 .btn.disabled {
 
-    opacity: .55;
 
-    pointer-events: none;
+opacity: .55;
 
-    cursor: not-allowed;
+pointer-events: none;
+
+cursor: not-allowed;
+
 
 }
 
 /* ===========================
-   LOADING
+LOADING
 =========================== */
 
 .btn-loading {
 
-    pointer-events: none;
+
+pointer-events: none;
+
 
 }
 
 .btn-loading::after {
 
-    content: "";
 
-    width: 16px;
+content: "";
 
-    height: 16px;
+width: 16px;
 
-    border-radius: 50%;
+height: 16px;
 
-    border: 2px solid rgba(255,255,255,.35);
+border-radius: 50%;
 
-    border-top-color: white;
+border: 2px solid rgba(255,255,255,.35);
 
-    animation:
+border-top-color: white;
 
-        button-loading-spin
+animation:
+    button-loading-spin
+    .8s linear infinite;
 
-        .8s linear infinite;
 
 }
 
 /* ===========================
-   PILL
+PILL
 =========================== */
 
 .btn-pill {
 
-    border-radius: 999px;
+
+border-radius: 999px;
+
 
 }
 
 /* ===========================
-   SOFT PRIMARY
+SOFT PRIMARY
 =========================== */
 
 .btn-soft-primary {
 
-    background:
 
-        rgba(99,102,241,.12);
+background: rgba(99,102,241,.12);
 
-    color:
+color: var(--primary-color);
 
-        var(--primary-color);
 
 }
 
 .btn-soft-primary:hover {
 
-    background:
 
-        rgba(99,102,241,.18);
+background: rgba(99,102,241,.18);
+
 
 }
 
 /* ===========================
-   SOFT SUCCESS
+SOFT SUCCESS
 =========================== */
 
 .btn-soft-success {
 
-    background:
 
-        rgba(16,185,129,.12);
+background: rgba(16,185,129,.12);
 
-    color:
+color: #10b981;
 
-        #10b981;
 
 }
 
 /* ===========================
-   SOFT DANGER
+SOFT DANGER
 =========================== */
 
 .btn-soft-danger {
 
-    background:
 
-        rgba(239,68,68,.12);
+background: rgba(239,68,68,.12);
 
-    color:
+color: #ef4444;
 
-        #ef4444;
 
 }
 
 /* ===========================
-   ANIMATION
+ANIMATION
 =========================== */
 
 @keyframes button-loading-spin {
 
-    to {
 
-        transform: rotate(360deg);
+to {
 
-    }
+    transform: rotate(360deg);
+
+}
+
 
 }
 
 /* ===========================
-   MOBILE
+MOBILE
 =========================== */
 
 @media (max-width:768px){
 
-    .btn-lg{
 
-        height:48px;
+.btn-lg{
 
-        padding:0 22px;
+    height:50px;
 
-    }
+    padding:0 22px;
 
-    .btn-md{
+}
 
-        height:42px;
+.btn-md{
 
-    }
+    height:44px;
+
+}
+
 
 }

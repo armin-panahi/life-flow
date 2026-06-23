@@ -25,6 +25,9 @@
 /* ==========================================
    HERO SECTION
 ========================================== */
+/* ==========================================
+   HERO SECTION
+========================================== */
 
 #hero-section {
 
@@ -32,25 +35,22 @@
 
     overflow: hidden;
 
-    min-height: 240px;
+    min-height: 210px;
 
-    padding: 32px;
+    padding: 36px;
 
-    border:
+    border: 1px solid rgba(255,255,255,.08);
 
-        1px solid var(--border-color);
-
-    border-radius: 28px;
+    border-radius: 32px;
 
     background:
-
         linear-gradient(
             135deg,
-            rgba(99,102,241,.25),
-            rgba(139,92,246,.12)
+            rgba(99,102,241,.30),
+            rgba(139,92,246,.16)
         );
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
 
 }
 
@@ -60,19 +60,22 @@
 
     position: absolute;
 
-    top: -80px;
+    top: -120px;
 
-    right: -80px;
+    right: -100px;
 
-    width: 260px;
+    width: 320px;
 
-    height: 260px;
+    height: 320px;
 
     border-radius: 50%;
 
     background:
-
-        rgba(99,102,241,.15);
+        radial-gradient(
+            circle,
+            rgba(99,102,241,.30),
+            transparent 70%
+        );
 
 }
 
@@ -92,37 +95,43 @@
 
     gap: 8px;
 
-    padding: 8px 14px;
+    padding: 10px 16px;
 
     border-radius: 999px;
 
-    background:
+    background: rgba(255,255,255,.08);
 
-        rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.06);
 
     font-size: .85rem;
+
+    font-weight: 600;
 
 }
 
 .hero-title {
 
-    margin-top: 18px;
+    margin-top: 20px;
 
-    font-size: 2.4rem;
+    font-size: 3rem;
 
     font-weight: 800;
+
+    line-height: 1.1;
 
 }
 
 .hero-description {
 
-    max-width: 650px;
+    max-width: 680px;
 
-    margin-top: 12px;
+    margin-top: 14px;
 
     color: var(--text-secondary);
 
-    line-height: 1.7;
+    line-height: 1.8;
+
+    font-size: 1rem;
 
 }
 
@@ -130,9 +139,11 @@
 
     display: flex;
 
-    gap: 12px;
+    align-items: center;
 
-    margin-top: 24px;
+    gap: 14px;
+
+    margin-top: 28px;
 
 }
 
@@ -223,7 +234,7 @@
 
 .widget {
 
-    min-height: 320px;
+    min-height: 340px;
 
 }
 
@@ -309,13 +320,23 @@
 
     justify-content: space-between;
 
-    padding: 14px;
+    padding: 16px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     background: rgba(255,255,255,.03);
 
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255,255,255,.05);
+
+    transition: all .25s ease;
+
+}
+
+.widget-item:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(255,255,255,.05);
 
 }
 
