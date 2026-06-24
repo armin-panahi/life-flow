@@ -8,7 +8,9 @@
 
 #dashboard {
 
-    padding: 24px;
+    width: 100%;
+
+    padding: 0;
 
 }
 
@@ -18,13 +20,10 @@
 
     flex-direction: column;
 
-    gap: 24px;
+    gap: 28px;
 
 }
 
-/* ==========================================
-   HERO SECTION
-========================================== */
 /* ==========================================
    HERO SECTION
 ========================================== */
@@ -35,22 +34,25 @@
 
     overflow: hidden;
 
-    min-height: 210px;
+    min-height: 340px;
 
-    padding: 36px;
-
-    border: 1px solid rgba(255,255,255,.08);
+    padding: 48px;
 
     border-radius: 32px;
 
+    border: 1px solid rgba(255,255,255,.08);
+
     background:
+
         linear-gradient(
             135deg,
-            rgba(99,102,241,.30),
-            rgba(139,92,246,.16)
+            rgba(99,102,241,.28),
+            rgba(17,24,39,.92)
         );
 
-    backdrop-filter: blur(24px);
+    display: flex;
+
+    align-items: center;
 
 }
 
@@ -62,20 +64,23 @@
 
     top: -120px;
 
-    right: -100px;
+    right: -120px;
 
-    width: 320px;
+    width: 420px;
 
-    height: 320px;
+    height: 420px;
 
     border-radius: 50%;
 
     background:
+
         radial-gradient(
             circle,
             rgba(99,102,241,.30),
             transparent 70%
         );
+
+    pointer-events: none;
 
 }
 
@@ -84,6 +89,8 @@
     position: relative;
 
     z-index: 2;
+
+    max-width: 760px;
 
 }
 
@@ -95,15 +102,17 @@
 
     gap: 8px;
 
-    padding: 10px 16px;
+    padding: 10px 18px;
 
     border-radius: 999px;
 
-    background: rgba(255,255,255,.08);
+    background: rgba(255,255,255,.06);
 
-    border: 1px solid rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
 
-    font-size: .85rem;
+    backdrop-filter: blur(10px);
+
+    font-size: .9rem;
 
     font-weight: 600;
 
@@ -111,27 +120,31 @@
 
 .hero-title {
 
-    margin-top: 20px;
+    margin-top: 24px;
 
-    font-size: 3rem;
+    font-size: 4rem;
 
     font-weight: 800;
 
-    line-height: 1.1;
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #fff;
 
 }
 
 .hero-description {
 
-    max-width: 680px;
+    margin-top: 18px;
 
-    margin-top: 14px;
+    max-width: 700px;
 
-    color: var(--text-secondary);
+    font-size: 1.1rem;
 
     line-height: 1.8;
 
-    font-size: 1rem;
+    color: rgba(255,255,255,.75);
 
 }
 
@@ -141,9 +154,9 @@
 
     align-items: center;
 
-    gap: 14px;
+    gap: 16px;
 
-    margin-top: 28px;
+    margin-top: 32px;
 
 }
 
@@ -156,19 +169,28 @@
     display: grid;
 
     grid-template-columns:
-
         repeat(
             4,
             minmax(0,1fr)
         );
 
-    gap: 20px;
+    gap: 24px;
 
 }
 
 .kpi-card {
 
-    min-height: 180px;
+    min-height: 220px;
+
+}
+
+.kpi-card .card-body {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
 
 }
 
@@ -184,17 +206,21 @@
 
 .kpi-number {
 
-    margin-top: 24px;
+    margin-top: 32px;
 
-    font-size: 2.4rem;
+    font-size: 3.4rem;
 
     font-weight: 800;
+
+    line-height: 1;
 
 }
 
 .kpi-text {
 
-    margin-top: 8px;
+    margin-top: 14px;
+
+    font-size: 1.05rem;
 
     color: var(--text-muted);
 
@@ -208,11 +234,25 @@
 
     display: grid;
 
-    grid-template-columns:
+    grid-template-columns: 2fr 1fr;
 
-        2fr 1fr;
+    gap: 24px;
 
-    gap: 20px;
+}
+
+.chart-card {
+
+    min-height: 460px;
+
+}
+
+.chart-container {
+
+    position: relative;
+
+    height: 340px;
+
+    width: 100%;
 
 }
 
@@ -228,78 +268,18 @@
 
         2fr 1fr 1fr;
 
-    gap: 20px;
+    gap: 24px;
 
 }
 
 .widget {
 
-    min-height: 340px;
+    min-height: 420px;
 
 }
 
 /* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:1200px) {
-
-    #kpi-grid {
-
-        grid-template-columns:
-
-            repeat(
-                2,
-                1fr
-            );
-
-    }
-
-    #dashboard-grid {
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-}
-
-@media (max-width:768px) {
-
-    #dashboard {
-
-        padding: 16px;
-
-    }
-
-    #kpi-grid {
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-    #charts-section {
-
-        grid-template-columns:
-
-            1fr;
-
-    }
-
-    .hero-title {
-
-        font-size: 1.9rem;
-
-    }
-
-}
-
-
-/* ==========================================
-   DASHBOARD WIDGETS
+   WIDGETS
 ========================================== */
 
 .widget-list {
@@ -326,7 +306,7 @@
 
     background: rgba(255,255,255,.03);
 
-    border: 1px solid rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.06);
 
     transition: all .25s ease;
 
@@ -334,15 +314,15 @@
 
 .widget-item:hover {
 
-    transform: translateY(-2px);
-
     background: rgba(255,255,255,.05);
+
+    transform: translateY(-2px);
 
 }
 
 .goal-item {
 
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 
 }
 
@@ -350,11 +330,197 @@
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
 
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     font-weight: 600;
 
 }
 
+/* ==========================================
+   GOAL PROGRESS
+========================================== */
+
+.habit-progress {
+
+    width: 100%;
+
+    height: 10px;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+.habit-progress-fill {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+}
+
+/* ==========================================
+   FOCUS SCORE
+========================================== */
+
+.focus-score {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    height: 100%;
+
+}
+
+.focus-score-value {
+
+    font-size: 4.5rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+.focus-score-label {
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1200px) {
+
+    #kpi-grid {
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+    #dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    #charts-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .content-wrapper {
+
+        gap: 20px;
+
+    }
+
+    #hero-section {
+
+        min-height: auto;
+
+        padding: 32px;
+
+    }
+
+    .hero-title {
+
+        font-size: 2.6rem;
+
+        line-height: 1.1;
+
+    }
+
+    .hero-description {
+
+        font-size: 1rem;
+
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    #kpi-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .kpi-number {
+
+        font-size: 2.8rem;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    #hero-section {
+
+        padding: 24px;
+
+        border-radius: 24px;
+
+    }
+
+    .hero-title {
+
+        font-size: 2.2rem;
+
+    }
+
+    .hero-badge {
+
+        font-size: .8rem;
+
+    }
+
+}

@@ -1,6 +1,6 @@
 /* ==========================================================
    LIFEOS TASK SERVICE
-   ========================================================== */
+========================================================== */
 
 import storage from "../../core/storage.js";
 
@@ -11,11 +11,8 @@ class TaskService {
     getAll() {
 
         return storage.get(
-
             STORAGE_KEY,
-
             []
-
         );
 
     }
@@ -23,11 +20,16 @@ class TaskService {
     saveAll(tasks) {
 
         return storage.set(
-
             STORAGE_KEY,
-
             tasks
+        );
 
+    }
+
+    getById(taskId) {
+
+        return this.getAll().find(
+            task => task.id === taskId
         );
 
     }
@@ -44,6 +46,8 @@ class TaskService {
 
             completed: false,
 
+            pinned: false,
+
             ...task
 
         };
@@ -53,6 +57,45 @@ class TaskService {
         this.saveAll(tasks);
 
         return newTask;
+
+    }
+
+    update(taskId, updates) {
+
+        const tasks = this.getAll();
+
+        const updatedTasks = tasks.map(task =>
+
+            task.id === taskId
+
+                ? {
+                    ...task,
+                    ...updates
+                }
+
+                : task
+
+        );
+
+        this.saveAll(updatedTasks);
+
+    }
+
+    toggleComplete(taskId) {
+
+        const task = this.getById(taskId);
+
+        if (!task) {
+
+            return;
+
+        }
+
+        this.update(taskId, {
+
+            completed: !task.completed
+
+        });
 
     }
 
@@ -67,6 +110,19 @@ class TaskService {
         );
 
         this.saveAll(filteredTasks);
+
+    }
+
+    getRecent(limit = 5) {
+
+        return this.getAll()
+
+            .sort(
+                (a, b) =>
+                    b.createdAt - a.createdAt
+            )
+
+            .slice(0, limit);
 
     }
 

@@ -2,9 +2,9 @@
    LIFEOS APPLICATION
    ========================================================== */
 
-import dashboard from "./modules/dashboard/dashboard.js";
-
 import taskUI from "./modules/tasks/task.ui.js";
+
+import dashboard from "./modules/dashboard/dashboard.js";
 
 /* ==========================================================
    APP

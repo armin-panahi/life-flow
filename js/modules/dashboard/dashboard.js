@@ -1,8 +1,10 @@
 /* ==========================================================
    LIFEOS DASHBOARD MODULE
-   ========================================================== */
+========================================================== */
 
 import { initDashboardChart } from "./chart.js";
+
+import renderRecentTasks from "./recentTasks.js";
 
 class Dashboard {
 
@@ -10,11 +12,19 @@ class Dashboard {
 
         this.initializeCharts();
 
+        this.initializeWidgets();
+
     }
 
     initializeCharts() {
 
         initDashboardChart();
+
+    }
+
+    initializeWidgets() {
+
+        renderRecentTasks();
 
     }
 
