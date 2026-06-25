@@ -1,14 +1,16 @@
 /* ==========================================================
    LIFEOS APPLICATION
-   ========================================================== */
+========================================================== */
 
-import taskUI from "./modules/tasks/task.ui.js";
+import sidebar from "./layout/sidebar.js";
 
 import dashboard from "./modules/dashboard/dashboard.js";
 
+import taskUI from "./modules/tasks/task.ui.js";
+
 /* ==========================================================
    APP
-   ========================================================== */
+========================================================== */
 
 class App {
 
@@ -22,11 +24,7 @@ class App {
 
         );
 
-        this.initializeModules();
-
-    }
-
-    initializeModules() {
+        sidebar.init();
 
         dashboard.init();
 

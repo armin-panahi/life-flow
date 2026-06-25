@@ -43,6 +43,48 @@
 }
 
 /* ==========================================
+   TITLE
+========================================== */
+
+.navbar-left {
+
+    gap: 16px;
+
+}
+
+.navbar-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.navbar-title h1 {
+
+    font-size: 1.35rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: var(--text-primary);
+
+}
+
+.navbar-title p {
+
+    margin-top: 4px;
+
+    font-size: .8rem;
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================
    CENTER
 ========================================== */
 
@@ -60,7 +102,7 @@
 
     width: 100%;
 
-    max-width: 720px;
+    max-width: 560px;
 
     height: 46px;
 
@@ -322,6 +364,12 @@
     }
 
     .user-info {
+
+        display: none;
+
+    }
+
+    .navbar-title p {
 
         display: none;
 

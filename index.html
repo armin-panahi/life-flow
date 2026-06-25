@@ -123,7 +123,12 @@
         <nav class="sidebar-nav">
           <ul>
             <li>
-              <a href="#" class="active">
+              <a
+                href="#"
+                class="active"
+                data-page="dashboard"
+                title="Dashboard"
+              >
                 <span class="nav-icon">
                   <i class="fa-solid fa-house"></i>
                 </span>
@@ -133,17 +138,19 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="tasks" title="Tasks">
                 <span class="nav-icon">
                   <i class="fa-solid fa-list-check"></i>
                 </span>
 
                 <span class="nav-label"> Tasks </span>
+
+                <span class="nav-badge"> 0 </span>
               </a>
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="habits" title="Habits">
                 <span class="nav-icon">
                   <i class="fa-solid fa-fire"></i>
                 </span>
@@ -153,7 +160,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="finance" title="Finance">
                 <span class="nav-icon">
                   <i class="fa-solid fa-wallet"></i>
                 </span>
@@ -163,7 +170,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="goals" title="Goals">
                 <span class="nav-icon">
                   <i class="fa-solid fa-bullseye"></i>
                 </span>
@@ -173,7 +180,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="calendar" title="Calendar">
                 <span class="nav-icon">
                   <i class="fa-solid fa-calendar-days"></i>
                 </span>
@@ -183,7 +190,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="analytics" title="Analytics">
                 <span class="nav-icon">
                   <i class="fa-solid fa-chart-line"></i>
                 </span>
@@ -193,7 +200,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="journal" title="Journal">
                 <span class="nav-icon">
                   <i class="fa-solid fa-book"></i>
                 </span>
@@ -203,7 +210,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="achievements" title="Achievements">
                 <span class="nav-icon">
                   <i class="fa-solid fa-trophy"></i>
                 </span>
@@ -213,7 +220,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="#" data-page="settings" title="Settings">
                 <span class="nav-icon">
                   <i class="fa-solid fa-gear"></i>
                 </span>
@@ -247,6 +254,12 @@
             <button id="sidebar-toggle" class="icon-button">
               <i class="fa-solid fa-bars"></i>
             </button>
+
+            <div class="navbar-title">
+              <h1>Dashboard</h1>
+
+              <p>Welcome back, Armin 👋</p>
+            </div>
           </div>
           <div class="navbar-center">
             <div class="search-box">
@@ -566,6 +579,8 @@
           </div>
         </section>
       </main>
+
+      <div id="sidebar-overlay"></div>
     </div>
 
     <!-- =====================================

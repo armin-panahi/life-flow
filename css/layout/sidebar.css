@@ -4,6 +4,8 @@
 
 #sidebar {
 
+    isolation: isolate;
+
     position: fixed;
 
     top: 16px;
@@ -35,6 +37,38 @@
         transform var(--duration-normal) var(--ease-default);
 
     z-index: 1000;
+
+}
+
+/* ==========================================
+   SIDEBAR OVERLAY
+========================================== */
+
+#sidebar-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.5);
+
+    backdrop-filter: blur(4px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .25s;
+
+    z-index: 999;
+
+}
+
+#sidebar-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
 
 }
 
@@ -122,6 +156,8 @@
 
     overflow-y: auto;
 
+    scrollbar-width: thin;
+
 }
 
 .sidebar-nav ul {
@@ -158,6 +194,9 @@
 
     transition: all .25s ease;
 
+    position: relative;
+    overflow: hidden;
+
 }
 
 .sidebar-nav a:hover {
@@ -177,6 +216,26 @@
     color: #fff;
 
     box-shadow: var(--shadow-md);
+
+}
+
+.sidebar-nav a.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 4px;
+
+    border-radius: 999px;
+
+    background: #fff;
 
 }
 
@@ -200,7 +259,41 @@
 
     white-space: nowrap;
 
-    transition: opacity .2s;
+    transition:
+        opacity .25s ease,
+        width .25s ease;
+
+}
+
+/* ==========================================
+   NAV BADGE
+========================================== */
+
+.nav-badge {
+
+    margin-left: auto;
+
+    min-width: 22px;
+
+    height: 22px;
+
+    padding: 0 6px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.12);
+
+    color: inherit;
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
 }
 
@@ -252,6 +345,8 @@
 
     background: var(--bg-hover);
 
+    transform: translateY(-2px);
+
 }
 
 /* ==========================================
@@ -274,6 +369,8 @@
 
     width: 0;
 
+    margin: 0;
+
     overflow: hidden;
 
 }
@@ -289,6 +386,34 @@
 #sidebar.collapsed #profile-button span {
 
     display: none;
+
+}
+
+#sidebar.collapsed .nav-badge {
+
+    display: none;
+
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.sidebar-nav a:focus-visible {
+
+    outline: 2px solid var(--primary-color);
+
+    outline-offset: 2px;
+
+}
+
+/* ==========================================
+   COLLAPSED HOVER FIX
+========================================== */
+
+#sidebar.collapsed .sidebar-nav a:hover {
+
+    transform: none;
 
 }
 
@@ -309,5 +434,58 @@
         transform: translateX(0);
 
     }
+
+}
+
+/* ==========================================
+   TOOLTIP
+========================================== */
+
+#sidebar.collapsed .sidebar-nav a {
+
+    position: relative;
+
+}
+
+#sidebar.collapsed .sidebar-nav a:hover::after {
+
+    content: attr(title);
+
+    position: absolute;
+
+    left: calc(100% + 12px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: .8rem;
+
+    white-space: nowrap;
+
+    z-index: 2000;
+
+}
+
+
+.sidebar-nav::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+
+    background: rgba(255,255,255,.08);
+
+    border-radius: 999px;
 
 }
