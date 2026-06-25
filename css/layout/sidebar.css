@@ -155,8 +155,15 @@
     padding: 18px 14px;
 
     overflow-y: auto;
+    
+    /* scrollbar-width: thin; */
+    scrollbar-width: none;
 
-    scrollbar-width: thin;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+
+    display: none;
 
 }
 

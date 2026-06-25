@@ -29,12 +29,13 @@
 ========================================== */
 
 #hero-section {
-
+    
     position: relative;
-
+    
     overflow: hidden;
-
-    min-height: 340px;
+    
+    /* min-height: 340px; */
+    min-height: 320px;
 
     padding: 48px;
 
@@ -92,6 +93,8 @@
 
     max-width: 760px;
 
+    padding: 48px;
+
 }
 
 .hero-badge {
@@ -122,11 +125,17 @@
 
     margin-top: 24px;
 
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: clamp(
+        2.8rem,
+        4vw,
+        4.5rem
+    );
 
     font-weight: 800;
 
-    line-height: 1.05;
+    /* line-height: 1.05; */
+    line-height: 1.1;
 
     letter-spacing: -2px;
 
@@ -208,7 +217,8 @@
 
     margin-top: 32px;
 
-    font-size: 3.4rem;
+    /* font-size: 3.4rem; */
+    font-size: 3.2rem;
 
     font-weight: 800;
 
