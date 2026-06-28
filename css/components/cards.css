@@ -1,290 +1,121 @@
-/* ==================================================
-   LIFEOS DESIGN SYSTEM - CARDS
-================================================== */
+/* ==========================================================
+   LIFEOS CARD SYSTEM
+========================================================== */
 
-/* ===========================
-   BASE CARD
-=========================== */
+.card{
 
-.card {
+    position:relative;
 
-    position: relative;
+    display:flex;
 
-    display: flex;
+    flex-direction:column;
 
-    flex-direction: column;
+    overflow:hidden;
 
-    background: var(--bg-card);
+    border-radius:28px;
 
-    border: 1px solid var(--border-color);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,28,48,.96),
+            rgba(12,18,34,.98)
+        );
 
-    border-radius: 24px;
+    border:1px solid rgba(255,255,255,.08);
 
-    overflow: hidden;
+    box-shadow:
+
+        0 8px 30px rgba(0,0,0,.18);
 
     transition:
 
-        transform var(--duration-fast) var(--ease-default),
+        transform .35s ease,
 
-        box-shadow var(--duration-fast) var(--ease-default),
+        box-shadow .35s ease,
 
-        border-color var(--duration-fast) var(--ease-default);
-
-}
-
-.card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow: var(--shadow-lg);
+        border-color .35s ease;
 
 }
 
-/* ===========================
-   PADDING
-=========================== */
+/* ==========================================================
+   CARD GLOW
+========================================================== */
 
-.card-body {
+.card::before{
 
-    padding: 24px;
+    content:"";
 
-}
+    position:absolute;
 
-.card-header {
+    inset:-1px;
 
-    padding: 22px 24px;
+    background:
 
-    border-bottom: 1px solid var(--border-color);
+        linear-gradient(
 
-}
+            135deg,
 
-.card-footer {
+            rgba(99,102,241,.18),
 
-    padding: 18px 24px;
+            transparent,
 
-    border-top: 1px solid var(--border-color);
+            rgba(56,189,248,.12)
 
-}
+        );
 
-/* ===========================
-   TITLE
-=========================== */
+    opacity:0;
 
-.card-title {
+    transition:.35s;
 
-    font-size: 1.1rem;
-
-    font-weight: 700;
-
-    color: var(--text-primary);
+    pointer-events:none;
 
 }
 
-.card-subtitle {
+.card:hover::before{
 
-    margin-top: 6px;
-
-    font-size: .9rem;
-
-    color: var(--text-muted);
+    opacity:1;
 
 }
 
-/* ===========================
-   KPI CARD
-=========================== */
+.card:hover{
 
-.kpi-card {
+    transform:translateY(-6px);
 
-    min-height: 170px;
+    border-color:rgba(99,102,241,.18);
 
-}
+    box-shadow:
 
-.kpi-value {
+        0 18px 40px rgba(0,0,0,.28),
 
-    margin-top: 18px;
-
-    font-size: 2rem;
-
-    font-weight: 800;
-
-    color: var(--text-primary);
+        0 0 30px rgba(99,102,241,.12);
 
 }
 
-.kpi-label {
+/* ==========================================================
+   CARD BODY
+========================================================== */
 
-    margin-top: 8px;
+.card-body{
 
-    font-size: .9rem;
+    position:relative;
 
-    color: var(--text-muted);
+    z-index:2;
 
-}
+    padding:28px;
 
-.kpi-change {
-
-    margin-top: auto;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    font-size: .85rem;
-
-    font-weight: 600;
+    flex:1;
 
 }
 
-.kpi-positive {
+/* ==========================================================
+   CARD HEADER
+========================================================== */
 
-    color: #10b981;
-
-}
-
-.kpi-negative {
-
-    color: #ef4444;
-
-}
-
-.kpi-number {
-
-    font-size: 2.4rem;
-
-    font-weight: 800;
-
-    margin-top: 20px;
-
-    color: var(--text-primary);
-
-}
-
-.kpi-text {
-
-    margin-top: 8px;
-
-    color: var(--text-muted);
-
-}
-
-/* ===========================
-   ICON
-=========================== */
-
-.card-icon {
-
-    width: 54px;
-
-    height: 54px;
-
-    border-radius: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: rgba(99,102,241,.12);
-
-    color: var(--primary-color);
-
-    font-size: 22px;
-
-}
-
-/* ===========================
-   CHART CARD
-=========================== */
-
-.chart-card {
-
-    min-height: 380px;
-
-}
-
-.chart-container {
+.card-header{
 
     position: relative;
 
-    width: 100%;
-
-    height: 300px;
-
-}
-
-/* ===========================
-   TASK CARD
-=========================== */
-
-/* ===========================
-   TASK CARD
-=========================== */
-
-.task-card {
-
-    position: relative;
-
-    display: flex;
-
-    overflow: hidden;
-
-    min-height: 220px;
-
-    background: var(--bg-card);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: 24px;
-
-    transition:
-
-        transform var(--duration-fast) var(--ease-default),
-
-        box-shadow var(--duration-fast) var(--ease-default),
-
-        border-color var(--duration-fast) var(--ease-default);
-
-}
-
-.task-card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow: var(--shadow-lg);
-
-}
-
-.task-card.completed {
-
-    opacity: .75;
-
-}
-
-.task-card__accent {
-
-    width: 6px;
-
-    flex-shrink: 0;
-
-}
-
-.task-card__content {
-
-    flex: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    padding: 22px;
-
-}
-
-.task-card__header {
+    z-index: 2;
 
     display: flex;
 
@@ -292,289 +123,777 @@
 
     justify-content: space-between;
 
-    gap: 12px;
+    gap: 20px;
+
+    padding: 26px 28px 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
 
 }
 
-.task-card__title-wrapper {
+/* ==========================================================
+   HEADER LEFT
+========================================================== */
 
-    display: flex;
+.card-header-left{
 
-    align-items: center;
+    display:flex;
 
-    gap: 12px;
+    flex-direction:column;
 
-}
+    gap:8px;
 
-.task-card__icon {
-
-    font-size: 1.3rem;
-
-}
-
-.task-card__title {
-
-    font-size: 1rem;
-
-    font-weight: 700;
-
-    color: var(--text-primary);
+    flex:1;
 
 }
 
-.task-card__description {
+/* ==========================================================
+   CARD TITLE
+========================================================== */
 
-    margin-top: 14px;
+.card-title{
 
-    color: var(--text-muted);
+    font-size:1.15rem;
 
-    line-height: 1.6;
+    font-weight:700;
 
-}
+    color:var(--text-primary);
 
-.task-card__actions {
+    letter-spacing:-.02em;
 
-    display: flex;
-
-    gap: 6px;
-
-}
-
-.task-action {
-
-    width: 36px;
-
-    height: 36px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    background: transparent;
-
-    transition: .2s;
+    line-height:1.3;
 
 }
 
-.task-action:hover {
+/* ==========================================================
+   CARD SUBTITLE
+========================================================== */
 
-    background: var(--bg-hover);
+.card-subtitle{
 
-}
+    font-size:.88rem;
 
-.task-card__meta {
+    color:var(--text-muted);
 
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-top: 18px;
+    line-height:1.6;
 
 }
 
-.task-chip {
+/* ==========================================================
+   CARD ACTIONS
+========================================================== */
 
-    padding: 6px 10px;
+.card-actions{
 
-    border-radius: 999px;
+    display:flex;
 
-    font-size: .75rem;
+    align-items:center;
 
-    font-weight: 600;
+    gap:10px;
 
-    background: rgba(99,102,241,.12);
-
-    color: var(--primary-color);
-
-}
-
-.task-progress {
-
-    width: 100%;
-
-    height: 10px;
-
-    margin-top: 18px;
-
-    border-radius: 999px;
-
-    overflow: hidden;
-
-    background: rgba(255,255,255,.06);
+    flex-shrink:0;
 
 }
 
-.task-progress__bar {
+/* ==========================================================
+   ACTION BUTTON
+========================================================== */
 
-    height: 100%;
+.card-action{
 
-    border-radius: inherit;
+    width:38px;
 
-    background: var(--gradient-primary);
+    height:38px;
 
-}
+    display:flex;
 
-.task-card__footer {
+    align-items:center;
 
-    margin-top: auto;
+    justify-content:center;
 
-    padding-top: 18px;
+    border:none;
 
-}
+    outline:none;
 
-.task-complete-btn {
+    cursor:pointer;
 
-    width: 100%;
+    border-radius:12px;
 
-}
+    background:rgba(255,255,255,.04);
 
-/* ===========================
-   HABIT CARD
-=========================== */
+    border:1px solid rgba(255,255,255,.06);
 
-.habit-progress {
+    color:var(--text-secondary);
 
-    width: 100%;
-
-    height: 10px;
-
-    margin-top: 18px;
-
-    border-radius: 999px;
-
-    overflow: hidden;
-
-    background: rgba(255,255,255,.08);
+    transition:all .25s ease;
 
 }
 
-.habit-progress-fill {
+.card-action:hover{
 
-    width: 0;
+    background:rgba(99,102,241,.12);
 
-    height: 100%;
+    border-color:rgba(99,102,241,.25);
 
-    border-radius: inherit;
+    color:var(--primary-color);
 
-    background: var(--gradient-primary);
-
-}
-
-/* ===========================
-   FINANCE CARD
-=========================== */
-
-.finance-income {
-
-    color: #10b981;
-
-    font-weight: 700;
+    transform:translateY(-2px);
 
 }
 
-.finance-expense {
+.card-action i{
 
-    color: #ef4444;
-
-    font-weight: 700;
+    font-size:.95rem;
 
 }
 
-/* ===========================
-   MINI CARD
-=========================== */
+/* ==========================================================
+   CARD DIVIDER
+========================================================== */
 
-.card-mini {
+.card-divider{
 
-    padding: 16px;
+    width:100%;
 
-    border-radius: 18px;
+    height:1px;
+
+    background:rgba(255,255,255,.06);
 
 }
 
-/* ===========================
-   GLASS
-=========================== */
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
 
-.card-glass {
+.card-footer{
 
-    backdrop-filter: blur(20px);
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+    padding:20px 28px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    background:rgba(255,255,255,.015);
+
+}
+
+/* ==========================================================
+   FOOTER LEFT / RIGHT
+========================================================== */
+
+.card-footer-left,
+
+.card-footer-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+/* ==========================================================
+   CARD BADGE
+========================================================== */
+
+.card-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    height:30px;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.12);
+
+    border:1px solid rgba(99,102,241,.20);
+
+    color:var(--primary-color);
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    transition:all .25s ease;
+
+}
+
+.card-badge:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   STATUS CHIP
+========================================================== */
+
+.status-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    height:30px;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.status-success{
+
+    background:rgba(34,197,94,.12);
+
+    color:#22C55E;
+
+    border:1px solid rgba(34,197,94,.20);
+
+}
+
+.status-warning{
+
+    background:rgba(245,158,11,.12);
+
+    color:#F59E0B;
+
+    border:1px solid rgba(245,158,11,.20);
+
+}
+
+.status-danger{
+
+    background:rgba(239,68,68,.12);
+
+    color:#EF4444;
+
+    border:1px solid rgba(239,68,68,.20);
+
+}
+
+.status-info{
+
+    background:rgba(59,130,246,.12);
+
+    color:#3B82F6;
+
+    border:1px solid rgba(59,130,246,.20);
+
+}
+
+/* ==========================================================
+   CARD ICON
+========================================================== */
+
+.card-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     background:
 
-        rgba(255,255,255,.04);
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.18),
+            rgba(59,130,246,.10)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--primary-color);
+
+    font-size:1.2rem;
+
+    transition:all .3s ease;
 
 }
 
-/* ===========================
-   OUTLINE
-=========================== */
+.card:hover .card-icon{
 
-.card-outline {
+    transform:scale(1.08) rotate(-6deg);
 
-    background: transparent;
+    box-shadow:
+
+        0 10px 24px rgba(99,102,241,.22);
 
 }
 
-/* ===========================
-   GRADIENT
-=========================== */
+/* ==========================================================
+   CARD META
+========================================================== */
 
-.card-gradient {
+.card-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    font-size:.82rem;
+
+    color:var(--text-muted);
+
+}
+
+.card-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+/* ==========================================================
+   INTERACTIVE CARD
+========================================================== */
+
+.card-interactive{
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+.card-interactive:hover{
+
+    transform:
+
+        translateY(-8px)
+
+        scale(1.01);
+
+}
+
+.card-interactive:active{
+
+    transform:
+
+        scale(.985);
+
+}
+
+/* ==========================================================
+   CARD OVERLAY
+========================================================== */
+
+.card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.75);
+
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.30s ease;
+
+    z-index:20;
+
+}
+
+.card:hover .card-overlay{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ==========================================================
+   LOADING STATE
+========================================================== */
+
+.card-loading{
+
+    position:relative;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.card-loading>*{
+
+    opacity:0;
+
+}
+
+.card-loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
 
     background:
 
-        var(--gradient-primary);
+        linear-gradient(
 
-    color: white;
+            90deg,
+
+            rgba(255,255,255,.03) 0%,
+
+            rgba(255,255,255,.08) 50%,
+
+            rgba(255,255,255,.03) 100%
+
+        );
+
+    background-size:250% 100%;
+
+    animation:cardSkeleton 1.5s linear infinite;
 
 }
 
-.card-gradient * {
+/* ==========================================================
+   SKELETON
+========================================================== */
 
-    color: inherit;
+@keyframes cardSkeleton{
+
+    from{
+
+        background-position:200% 0;
+
+    }
+
+    to{
+
+        background-position:-200% 0;
+
+    }
 
 }
 
-/* ===========================
-   BADGE
-=========================== */
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
 
-.card-badge {
+.card-empty{
 
-    display: inline-flex;
+    min-height:260px;
 
-    align-items: center;
+    display:flex;
 
-    justify-content: center;
+    flex-direction:column;
 
-    padding: 6px 12px;
+    justify-content:center;
 
-    border-radius: 999px;
+    align-items:center;
 
-    font-size: .75rem;
+    text-align:center;
 
-    font-weight: 600;
+    gap:18px;
+
+    color:var(--text-muted);
+
+}
+
+.card-empty i{
+
+    font-size:3rem;
+
+    opacity:.45;
+
+}
+
+.card-empty h4{
+
+    font-size:1.1rem;
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+}
+
+.card-empty p{
+
+    max-width:260px;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   HOVER UTILITIES
+========================================================== */
+
+.card-hover-border:hover{
+
+    border-color:rgba(99,102,241,.25);
+
+}
+
+.card-hover-glow:hover{
+
+    box-shadow:
+
+        0 0 40px rgba(99,102,241,.16);
+
+}
+
+.card-hover-lift:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card-hover-scale:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ==========================================================
+   SHINE
+========================================================== */
+
+.card-shine{
+
+    overflow:hidden;
+
+}
+
+.card-shine::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-120%;
+
+    width:70%;
+
+    height:300%;
 
     background:
 
-        rgba(99,102,241,.12);
+        linear-gradient(
 
-    color:
+            90deg,
 
-        var(--primary-color);
+            transparent,
+
+            rgba(255,255,255,.08),
+
+            transparent
+
+        );
+
+    transform:rotate(25deg);
 
 }
 
-/* ===========================
+.card-shine:hover::after{
+
+    animation:cardShine .9s ease;
+
+}
+
+@keyframes cardShine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:180%;
+
+    }
+
+}
+
+/* ==========================================================
    RESPONSIVE
-=========================== */
+========================================================== */
+
+@media (max-width:1200px){
+
+    .card{
+
+        border-radius:24px;
+
+    }
+
+    .card-header{
+
+        padding:24px;
+
+    }
+
+    .card-body{
+
+        padding:24px;
+
+    }
+
+    .card-footer{
+
+        padding:18px 24px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .card-header{
+
+        gap:16px;
+
+        padding:22px;
+
+    }
+
+    .card-title{
+
+        font-size:1.05rem;
+
+    }
+
+    .card-subtitle{
+
+        font-size:.82rem;
+
+    }
+
+    .card-body{
+
+        padding:22px;
+
+    }
+
+    .card-footer{
+
+        padding:18px 22px;
+
+        flex-wrap:wrap;
+
+    }
+
+}
 
 @media (max-width:768px){
+
+    .card{
+
+        border-radius:20px;
+
+    }
+
+    .card-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+
+    }
+
+    .card-actions{
+
+        width:100%;
+
+        justify-content:flex-end;
+
+    }
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+    .card-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+
+    }
+
+    .card-footer-left,
+
+    .card-footer-right{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .card{
+
+        border-radius:18px;
+
+    }
 
     .card-header{
 
@@ -590,14 +909,126 @@
 
     .card-footer{
 
-        padding:18px;
+        padding:16px 18px;
 
     }
 
-    .kpi-value{
+    .card-title{
 
-        font-size:1.6rem;
+        font-size:1rem;
+
+    }
+
+    .card-subtitle{
+
+        font-size:.8rem;
+
+    }
+
+    .card-icon{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:1rem;
+
+        border-radius:14px;
 
     }
 
 }
+
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
+[data-theme="dark"] .card{
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(20,28,48,.97),
+
+            rgba(10,16,30,.99)
+
+        );
+
+}
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+[data-theme="light"] .card{
+
+    background:#ffffff;
+
+    border-color:rgba(15,23,42,.08);
+
+    box-shadow:
+
+        0 10px 30px rgba(15,23,42,.05);
+
+}
+
+[data-theme="light"] .card:hover{
+
+    box-shadow:
+
+        0 18px 40px rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.card:focus-within{
+
+    outline:2px solid var(--primary-color);
+
+    outline-offset:3px;
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    .card,
+
+    .card *{
+
+        transition:none !important;
+
+        animation:none !important;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .card{
+
+        box-shadow:none;
+
+        border:1px solid #d1d5db;
+
+        background:#ffffff;
+
+        break-inside:avoid;
+
+    }
+
+}
+
+/* ==========================================================
+   END OF CARD SYSTEM
+========================================================== */

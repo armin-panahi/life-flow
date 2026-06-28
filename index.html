@@ -1,666 +1,1923 @@
 <!doctype html>
+
 <html lang="en" dir="ltr" data-theme="dark">
-  <head>
-    <!-- =====================================
-                META
-    ====================================== -->
 
-    <meta charset="UTF-8" />
+<head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ==========================================
+                    META
+    =========================================== -->
 
-    <meta name="description" content="LifeOS - Productivity Dashboard" />
+    <meta charset="UTF-8">
 
-    <title>LifeOS Dashboard</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <!-- =====================================
-                GOOGLE FONT
-    ====================================== -->
+    <meta
+        name="description"
+        content="LifeOS Productivity Dashboard">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>LifeOS</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- ==========================================
+                    GOOGLE FONT
+    =========================================== -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    <!-- =====================================
-                FONT AWESOME
-    ====================================== -->
+    <!-- ==========================================
+                    FONT AWESOME
+    =========================================== -->
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- =====================================
-                BASE CSS
-    ====================================== -->
+    <!-- ==========================================
+                    BASE
+    =========================================== -->
 
-    <link rel="stylesheet" href="./css/base/reset.css" />
+    <link rel="stylesheet" href="./css/base/reset.css">
 
-    <link rel="stylesheet" href="./css/base/variables.css" />
+    <link rel="stylesheet" href="./css/base/variables.css">
 
-    <link rel="stylesheet" href="./css/base/design-tokens.css" />
+    <link rel="stylesheet" href="./css/base/design-tokens.css">
 
-    <link rel="stylesheet" href="./css/base/typography.css" />
+    <link rel="stylesheet" href="./css/base/typography.css">
 
-    <!-- =====================================
-                LAYOUT CSS
-    ====================================== -->
+    <!-- ==========================================
+                    LAYOUT
+    =========================================== -->
 
-    <link rel="stylesheet" href="./css/layout/layout.css" />
+    <link rel="stylesheet" href="./css/layout/layout.css">
 
-    <link rel="stylesheet" href="./css/layout/sidebar.css" />
+    <link rel="stylesheet" href="./css/layout/sidebar.css">
 
-    <link rel="stylesheet" href="./css/layout/navbar.css" />
+    <link rel="stylesheet" href="./css/layout/navbar.css">
 
-    <!-- =====================================
-                COMPONENTS
-    ====================================== -->
+    <!-- ==========================================
+                    COMPONENTS
+    =========================================== -->
 
-    <link rel="stylesheet" href="./css/components/buttons.css" />
+    <link rel="stylesheet" href="./css/components/buttons.css">
 
-    <link rel="stylesheet" href="./css/components/cards.css" />
+    <link rel="stylesheet" href="./css/components/cards.css">
 
-    <link rel="stylesheet" href="./css/components/forms.css" />
+    <link rel="stylesheet" href="./css/components/forms.css">
 
-    <link rel="stylesheet" href="./css/components/modal.css" />
+    <link rel="stylesheet" href="./css/components/modal.css">
 
-    <link rel="stylesheet" href="./css/components/toast.css" />
+    <link rel="stylesheet" href="./css/components/toast.css">
 
-    <!-- =====================================
-                PAGE CSS
-    ====================================== -->
+    <!-- ==========================================
+                    PAGES
+    =========================================== -->
 
-    <link rel="stylesheet" href="./css/pages/dashboard.css" />
-    <link rel="stylesheet" href="./css/pages/tasks.css" />
+    <link rel="stylesheet" href="./css/pages/dashboard.css">
 
-    <!-- =====================================
-                GLOBAL CSS
-    ====================================== -->
+    <link rel="stylesheet" href="./css/pages/tasks.css">
 
-    <link rel="stylesheet" href="./css/animations.css" />
+    <!-- ==========================================
+                    GLOBAL
+    =========================================== -->
 
-    <link rel="stylesheet" href="./css/utilities.css" />
+    <link rel="stylesheet" href="./css/animations.css">
 
-    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/utilities.css">
 
-    <link rel="stylesheet" href="./css/theme.css" />
-  </head>
+    <link rel="stylesheet" href="./css/responsive.css">
 
-  <body>
-    <!-- =====================================
-                PAGE LOADER
-    ====================================== -->
+    <link rel="stylesheet" href="./css/theme.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+                    LOADER
+    =========================================== -->
 
     <div id="page-loader">
-      <div class="loader-spinner"></div>
+
+        <div class="loader-spinner"></div>
+
     </div>
 
-    <!-- =====================================
-                APPLICATION
-    ====================================== -->
+    <!-- ==========================================
+                    APP
+    =========================================== -->
 
     <div id="app">
-      <!-- =================================
+
+        <!-- ======================================
                     SIDEBAR
-        ================================== -->
+        ======================================= -->
 
-      <aside id="sidebar" class="expanded">
-        <div class="sidebar-top">
-          <div class="logo">
-            <div class="logo-icon">
-              <i class="fa-solid fa-layer-group"></i>
+        <aside id="sidebar">
+
+            <!-- Logo -->
+
+            <div class="sidebar-top">
+
+                <div class="logo">
+
+                    <div class="logo-icon">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </div>
+
+                    <div class="logo-content">
+
+                        <span class="logo-text">
+
+                            LifeOS
+
+                        </span>
+
+                        <small>
+
+                            Productivity Suite
+
+                        </small>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <span class="logo-text"> LifeOS </span>
-          </div>
-        </div>
+            <!-- Workspace -->
 
-        <nav class="sidebar-nav">
-          <ul>
-            <li>
-              <a
-                href="#"
-                class="active"
-                data-page="dashboard"
-                title="Dashboard"
-              >
-                <span class="nav-icon">
-                  <i class="fa-solid fa-house"></i>
-                </span>
+            <div class="workspace-switcher">
 
-                <span class="nav-label"> Dashboard </span>
-              </a>
-            </li>
+                <button class="workspace-button">
 
-            <li>
-              <a href="#" data-page="tasks" title="Tasks">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-list-check"></i>
-                </span>
+                    <div class="workspace-avatar">
 
-                <span class="nav-label"> Tasks </span>
+                        AP
 
-                <span class="nav-badge"> 0 </span>
-              </a>
-            </li>
+                    </div>
 
-            <li>
-              <a href="#" data-page="habits" title="Habits">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-fire"></i>
-                </span>
+                    <div class="workspace-info">
 
-                <span class="nav-label"> Habits </span>
-              </a>
-            </li>
+                        <strong>
 
-            <li>
-              <a href="#" data-page="finance" title="Finance">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-wallet"></i>
-                </span>
+                            Personal
 
-                <span class="nav-label"> Finance </span>
-              </a>
-            </li>
+                        </strong>
 
-            <li>
-              <a href="#" data-page="goals" title="Goals">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-bullseye"></i>
-                </span>
+                        <span>
 
-                <span class="nav-label"> Goals </span>
-              </a>
-            </li>
+                            Workspace
 
-            <li>
-              <a href="#" data-page="calendar" title="Calendar">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-calendar-days"></i>
-                </span>
+                        </span>
 
-                <span class="nav-label"> Calendar </span>
-              </a>
-            </li>
+                    </div>
 
-            <li>
-              <a href="#" data-page="analytics" title="Analytics">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-chart-line"></i>
-                </span>
+                    <i class="fa-solid fa-chevron-down"></i>
 
-                <span class="nav-label"> Analytics </span>
-              </a>
-            </li>
+                </button>
 
-            <li>
-              <a href="#" data-page="journal" title="Journal">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-book"></i>
-                </span>
+            </div>
 
-                <span class="nav-label"> Journal </span>
-              </a>
-            </li>
+            <!-- Navigation -->
 
-            <li>
-              <a href="#" data-page="achievements" title="Achievements">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-trophy"></i>
-                </span>
+            <nav class="sidebar-nav">
 
-                <span class="nav-label"> Achievements </span>
-              </a>
-            </li>
+                <ul>
 
-            <li>
-              <a href="#" data-page="settings" title="Settings">
-                <span class="nav-icon">
-                  <i class="fa-solid fa-gear"></i>
-                </span>
+                    <li>
 
-                <span class="nav-label"> Settings </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+                        <a
+                            href="#"
+                            class="active"
+                            data-page="dashboard"
+                            title="Dashboard">
 
-        <div class="sidebar-footer">
-          <button id="profile-button">
-            <i class="fa-solid fa-user"></i>
+                            <span class="nav-icon">
 
-            <span> Profile </span>
-          </button>
-        </div>
-      </aside>
+                                <i class="fa-solid fa-house"></i>
 
-      <!-- =====================================
+                            </span>
+
+                            <span class="nav-label">
+
+                                Dashboard
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="#"
+                            data-page="tasks"
+                            title="Tasks">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-list-check"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Tasks
+
+                            </span>
+
+                            <span class="nav-badge">
+
+                                12
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-fire"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Habits
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-wallet"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Finance
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-bullseye"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Goals
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Calendar
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Analytics
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#">
+
+                            <span class="nav-icon">
+
+                                <i class="fa-solid fa-book"></i>
+
+                            </span>
+
+                            <span class="nav-label">
+
+                                Journal
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Footer -->
+
+            <div class="sidebar-footer">
+
+                <button id="profile-button">
+
+                    <img
+                        src="./assets/images/ARMINPANAHI.png"
+                        alt="Profile">
+
+                    <div>
+
+                        <strong>
+
+                            Armin Panahi
+
+                        </strong>
+
+                        <small>
+
+                            Productivity Master
+
+                        </small>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </aside>
+                <!-- ======================================
                     MAIN CONTENT
-        ====================================== -->
+        ======================================= -->
 
-      <main id="main-content">
-        <!-- =================================
+        <main id="main-content">
+
+            <!-- ======================================
                         NAVBAR
-            ================================== -->
+            ======================================= -->
 
-        <header id="navbar">
-          <div class="navbar-left">
-            <button id="sidebar-toggle" class="icon-button">
-              <i class="fa-solid fa-bars"></i>
-            </button>
+            <header id="navbar">
 
-            <div class="navbar-title">
-              <h1>Dashboard</h1>
+                <!-- Left -->
 
-              <span>Welcome back, Armin 👋</span>
-            </div>
-          </div>
-          <div class="navbar-center">
-            <div class="search-box">
-              <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="navbar-left">
 
-              <input type="text" placeholder="Search anything..." />
-            </div>
-          </div>
+                    <button
+                        id="sidebar-toggle"
+                        class="icon-button">
 
-          <div class="navbar-right">
-            <button id="theme-toggle" class="icon-button">
-              <i class="fa-solid fa-moon"></i>
-            </button>
+                        <i class="fa-solid fa-bars"></i>
 
-            <button id="notification-button" class="icon-button">
-              <i class="fa-regular fa-bell"></i>
+                    </button>
 
-              <span class="notification-badge"> 3 </span>
-            </button>
+                    <div class="navbar-breadcrumb">
 
-            <button id="user-menu" class="user-button">
-              <img src="./assets/images/ARMINPANAHI.png" alt="User Avatar" />
+                        <span>
 
-              <div class="user-info">
-                <span class="user-name"> Armin Panahi </span>
+                            Workspace
 
-                <span class="user-role"> Productivity Master </span>
-              </div>
+                        </span>
 
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-          </div>
-        </header>
+                        <i class="fa-solid fa-chevron-right"></i>
 
-        <!-- =================================
-                        DASHBOARD
-            ================================== -->
+                        <strong>
 
-        <section id="dashboard">
-          <div class="content-wrapper">
-            <!-- Hero Section -->
+                            Dashboard
+
+                        </strong>
+
+                    </div>
+
+                    <div class="navbar-title">
+
+                        <h1>
+
+                            Dashboard
+
+                        </h1>
+
+                        <p>
+
+                            Welcome back, Armin 👋
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Center -->
+
+                <div class="navbar-center">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            placeholder="Search tasks, habits, goals...">
+
+                        <button
+                            class="search-shortcut">
+
+                            ⌘ K
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="navbar-right">
+
+                    <!-- Create -->
+
+                    <button
+                        class="icon-button"
+                        title="Quick Create">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                    <!-- Theme -->
+
+                    <button
+                        id="theme-toggle"
+                        class="icon-button"
+                        title="Theme">
+
+                        <i class="fa-solid fa-moon"></i>
+
+                    </button>
+
+                    <!-- Notifications -->
+
+                    <button
+                        id="notification-button"
+                        class="icon-button"
+                        title="Notifications">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-badge">
+
+                            3
+
+                        </span>
+
+                    </button>
+
+                    <!-- User -->
+
+                    <button
+                        id="user-menu"
+                        class="user-button">
+
+                        <img
+                            src="./assets/images/ARMINPANAHI.png"
+                            alt="Avatar">
+
+                        <div class="user-info">
+
+                            <span class="user-name">
+
+                                Armin Panahi
+
+                            </span>
+
+                            <span class="user-role">
+
+                                Productivity Master
+
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <!-- ======================================
+                    DASHBOARD
+            ======================================= -->
+
+            <section id="dashboard">
+
+                <div class="content-wrapper">
+                              <!-- ======================================
+                        HERO
+            ======================================= -->
 
             <section id="hero-section">
-              <div class="hero-content">
-                <div class="hero-left">
-                  <div class="hero-badge">✨ Productivity Dashboard</div>
 
-                  <h2 class="hero-title">Good Morning Armin 👋</h2>
+                <div class="hero-content">
 
-                  <p class="hero-description">
-                    Stay focused, track your goals, manage your tasks and build
-                    better habits every day.
-                  </p>
+                    <!-- Left -->
 
-                  <div class="hero-actions">
-                    <button class="btn btn-primary">New Task</button>
+                    <div class="hero-left">
 
-                    <button class="btn btn-secondary">View Analytics</button>
-                  </div>
+                        <div class="hero-badge">
 
-                  <div class="hero-stats">
-                    <div class="hero-stat">
-                      <strong>24</strong>
-                      <span>Tasks</span>
+                            <span class="hero-badge-dot"></span>
+
+                            Productivity Workspace
+
+                        </div>
+
+                        <h2 class="hero-title">
+
+                            Good Morning,
+
+                            <span>Armin 👋</span>
+
+                        </h2>
+
+                        <p class="hero-description">
+
+                            Stay focused, organize your day, track your goals,
+                            manage habits and build consistency with LifeOS.
+
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <button class="btn btn-primary">
+
+                                <i class="fa-solid fa-plus"></i>
+
+                                New Task
+
+                            </button>
+
+                            <button class="btn btn-secondary">
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                Analytics
+
+                            </button>
+
+                        </div>
+
+                        <!-- Stats -->
+
+                        <div class="hero-stats">
+
+                            <div class="hero-stat">
+
+                                <strong>
+
+                                    24
+
+                                </strong>
+
+                                <span>
+
+                                    Active Tasks
+
+                                </span>
+
+                            </div>
+
+                            <div class="hero-stat">
+
+                                <strong>
+
+                                    87%
+
+                                </strong>
+
+                                <span>
+
+                                    Habit Score
+
+                                </span>
+
+                            </div>
+
+                            <div class="hero-stat">
+
+                                <strong>
+
+                                    14
+
+                                </strong>
+
+                                <span>
+
+                                    Day Streak
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="hero-stat">
-                      <strong>87%</strong>
-                      <span>Habits</span>
+                    <!-- Right -->
+
+                    <div class="hero-right">
+
+                        <!-- Floating Card -->
+
+                        <div class="hero-widget">
+
+                            <div class="hero-widget-header">
+
+                                <span>
+
+                                    Today's Focus
+
+                                </span>
+
+                                <i class="fa-solid fa-bolt"></i>
+
+                            </div>
+
+                            <h3>
+
+                                Build LifeOS Dashboard
+
+                            </h3>
+
+                            <p>
+
+                                Finish Dashboard UI and Sidebar System
+
+                            </p>
+
+                            <div class="hero-progress">
+
+                                <div class="hero-progress-fill"
+                                     style="width:72%">
+
+                                </div>
+
+                            </div>
+
+                            <div class="hero-progress-info">
+
+                                <span>
+
+                                    Progress
+
+                                </span>
+
+                                <strong>
+
+                                    72%
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Floating Shapes -->
+
+                        <div class="hero-circle hero-circle-1"></div>
+
+                        <div class="hero-circle hero-circle-2"></div>
+
+                        <div class="hero-circle hero-circle-3"></div>
+
                     </div>
 
-                    <div class="hero-stat">
-                      <strong>68%</strong>
-                      <span>Goals</span>
-                    </div>
-                  </div>
                 </div>
 
-                <div class="hero-right">
-                  <div class="hero-circle hero-circle-1"></div>
-
-                  <div class="hero-circle hero-circle-2"></div>
-                </div>
-              </div>
             </section>
-
-            <!-- KPI Section -->
+                        <!-- ======================================
+                        KPI GRID
+            ======================================= -->
 
             <section id="kpi-grid">
-              <!-- KPI 1 -->
 
-              <div class="card kpi-card">
-                <div class="card-body">
-                  <div class="kpi-top">
-                    <div class="card-icon">
-                      <i class="fa-solid fa-list-check"></i>
+                <!-- ==================================
+                            CARD 1
+                =================================== -->
+
+                <article class="card kpi-card">
+
+                    <div class="card-body">
+
+                        <div class="kpi-top">
+
+                            <div class="card-icon blue">
+
+                                <i class="fa-solid fa-list-check"></i>
+
+                            </div>
+
+                            <span class="card-badge positive">
+
+                                +12%
+
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-content">
+
+                            <h3 class="kpi-number">
+
+                                24
+
+                            </h3>
+
+                            <p class="kpi-text">
+
+                                Active Tasks
+
+                            </p>
+
+                        </div>
+
+                        <div class="kpi-footer">
+
+                            <span class="trend trend-up">
+
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                3 more than yesterday
+
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <span class="card-badge"> +12% </span>
-                  </div>
+                </article>
 
-                  <div class="kpi-number">24</div>
+                <!-- ==================================
+                            CARD 2
+                =================================== -->
 
-                  <div class="kpi-text">Active Tasks</div>
+                <article class="card kpi-card">
 
-                  <div class="kpi-footer">
-                    <span class="trend trend-up">
-                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    <div class="card-body">
 
-                      vs last week
-                    </span>
-                  </div>
-                </div>
-              </div>
+                        <div class="kpi-top">
 
-              <!-- KPI 2 -->
+                            <div class="card-icon orange">
 
-              <div class="card kpi-card">
-                <div class="card-body">
-                  <div class="kpi-top">
-                    <div class="card-icon">
-                      <i class="fa-solid fa-fire"></i>
+                                <i class="fa-solid fa-fire"></i>
+
+                            </div>
+
+                            <span class="card-badge">
+
+                                14 Days
+
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-content">
+
+                            <h3 class="kpi-number">
+
+                                87%
+
+                            </h3>
+
+                            <p class="kpi-text">
+
+                                Habit Consistency
+
+                            </p>
+
+                        </div>
+
+                        <div class="kpi-footer">
+
+                            <span class="trend trend-up">
+
+                                <i class="fa-solid fa-fire"></i>
+
+                                Personal Best
+
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <span class="card-badge"> 14 Days </span>
-                  </div>
+                </article>
 
-                  <div class="kpi-number">87%</div>
+                <!-- ==================================
+                            CARD 3
+                =================================== -->
 
-                  <div class="kpi-text">Habit Consistency</div>
+                <article class="card kpi-card">
 
-                  <div class="kpi-footer">
-                    <span class="trend trend-up">
-                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    <div class="card-body">
 
-                      vs last week
-                    </span>
-                  </div>
-                </div>
-              </div>
+                        <div class="kpi-top">
 
-              <!-- KPI 3 -->
+                            <div class="card-icon purple">
 
-              <div class="card kpi-card">
-                <div class="card-body">
-                  <div class="kpi-top">
-                    <div class="card-icon">
-                      <i class="fa-solid fa-bullseye"></i>
+                                <i class="fa-solid fa-bullseye"></i>
+
+                            </div>
+
+                            <span class="card-badge">
+
+                                3 Goals
+
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-content">
+
+                            <h3 class="kpi-number">
+
+                                68%
+
+                            </h3>
+
+                            <p class="kpi-text">
+
+                                Goal Progress
+
+                            </p>
+
+                        </div>
+
+                        <div class="kpi-footer">
+
+                            <span class="trend trend-up">
+
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                On Schedule
+
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <span class="card-badge"> 3 Goals </span>
-                  </div>
+                </article>
 
-                  <div class="kpi-number">68%</div>
+                <!-- ==================================
+                            CARD 4
+                =================================== -->
 
-                  <div class="kpi-text">Goal Progress</div>
+                <article class="card kpi-card">
 
-                  <div class="kpi-footer">
-                    <span class="trend trend-up">
-                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    <div class="card-body">
 
-                      vs last week
-                    </span>
-                  </div>
-                </div>
-              </div>
+                        <div class="kpi-top">
 
-              <!-- KPI 4 -->
+                            <div class="card-icon green">
 
-              <div class="card kpi-card">
-                <div class="card-body">
-                  <div class="kpi-top">
-                    <div class="card-icon">
-                      <i class="fa-solid fa-wallet"></i>
+                                <i class="fa-solid fa-wallet"></i>
+
+                            </div>
+
+                            <span class="card-badge positive">
+
+                                +8.4%
+
+                            </span>
+
+                        </div>
+
+                        <div class="kpi-content">
+
+                            <h3 class="kpi-number">
+
+                                $4,250
+
+                            </h3>
+
+                            <p class="kpi-text">
+
+                                Monthly Income
+
+                            </p>
+
+                        </div>
+
+                        <div class="kpi-footer">
+
+                            <span class="trend trend-up">
+
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                Higher than last month
+
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <span class="card-badge"> +8.4% </span>
-                  </div>
+                </article>
 
-                  <div class="kpi-number">$4,250</div>
-
-                  <div class="kpi-text">Monthly Income</div>
-
-                  <div class="kpi-footer">
-                    <span class="trend trend-up">
-                      <i class="fa-solid fa-arrow-trend-up"></i>
-
-                      vs last week
-                    </span>
-                  </div>
-                </div>
-              </div>
             </section>
+            <!-- ======================================
+            CHARTS SECTION
+======================================= -->
 
-            <!-- Charts Section -->
+<section id="charts-section">
 
-            <section id="charts-section">
-              <!-- Productivity Chart -->
+    <!-- ==================================
+                PRODUCTIVITY
+    =================================== -->
 
-              <div class="card chart-card">
-                <div class="card-header">
-                  <div>
-                    <h3 class="card-title">Productivity Overview</h3>
+    <article class="card chart-card chart-large">
 
-                    <p class="card-subtitle">Last 7 days performance</p>
-                  </div>
-                </div>
+        <div class="card-header">
 
-                <div class="card-body">
-                  <div class="chart-container">
-                    <canvas id="productivity-chart"></canvas>
-                  </div>
-                </div>
-              </div>
+            <div>
 
-              <!-- Focus Score -->
+                <h3 class="card-title">
 
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Focus Score</h3>
-                </div>
+                    Productivity Overview
 
-                <div class="card-body">
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      justify-content: center;
-                      height: 100%;
-                    "
-                  >
-                    <div style="font-size: 4rem; font-weight: 800">86%</div>
+                </h3>
 
-                    <p class="text-muted">Excellent consistency this week</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+                <p class="card-subtitle">
 
-            <!-- Dashboard Grid -->
+                    Last 7 days performance
 
-            <section id="dashboard-grid">
-              <!-- Recent Tasks -->
+                </p>
 
-              <div class="card widget">
-                <div class="card-header">
-                  <h3 class="card-title">Recent Tasks</h3>
-                </div>
-
-                <div class="card-body">
-                  <div class="widget-list">
-                    <div class="widget-item">
-                      <span>Design Dashboard UI</span>
-
-                      <span class="card-badge"> High </span>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Create Task Module</span>
-
-                      <span class="card-badge"> Medium </span>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Build Finance Page</span>
-
-                      <span class="card-badge"> Low </span>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Analytics Integration</span>
-
-                      <span class="card-badge"> High </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Goals -->
-
-              <div class="card widget">
-                <div class="card-header">
-                  <h3 class="card-title">Goals Progress</h3>
-                </div>
-
-                <div class="card-body">
-                  <div class="goal-item">
-                    <div class="goal-top">
-                      <span>Launch LifeOS</span>
-
-                      <span>80%</span>
-                    </div>
-
-                    <div class="habit-progress">
-                      <div class="habit-progress-fill" style="width: 80%"></div>
-                    </div>
-                  </div>
-
-                  <div class="goal-item">
-                    <div class="goal-top">
-                      <span>100 Active Users</span>
-
-                      <span>55%</span>
-                    </div>
-
-                    <div class="habit-progress">
-                      <div class="habit-progress-fill" style="width: 55%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Habits -->
-
-              <div class="card widget">
-                <div class="card-header">
-                  <h3 class="card-title">Habit Tracker</h3>
-                </div>
-
-                <div class="card-body">
-                  <div class="widget-list">
-                    <div class="widget-item">
-                      <span>Workout</span>
-
-                      <strong>🔥 14</strong>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Reading</span>
-
-                      <strong>🔥 8</strong>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Meditation</span>
-
-                      <strong>🔥 22</strong>
-                    </div>
-
-                    <div class="widget-item">
-                      <span>Journaling</span>
-
-                      <strong>🔥 17</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
-
-        <!-- =================================
-                        TASKS PAGE
-            ================================== -->
-
-        <section id="tasks-page" class="page-view hidden">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <div>
-                <h2>Tasks</h2>
-
-                <p>Manage your daily tasks</p>
-              </div>
-
-              <button id="add-task-btn" class="btn btn--primary">
-                <i class="fa-solid fa-plus"></i>
-
-                New Task
-              </button>
             </div>
 
-            <div id="tasks-container"></div>
-          </div>
-        </section>
-      </main>
+            <button class="card-action">
 
-      <div id="sidebar-overlay"></div>
+                This Week
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="chart-container">
+
+                <canvas id="productivity-chart"></canvas>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================
+                RIGHT COLUMN
+    =================================== -->
+
+    <div class="chart-side">
+
+        <!-- Focus -->
+
+        <article class="card mini-card">
+
+            <div class="card-header">
+
+                <h3 class="card-title">
+
+                    Focus Score
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="score-circle">
+
+                    <strong>
+
+                        86%
+
+                    </strong>
+
+                </div>
+
+                <p class="text-muted">
+
+                    Excellent consistency this week
+
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- Weekly -->
+
+        <article class="card mini-card">
+
+            <div class="card-header">
+
+                <h3 class="card-title">
+
+                    Weekly Summary
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="summary-list">
+
+                    <div class="summary-item">
+
+                        <span>
+
+                            Completed
+
+                        </span>
+
+                        <strong>
+
+                            42
+
+                        </strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>
+
+                            Pending
+
+                        </span>
+
+                        <strong>
+
+                            11
+
+                        </strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>
+
+                            Productivity
+
+                        </span>
+
+                        <strong>
+
+                            +18%
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
     </div>
 
-    <!-- =====================================
-                MODALS
-    ====================================== -->
+</section>
+<!-- ======================================
+            DASHBOARD GRID
+======================================= -->
+
+<section id="dashboard-grid">
+
+    <!-- ==================================
+                RECENT TASKS
+    =================================== -->
+
+    <article class="card widget widget-large">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Recent Tasks
+
+            </h3>
+
+            <button class="card-action">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="widget-list">
+
+                <div class="widget-item">
+
+                    <div>
+
+                        <strong>
+
+                            Design Dashboard UI
+
+                        </strong>
+
+                        <small>
+
+                            Today • 09:30
+
+                        </small>
+
+                    </div>
+
+                    <span class="card-badge high">
+
+                        High
+
+                    </span>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <div>
+
+                        <strong>
+
+                            Create Task Module
+
+                        </strong>
+
+                        <small>
+
+                            Today • 12:00
+
+                        </small>
+
+                    </div>
+
+                    <span class="card-badge medium">
+
+                        Medium
+
+                    </span>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <div>
+
+                        <strong>
+
+                            Analytics Dashboard
+
+                        </strong>
+
+                        <small>
+
+                            Tomorrow
+
+                        </small>
+
+                    </div>
+
+                    <span class="card-badge low">
+
+                        Low
+
+                    </span>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <div>
+
+                        <strong>
+
+                            Finance Module
+
+                        </strong>
+
+                        <small>
+
+                            Friday
+
+                        </small>
+
+                    </div>
+
+                    <span class="card-badge high">
+
+                        High
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================
+                GOALS
+    =================================== -->
+
+    <article class="card widget">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Goals Progress
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="goal-item">
+
+                <div class="goal-top">
+
+                    <span>
+
+                        Launch LifeOS
+
+                    </span>
+
+                    <strong>
+
+                        80%
+
+                    </strong>
+
+                </div>
+
+                <div class="habit-progress">
+
+                    <div
+                        class="habit-progress-fill"
+                        style="width:80%">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="goal-item">
+
+                <div class="goal-top">
+
+                    <span>
+
+                        100 Active Users
+
+                    </span>
+
+                    <strong>
+
+                        55%
+
+                    </strong>
+
+                </div>
+
+                <div class="habit-progress">
+
+                    <div
+                        class="habit-progress-fill"
+                        style="width:55%">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================
+                HABITS
+    =================================== -->
+
+    <article class="card widget">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Habit Tracker
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="widget-list">
+
+                <div class="widget-item">
+
+                    <span>
+
+                        Workout
+
+                    </span>
+
+                    <strong>
+
+                        🔥 14
+
+                    </strong>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <span>
+
+                        Reading
+
+                    </span>
+
+                    <strong>
+
+                        🔥 8
+
+                    </strong>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <span>
+
+                        Meditation
+
+                    </span>
+
+                    <strong>
+
+                        🔥 22
+
+                    </strong>
+
+                </div>
+
+                <div class="widget-item">
+
+                    <span>
+
+                        Journaling
+
+                    </span>
+
+                    <strong>
+
+                        🔥 17
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================
+                ACTIVITY
+    =================================== -->
+
+    <article class="card widget">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Activity Feed
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="activity-item">
+
+                ✅ Completed Dashboard Design
+
+            </div>
+
+            <div class="activity-item">
+
+                🔥 Habit Streak Increased
+
+            </div>
+
+            <div class="activity-item">
+
+                🎯 Goal Updated
+
+            </div>
+
+            <div class="activity-item">
+
+                💰 Finance Synced
+
+            </div>
+
+        </div>
+
+    </article>
+
+    <!-- ==================================
+                AI ASSISTANT
+    =================================== -->
+
+    <article class="card widget ai-widget">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                AI Assistant
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <h4>
+
+                Today's Suggestion
+
+            </h4>
+
+            <p>
+
+                Finish your high priority tasks before noon to maximize productivity.
+
+            </p>
+
+            <button class="btn btn-primary">
+
+                Ask AI
+
+            </button>
+
+        </div>
+
+    </article>
+
+</section>
+            <!-- ======================================
+                        TASKS PAGE
+            ======================================= -->
+
+            <section
+                id="tasks-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Tasks
+
+                            </h2>
+
+                            <p>
+
+                                Organize and manage your daily workflow.
+
+                            </p>
+
+                        </div>
+
+                        <button
+                            id="add-task-btn"
+                            class="btn btn-primary">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            New Task
+
+                        </button>
+
+                    </div>
+
+                    <div id="tasks-container">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        HABITS PAGE
+            ======================================= -->
+
+            <section
+                id="habits-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Habits
+
+                            </h2>
+
+                            <p>
+
+                                Build powerful daily habits.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        FINANCE PAGE
+            ======================================= -->
+
+            <section
+                id="finance-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Finance
+
+                            </h2>
+
+                            <p>
+
+                                Track your personal finances.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        GOALS PAGE
+            ======================================= -->
+
+            <section
+                id="goals-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Goals
+
+                            </h2>
+
+                            <p>
+
+                                Track long-term achievements.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        CALENDAR PAGE
+            ======================================= -->
+
+            <section
+                id="calendar-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Calendar
+
+                            </h2>
+
+                            <p>
+
+                                Plan your schedule.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        ANALYTICS PAGE
+            ======================================= -->
+
+            <section
+                id="analytics-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Analytics
+
+                            </h2>
+
+                            <p>
+
+                                Productivity insights and statistics.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        JOURNAL PAGE
+            ======================================= -->
+
+            <section
+                id="journal-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Journal
+
+                            </h2>
+
+                            <p>
+
+                                Capture your daily thoughts.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        ACHIEVEMENTS PAGE
+            ======================================= -->
+
+            <section
+                id="achievements-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Achievements
+
+                            </h2>
+
+                            <p>
+
+                                Your milestones and rewards.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ======================================
+                        SETTINGS PAGE
+            ======================================= -->
+
+            <section
+                id="settings-page"
+                class="page-view hidden">
+
+                <div class="content-wrapper">
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <h2>
+
+                                Settings
+
+                            </h2>
+
+                            <p>
+
+                                Customize your LifeOS experience.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ======================================
+                    SIDEBAR OVERLAY
+        ======================================= -->
+
+        <div id="sidebar-overlay"></div>
+
+    </div>
+
+    <!-- ======================================
+                MODAL ROOT
+    ======================================= -->
 
     <div id="modal-root"></div>
 
-    <!-- =====================================
-                TOASTS
-    ====================================== -->
+    <!-- ======================================
+                TOAST ROOT
+    ======================================= -->
 
     <div id="toast-root"></div>
-    <!-- =====================================
+
+    <!-- ======================================
+                LOADING BAR
+    ======================================= -->
+
+    <div id="global-loader"></div>
+
+    <!-- ======================================
                 CHART.JS
-    ====================================== -->
+    ======================================= -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- =====================================
-                MAIN APP
-    ====================================== -->
+    <!-- ======================================
+                LIFEOS APP
+    ======================================= -->
 
-    <script type="module" src="./js/app.js"></script>
-  </body>
+    <script
+        type="module"
+        src="./js/app.js">
+
+    </script>
+
+</body>
+
 </html>

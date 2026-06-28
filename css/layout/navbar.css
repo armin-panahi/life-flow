@@ -1,11 +1,19 @@
-/* ==========================================
+/* ==========================================================
    LIFEOS NAVBAR
-========================================== */
+   Version: 2.0
+   ========================================================== */
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 
 #navbar {
 
-    /* height: 78px; */
-    min-height: 88px;
+    position: sticky;
+
+    top: 0;
+
+    z-index: 900;
 
     display: flex;
 
@@ -13,403 +21,736 @@
 
     justify-content: space-between;
 
-    gap: 34px;
+    gap: 32px;
 
-    /* padding: 0 28px; */
-    padding: 18px 28px;
+    width: 100%;
 
-    background: rgba(15,23,42,.88);
+    height: 82px;
 
-    backdrop-filter: blur(24px);
+    padding: 0 32px;
+
+    background: rgba(15,23,42,.82);
+
+    backdrop-filter: blur(22px);
+
+    -webkit-backdrop-filter: blur(22px);
 
     border-bottom: 1px solid rgba(255,255,255,.05);
 
-    position: sticky;
-
-    top: 0;
-
-    z-index: 100;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        padding .3s ease;
 
 }
 
-/* ==========================================
+/* ==========================================================
    LEFT
-========================================== */
+   ========================================================== */
 
-.navbar-left {
+.navbar-left{
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
+
+    gap:20px;
+
+    min-width:260px;
+
+}
+
+/* ==========================================================
+   SIDEBAR TOGGLE
+   ========================================================== */
+
+#sidebar-toggle{
+
+    display:none;
 
 }
 
-/* ==========================================
-   TITLE
-========================================== */
-
-.navbar-left {
-
-    gap: 16px;
-
-}
+/* ==========================================================
+   PAGE TITLE
+   ========================================================== */
 
 .navbar-title{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:2px;
+    justify-content:center;
+
+    gap:4px;
 
 }
 
 .navbar-title h1{
 
-font-size:2rem;
+    font-size:1.55rem;
 
-font-weight:800;
+    font-weight:800;
 
-line-height:1;
+    color:var(--text-primary);
 
-color:var(--text-primary);
+    line-height:1;
 
-}
-
-.navbar-title span {
-
-font-size:.9rem;
-
-color:var(--text-muted);
+    letter-spacing:-.02em;
 
 }
 
-/* ==========================================
+.navbar-title span{
+
+    font-size:.82rem;
+
+    color:var(--text-muted);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
    CENTER
-========================================== */
+   ========================================================== */
 
-.navbar-center {
+.navbar-center{
 
-    flex: 1;
+    flex:1;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
-
-    padding: 0 20px;
+    justify-content:center;
 
 }
 
-.search-box {
+/* ==========================================================
+   SEARCH
+   ========================================================== */
 
-    width: 100%;
+.search-box{
 
-    max-width: 780px;
+    position:relative;
 
-    height: 46px;
+    display:flex;
 
-    display: flex;
+    align-items:center;
 
-    align-items: center;
+    width:100%;
 
-    gap: 12px;
+    max-width:680px;
 
-    padding: 0 18px;
+    height:52px;
 
-    background: rgba(2,8,23,.55);
+    padding:0 18px;
 
-    border: 1px solid rgba(255,255,255,.06);
+    gap:14px;
 
-    border-radius: 14px;
+    background:rgba(255,255,255,.03);
 
-    transition: .25s ease;
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    transition:all .28s ease;
 
 }
 
-.search-box:hover {
+.search-box:hover{
 
-    border-color: rgba(99,102,241,.25);
+    border-color:rgba(99,102,241,.30);
+
+    background:rgba(255,255,255,.05);
 
 }
 
-.search-box:focus-within {
+.search-box:focus-within{
 
-    border-color: var(--primary-color);
+    border-color:var(--primary-color);
 
     box-shadow:
+
         0 0 0 4px rgba(99,102,241,.12);
 
 }
 
-.search-box i {
+.search-box i{
 
-    color: var(--text-muted);
+    font-size:15px;
 
-}
-
-.search-box input {
-
-    flex: 1;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    color: var(--text-primary);
-
-    font-size: .95rem;
+    color:var(--text-muted);
 
 }
 
-.search-box input::placeholder {
+.search-box input{
 
-    color: var(--text-muted);
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:var(--text-primary);
+
+    font-size:.95rem;
+
+    font-weight:500;
 
 }
 
-/* ==========================================
+.search-box input::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+.search-box::after{
+
+    content:"⌘K";
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    color:var(--text-muted);
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
    RIGHT
-========================================== */
+   ========================================================== */
 
-.navbar-right {
+.navbar-right{
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 10px;
+    justify-content:flex-end;
+
+    gap:12px;
+
+    flex-shrink:0;
 
 }
 
-/* ==========================================
+/* ==========================================================
    ICON BUTTON
-========================================== */
+   ========================================================== */
 
-.icon-button {
+.icon-button{
 
-    width: 44px;
+    position:relative;
 
-    height: 44px;
+    width:46px;
 
-    border: none;
+    height:46px;
 
-    border-radius: 12px;
+    display:flex;
 
-    background: rgba(255,255,255,.03);
+    align-items:center;
 
-    border: 1px solid rgba(255,255,255,.05);
+    justify-content:center;
 
-    display: flex;
+    border:none;
 
-    align-items: center;
+    outline:none;
 
-    justify-content: center;
+    cursor:pointer;
 
-    cursor: pointer;
+    border-radius:16px;
 
-    transition: .25s ease;
+    background:rgba(255,255,255,.04);
 
-    position: relative;
+    border:1px solid rgba(255,255,255,.06);
+
+    color:var(--text-primary);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 
 }
 
 .icon-button:hover{
 
-transform:translateY(-2px);
+    transform:translateY(-2px);
 
-background:rgba(99,102,241,.18);
+    background:rgba(99,102,241,.12);
 
-border-color:rgba(99,102,241,.25);
+    border-color:rgba(99,102,241,.35);
 
-}
-
-.icon-button i {
-
-    font-size: 16px;
-
-    color: var(--text-primary);
+    box-shadow:
+        0 10px 24px rgba(99,102,241,.18);
 
 }
 
-/* ==========================================
+.icon-button:active{
+
+    transform:scale(.96);
+
+}
+
+.icon-button:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,.18);
+
+}
+
+.icon-button i{
+
+    font-size:17px;
+
+}
+
+/* ==========================================================
+   QUICK ACTION
+   ========================================================== */
+
+#quick-action{
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    border:none;
+
+}
+
+#quick-action:hover{
+
+    transform:translateY(-2px) scale(1.03);
+
+    box-shadow:
+
+        0 12px 30px rgba(99,102,241,.35);
+
+}
+
+/* ==========================================================
+   THEME BUTTON
+   ========================================================== */
+
+#theme-toggle{
+
+    overflow:hidden;
+
+}
+
+#theme-toggle i{
+
+    transition:
+        transform .35s ease;
+
+}
+
+#theme-toggle:hover i{
+
+    transform:rotate(25deg);
+
+}
+
+/* ==========================================================
    NOTIFICATION
-========================================== */
+   ========================================================== */
 
-.notification-badge {
+#notification-button{
 
-    position: absolute;
-
-    top: 3px;
-
-    right: 3px;
-
-    min-width: 18px;
-
-    height: 18px;
-
-    border-radius: 999px;
-
-    background: #ef4444;
-
-    color: white;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    box-shadow: 0 0 0 3px var(--bg-main);
+    position:relative;
 
 }
 
-/* ==========================================
-   USER
-========================================== */
+.notification-badge{
 
-.user-button {
+    position:absolute;
 
-    display: flex;
+    top:6px;
 
-    align-items: center;
+    right:6px;
 
-    gap: 10px;
+    min-width:18px;
 
-    /* padding: 4px 8px; */
-    padding:6px 12px;
+    height:18px;
 
-    border: none;
+    padding:0 5px;
 
-    background: transparent;
+    border-radius:999px;
 
-    cursor: pointer;
+    display:flex;
 
-    border-radius: 14px;
+    align-items:center;
 
-    transition: .25s ease;
+    justify-content:center;
 
-    border: 1px solid transparent;
+    background:#ef4444;
+
+    color:#fff;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    border:2px solid var(--bg-main);
+
+    animation:badgePulse 2.4s infinite;
+
+}
+
+/* ==========================================================
+   BADGE ANIMATION
+   ========================================================== */
+
+@keyframes badgePulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   ICON STATES
+   ========================================================== */
+
+.icon-button.is-active{
+
+    background:rgba(99,102,241,.14);
+
+    border-color:rgba(99,102,241,.4);
+
+}
+
+.icon-button.is-danger:hover{
+
+    background:rgba(239,68,68,.12);
+
+    border-color:rgba(239,68,68,.35);
+
+}
+
+/* ==========================================================
+   USER MENU
+   ========================================================== */
+
+.user-button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:6px 10px 6px 6px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
 
 }
 
 .user-button:hover{
 
-background:rgba(255,255,255,.04);
-
-border-color:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
 
 }
 
-.user-button img {
+.user-button:active{
 
-    width: 42px;
-
-    height: 42px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
+    transform:scale(.98);
 
 }
 
-.user-info {
+/* ==========================================================
+   USER AVATAR
+   ========================================================== */
 
-    display: flex;
+.user-button img{
 
-    flex-direction: column;
+    width:46px;
 
-    align-items: flex-start;
+    height:46px;
 
-}
+    object-fit:cover;
 
-.user-name {
+    border-radius:50%;
 
-    font-size: .92rem;
+    border:2px solid rgba(255,255,255,.08);
 
-    font-weight: 700;
-
-}
-
-.user-role {
-
-    font-size: .72rem;
-
-    color: var(--text-muted);
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
 
 }
 
-.user-button .fa-chevron-down {
+.user-button:hover img{
 
-    font-size: 11px;
+    transform:scale(1.05);
 
-    color: var(--text-muted);
+    border-color:rgba(99,102,241,.45);
 
 }
 
-/* ==========================================
+/* ==========================================================
+   ONLINE STATUS
+   ========================================================== */
+
+.user-button{
+
+    position:relative;
+
+}
+
+.user-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:38px;
+
+    bottom:8px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    border:2px solid var(--bg-main);
+
+}
+
+/* ==========================================================
+   USER INFO
+   ========================================================== */
+
+.user-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:2px;
+
+}
+
+.user-name{
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+    line-height:1;
+
+}
+
+.user-role{
+
+    font-size:.75rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   CHEVRON
+   ========================================================== */
+
+.user-button .fa-chevron-down{
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+    transition:transform .25s ease;
+
+}
+
+.user-button:hover .fa-chevron-down{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================================
    RESPONSIVE
-========================================== */
+   ========================================================== */
 
-@media (max-width: 992px) {
+@media (max-width:1200px){
 
-    .navbar-center {
+    .search-box{
 
-        display: none;
-
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    #navbar {
-
-        padding: 0 18px;
-
-    }
-
-    .user-info {
-
-        display: none;
-
-    }
-
-    .navbar-title p {
-
-        display: none;
+        max-width:520px;
 
     }
 
 }
 
-/* ==========================================
-   SIDEBAR TOGGLE
-========================================== */
+@media (max-width:992px){
 
-#sidebar-toggle {
+    #sidebar-toggle{
 
-    display: none;
+        display:flex;
 
-}
+    }
 
-/* ==========================================
-   TABLET & MOBILE
-========================================== */
+    .navbar-center{
 
-@media (max-width: 992px) {
+        display:none;
 
-    #sidebar-toggle {
+    }
 
-        display: flex;
+    #navbar{
+
+        padding:0 20px;
+
+        gap:16px;
+
+    }
+
+    .navbar-title span{
+
+        display:none;
 
     }
 
 }
+
+@media (max-width:768px){
+
+    #navbar{
+
+        height:72px;
+
+        padding:0 16px;
+
+    }
+
+    .user-info{
+
+        display:none;
+
+    }
+
+    .user-button{
+
+        padding:0;
+
+        gap:0;
+
+    }
+
+    .user-button .fa-chevron-down{
+
+        display:none;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .navbar-title h1{
+
+        font-size:1.2rem;
+
+    }
+
+    .icon-button{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .user-button img{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+}
+
+/* ==========================================================
+   DARK THEME ENHANCEMENT
+   ========================================================== */
+
+html[data-theme="dark"] #navbar{
+
+    background:rgba(15,23,42,.82);
+
+}
+
+html[data-theme="light"] #navbar{
+
+    background:rgba(255,255,255,.82);
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+   ========================================================== */
+
+.icon-button:focus-visible,
+.user-button:focus-visible,
+.search-box input:focus-visible{
+
+    outline:none;
+
+}
+
+/* ==========================================================
+   END
+   ========================================================== */
