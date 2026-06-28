@@ -1,0 +1,1561 @@
+/* ==========================================================
+   LIFEOS ACTIVITY SYSTEM
+========================================================== */
+
+/* ==========================================================
+   ACTIVITY FEED
+========================================================== */
+
+.activity-feed{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+/* ==========================================================
+   ACTIVITY CARD
+========================================================== */
+
+.activity-card{
+
+    position:relative;
+
+    display:flex;
+
+    gap:18px;
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:
+
+        transform .25s ease,
+
+        border-color .25s ease,
+
+        background .25s ease;
+
+}
+
+.activity-card:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(99,102,241,.05);
+
+    border-color:rgba(99,102,241,.15);
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.activity-icon{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.18),
+            rgba(59,130,246,.08)
+        );
+
+    color:var(--primary-color);
+
+    font-size:1.1rem;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.activity-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.activity-title{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.activity-description{
+
+    font-size:.88rem;
+
+    line-height:1.7;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   META
+========================================================== */
+
+.activity-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:4px;
+
+}
+
+.activity-time{
+
+    font-size:.78rem;
+
+    color:var(--text-muted);
+
+}
+
+.activity-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.activity-user img{
+
+    width:26px;
+
+    height:26px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.activity-user span{
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    color:var(--text-secondary);
+
+}
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.timeline{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:26px;
+
+    padding-left:34px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:16px;
+
+    width:2px;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(99,102,241,.45),
+        rgba(255,255,255,.08)
+    );
+
+}
+
+/* ==========================================================
+   TIMELINE ITEM
+========================================================== */
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+}
+
+/* ==========================================================
+   TIMELINE DOT
+========================================================== */
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:-26px;
+
+    top:4px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    border:4px solid var(--bg-primary);
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,.18);
+
+}
+
+/* ==========================================================
+   TIMELINE CONTENT
+========================================================== */
+
+.timeline-content{
+
+    flex:1;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+
+}
+
+.timeline-content:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(99,102,241,.05);
+
+    border-color:rgba(99,102,241,.16);
+
+}
+
+/* ==========================================================
+   TIMELINE HEADER
+========================================================== */
+
+.timeline-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:8px;
+
+}
+
+.timeline-title{
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.timeline-date{
+
+    font-size:.75rem;
+
+    color:var(--text-muted);
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================================
+   TIMELINE TEXT
+========================================================== */
+
+.timeline-text{
+
+    font-size:.86rem;
+
+    line-height:1.7;
+
+    color:var(--text-secondary);
+
+}
+
+/* ==========================================================
+   TIMELINE FOOTER
+========================================================== */
+
+.timeline-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+    margin-top:14px;
+
+}
+
+/* ==========================================================
+   TIMELINE TAG
+========================================================== */
+
+.timeline-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.10);
+
+    color:var(--primary-color);
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   NOTIFICATION LIST
+========================================================== */
+
+.notification-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+/* ==========================================================
+   NOTIFICATION ITEM
+========================================================== */
+
+.notification-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.notification-item:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(99,102,241,.05);
+
+    border-color:rgba(99,102,241,.15);
+
+}
+
+/* ==========================================================
+   NOTIFICATION ICON
+========================================================== */
+
+.notification-icon{
+
+    width:46px;
+
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    flex-shrink:0;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================================
+   TYPES
+========================================================== */
+
+.notification-success .notification-icon{
+
+    background:rgba(34,197,94,.12);
+
+    color:#22C55E;
+
+}
+
+.notification-warning .notification-icon{
+
+    background:rgba(245,158,11,.12);
+
+    color:#F59E0B;
+
+}
+
+.notification-error .notification-icon{
+
+    background:rgba(239,68,68,.12);
+
+    color:#EF4444;
+
+}
+
+.notification-info .notification-icon{
+
+    background:rgba(59,130,246,.12);
+
+    color:#3B82F6;
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.notification-content{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.notification-title{
+
+    font-size:.92rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.notification-text{
+
+    margin-top:6px;
+
+    font-size:.82rem;
+
+    line-height:1.7;
+
+    color:var(--text-muted);
+
+}
+
+.notification-time{
+
+    margin-top:10px;
+
+    font-size:.72rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   UNREAD
+========================================================== */
+
+.notification-unread{
+
+    position:relative;
+
+}
+
+.notification-unread::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:22px;
+
+    right:18px;
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+}
+
+/* ==========================================================
+   ACTIVITY BADGE
+========================================================== */
+
+.activity-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:5px 12px;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.10);
+
+    color:var(--primary-color);
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   USER STACK
+========================================================== */
+
+.activity-users{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.activity-users img{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--bg-card);
+
+    margin-left:-8px;
+
+}
+
+.activity-users img:first-child{
+
+    margin-left:0;
+
+}
+
+/* ==========================================================
+   COMMENT PREVIEW
+========================================================== */
+
+.activity-comment{
+
+    margin-top:12px;
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.04);
+
+    border-left:3px solid var(--primary-color);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+
+    color:var(--text-secondary);
+
+}
+
+/* ==========================================================
+   LABEL
+========================================================== */
+
+.activity-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:4px 10px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--text-secondary);
+
+    font-size:.72rem;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   DAY DIVIDER
+========================================================== */
+
+.activity-day{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin:32px 0 18px;
+
+}
+
+.activity-day::before,
+
+.activity-day::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.activity-day span{
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(99,102,241,.08);
+
+    color:var(--primary-color);
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================================
+   TIME DIVIDER
+========================================================== */
+
+.activity-time-divider{
+
+    margin:20px 0;
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   SYSTEM LOG
+========================================================== */
+
+.system-log{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.system-log-icon{
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    color:var(--text-secondary);
+
+    flex-shrink:0;
+
+}
+
+.system-log-content{
+
+    flex:1;
+
+}
+
+.system-log-title{
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.system-log-text{
+
+    margin-top:6px;
+
+    font-size:.82rem;
+
+    line-height:1.7;
+
+    color:var(--text-muted);
+
+}
+
+.system-log-time{
+
+    margin-top:10px;
+
+    font-size:.72rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   EVENT STREAM
+========================================================== */
+
+.event-stream{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.event-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:18px;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.event-item:hover{
+
+    background:rgba(99,102,241,.05);
+
+    border-color:rgba(99,102,241,.16);
+
+    transform:translateY(-2px);
+
+}
+
+.event-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.event-title{
+
+    font-size:.88rem;
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+.event-time{
+
+    font-size:.75rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   MILESTONE
+========================================================== */
+
+.milestone{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:24px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(99,102,241,.12),
+        rgba(59,130,246,.06)
+    );
+
+    border:1px solid rgba(99,102,241,.16);
+
+}
+
+.milestone-title{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.milestone-text{
+
+    margin-top:8px;
+
+    font-size:.85rem;
+
+    line-height:1.7;
+
+    color:var(--text-secondary);
+
+}
+
+.milestone-progress{
+
+    margin-top:18px;
+
+}
+
+/* ==========================================================
+   HOVER GLOW
+========================================================== */
+
+.activity-card,
+
+.timeline-content,
+
+.notification-item,
+
+.event-item,
+
+.system-log{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.activity-card::after,
+
+.timeline-content::after,
+
+.notification-item::after,
+
+.event-item::after,
+
+.system-log::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(99,102,241,.08),
+            transparent 65%
+        );
+
+    opacity:0;
+
+    transition:opacity .3s ease;
+
+    pointer-events:none;
+
+}
+
+.activity-card:hover::after,
+
+.timeline-content:hover::after,
+
+.notification-item:hover::after,
+
+.event-item:hover::after,
+
+.system-log:hover::after{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   ACTIVITY TOOLBAR
+========================================================== */
+
+.activity-toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:28px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================================================
+   FILTERS
+========================================================== */
+
+.activity-filters{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.activity-filter{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 16px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:var(--text-secondary);
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+.activity-filter:hover{
+
+    background:rgba(99,102,241,.10);
+
+    border-color:rgba(99,102,241,.18);
+
+    color:var(--primary-color);
+
+}
+
+.activity-filter.active{
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    border-color:transparent;
+
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.activity-search{
+
+    position:relative;
+
+    width:320px;
+
+    max-width:100%;
+
+}
+
+.activity-search input{
+
+    width:100%;
+
+    height:46px;
+
+    padding:0 18px 0 46px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    color:var(--text-primary);
+
+    outline:none;
+
+    transition:border-color .25s ease;
+
+}
+
+.activity-search input:focus{
+
+    border-color:var(--primary-color);
+
+}
+
+.activity-search i{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   QUICK ACTIONS
+========================================================== */
+
+.activity-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.activity-action{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    color:var(--text-secondary);
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+.activity-action:hover{
+
+    background:rgba(99,102,241,.10);
+
+    color:var(--primary-color);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.activity-empty{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    min-height:300px;
+
+    text-align:center;
+
+}
+
+.activity-empty-icon{
+
+    width:82px;
+
+    height:82px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:rgba(99,102,241,.08);
+
+    color:var(--primary-color);
+
+    font-size:2rem;
+
+}
+
+.activity-empty-title{
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.activity-empty-text{
+
+    max-width:360px;
+
+    font-size:.88rem;
+
+    line-height:1.7;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.activity-loading{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.activity-skeleton{
+
+    width:100%;
+
+    height:82px;
+
+    border-radius:18px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.03) 0%,
+
+            rgba(255,255,255,.08) 50%,
+
+            rgba(255,255,255,.03) 100%
+
+        );
+
+    background-size:300% 100%;
+
+    animation:activitySkeleton 1.5s linear infinite;
+
+}
+
+@keyframes activitySkeleton{
+
+    from{
+
+        background-position:100% 0;
+
+    }
+
+    to{
+
+        background-position:-100% 0;
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    .activity-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .activity-search{
+
+        width:100%;
+
+    }
+
+    .activity-filters{
+
+        overflow-x:auto;
+
+        flex-wrap:nowrap;
+
+        scrollbar-width:none;
+
+    }
+
+    .activity-filters::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+[data-theme="light"] .activity-card,
+[data-theme="light"] .timeline-content,
+[data-theme="light"] .notification-item,
+[data-theme="light"] .event-item,
+[data-theme="light"] .system-log,
+[data-theme="light"] .milestone{
+
+    background:#ffffff;
+
+    border-color:rgba(15,23,42,.08);
+
+}
+
+[data-theme="light"] .activity-filter,
+[data-theme="light"] .activity-action{
+
+    background:#ffffff;
+
+    border-color:rgba(15,23,42,.08);
+
+}
+
+[data-theme="light"] .activity-search input{
+
+    background:#ffffff;
+
+    border-color:rgba(15,23,42,.08);
+
+}
+
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
+[data-theme="dark"] .activity-card,
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .notification-item,
+[data-theme="dark"] .event-item,
+[data-theme="dark"] .system-log{
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.16);
+
+}
+
+/* ==========================================================
+   FOCUS STATES
+========================================================== */
+
+.activity-filter:focus-visible,
+.activity-action:focus-visible,
+.activity-search input:focus-visible{
+
+    outline:2px solid var(--primary-color);
+
+    outline-offset:3px;
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .activity-feed,
+    .activity-feed *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    .activity-toolbar,
+    .activity-actions{
+
+        display:none !important;
+
+    }
+
+    .activity-card,
+    .timeline-content,
+    .notification-item,
+    .system-log,
+    .event-item{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+        box-shadow:none !important;
+
+    }
+
+}
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.activity-feed{
+
+    contain:layout;
+
+}
+
+.activity-card,
+.timeline-content,
+.notification-item,
+.system-log,
+.event-item{
+
+    contain:layout paint;
+
+    will-change:transform;
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.activity-feed::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.activity-feed::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+}
+
+.activity-feed{
+
+    scrollbar-width:thin;
+
+}
+
+/* ==========================================================
+   END OF LIFEOS ACTIVITY SYSTEM
+========================================================== */
