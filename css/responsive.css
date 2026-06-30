@@ -1,158 +1,1583 @@
-/* ==========================================
-   LIFEOS RESPONSIVE SYSTEM
-   ------------------------------------------
-   Mobile First Strategy
-========================================== */
+/* ==========================================================
+   LIFEOS
+   RESPONSIVE
+   Version : 1.0
+========================================================== */
 
-/* ==========================================
-   VISIBILITY UTILITIES
-========================================== */
+/* ==========================================================
+   DESKTOP XL
+   <=1600px
+========================================================== */
 
-.hide {
-    display: none !important;
-}
+@media (max-width:1600px){
 
-.show {
-    display: block !important;
-}
+    :root{
 
-/* Mobile */
+        --sidebar-width:270px;
 
-.hide-mobile {
-    display: none !important;
-}
+        --content-padding:28px;
 
-.show-mobile {
-    display: block !important;
-}
-
-/* Tablet & Desktop */
-
-.show-tablet,
-.show-desktop {
-    display: none !important;
-}
-
-/* ==========================================
-   TABLET
-   >= 768px
-========================================== */
-
-@media (min-width: 768px) {
-
-    .hide-mobile {
-        display: inherit !important;
     }
 
-    .show-mobile {
-        display: none !important;
+    #main-content{
+
+        padding:30px;
+
     }
 
-    .show-tablet {
-        display: block !important;
+    .content-wrapper{
+
+        gap:28px;
+
     }
 
 }
 
-/* ==========================================
+/* ==========================================================
+   DESKTOP
+   <=1400px
+========================================================== */
+
+@media (max-width:1400px){
+
+    :root{
+
+        --content-padding:24px;
+
+    }
+
+    #main-content{
+
+        padding:24px;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:
+            1fr
+            360px;
+
+        gap:32px;
+
+    }
+
+    #dashboard-grid{
+
+        grid-template-columns:
+            1.6fr
+            1fr
+            1fr;
+
+    }
+
+    #charts-section{
+
+        grid-template-columns:
+            2fr
+            1fr;
+
+    }
+
+    .navbar-center{
+
+        max-width:420px;
+
+    }
+
+}
+
+/* ==========================================================
    LAPTOP
-   >= 1024px
-========================================== */
+   <=1200px
+========================================================== */
 
-@media (min-width: 1024px) {
+@media (max-width:1200px){
 
-    .show-desktop {
-        display: block !important;
+    :root{
+
+        --sidebar-width:260px;
+
+        --content-padding:22px;
+
+    }
+
+    #main-content{
+
+        padding:22px;
+
+    }
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    .navbar{
+
+        gap:20px;
+
+    }
+
+    .navbar-left{
+
+        gap:18px;
+
+    }
+
+    .navbar-center{
+
+        flex:1;
+
+        max-width:none;
+
+    }
+
+    .navbar-right{
+
+        gap:12px;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        gap:36px;
+
+    }
+
+    .hero-left{
+
+        order:1;
+
+    }
+
+    .hero-right{
+
+        order:2;
+
+        min-height:340px;
+
+    }
+
+    .hero-widget{
+
+        max-width:420px;
+
+        margin:auto;
+
+    }
+
+    /* =====================================
+       KPI GRID
+    ===================================== */
+
+    #kpi-grid{
+
+        grid-template-columns:
+
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    /* =====================================
+       CHARTS
+    ===================================== */
+
+    #charts-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-side{
+
+        display:grid;
+
+        grid-template-columns:
+
+            repeat(2,minmax(0,1fr));
+
+        gap:24px;
+
+    }
+
+    /* =====================================
+       DASHBOARD GRID
+    ===================================== */
+
+    #dashboard-grid{
+
+        grid-template-columns:
+
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .widget-large{
+
+        grid-column:1 / -1;
+
+        grid-row:auto;
+
+        min-height:auto;
+
     }
 
 }
 
-/* ==========================================
-   DASHBOARD GRID
-========================================== */
+/* ==========================================================
+   TABLET LANDSCAPE
+   <=992px
+========================================================== */
 
-@media (max-width: 1023px) {
+@media (max-width:992px){
 
-    .dashboard-grid {
+    :root{
 
-        grid-template-columns: repeat(6, 1fr);
+        --content-padding:20px;
+
+    }
+
+    /* =====================================
+       APP
+    ===================================== */
+
+    #app{
+
+        display:block;
+
+    }
+
+    /* =====================================
+       SIDEBAR
+    ===================================== */
+
+    #sidebar{
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        width:300px;
+
+        height:100vh;
+
+        z-index:1200;
+
+        transform:translateX(-100%);
+
+        transition:transform .35s ease;
+
+        box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    }
+
+    #sidebar.active{
+
+        transform:translateX(0);
+
+    }
+
+    #sidebar-overlay{
+
+        position:fixed;
+
+        inset:0;
+
+        background:rgba(0,0,0,.45);
+
+        backdrop-filter:blur(4px);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:all .3s ease;
+
+        z-index:1100;
+
+    }
+
+    #sidebar-overlay.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+    /* =====================================
+       MAIN
+    ===================================== */
+
+    #main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:20px;
+
+    }
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    #navbar{
+
+        flex-wrap:wrap;
+
+        gap:18px;
+
+    }
+
+    .navbar-left{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .navbar-center{
+
+        order:3;
+
+        width:100%;
+
+    }
+
+    .navbar-right{
+
+        margin-left:auto;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-title{
+
+        font-size:2.8rem;
+
+    }
+
+    .hero-description{
+
+        max-width:100%;
+
+    }
+
+    .hero-right{
+
+        min-height:300px;
+
+    }
+
+    /* =====================================
+       CHARTS
+    ===================================== */
+
+    .chart-container{
+
+        height:340px;
 
     }
 
 }
 
-@media (max-width: 767px) {
+/* ==========================================================
+   TABLET PORTRAIT
+   <=768px
+========================================================== */
 
-    .dashboard-grid {
+@media (max-width:768px){
 
-        grid-template-columns: 1fr;
+    :root{
+
+        --content-padding:18px;
+
+    }
+
+    /* =====================================
+       MAIN
+    ===================================== */
+
+    #main-content{
+
+        padding:18px;
+
+    }
+
+    .content-wrapper{
+
+        gap:22px;
+
+    }
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    #navbar{
+
+        padding:18px 20px;
+
+        border-radius:20px;
+
+    }
+
+    .navbar-title h1{
+
+        font-size:1.5rem;
+
+    }
+
+    .navbar-title p{
+
+        font-size:.88rem;
+
+    }
+
+    .navbar-breadcrumb{
+
+        display:none;
+
+    }
+
+    .user-info{
+
+        display:none;
+
+    }
+
+    .search-shortcut{
+
+        display:none;
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-content{
+
+        padding:28px;
+
+        border-radius:28px;
+
+        gap:28px;
+
+    }
+
+    .hero-title{
+
+        font-size:2.3rem;
+
+        line-height:1.15;
+
+    }
+
+    .hero-description{
+
+        font-size:.95rem;
+
+    }
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .hero-actions .btn{
+
+        width:100%;
+
+    }
+
+    .hero-stats{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+    }
+
+    .hero-stat{
+
+        width:100%;
+
+    }
+
+    .hero-right{
+
+        min-height:auto;
+
+    }
+
+    .hero-widget{
+
+        max-width:100%;
+
+    }
+
+    /* =====================================
+       KPI GRID
+    ===================================== */
+
+    #kpi-grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    /* =====================================
+       CHARTS
+    ===================================== */
+
+    .chart-side{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-container{
+
+        height:300px;
+
+    }
+
+    /* =====================================
+       DASHBOARD GRID
+    ===================================== */
+
+    #dashboard-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .widget-large{
+
+        grid-column:auto;
 
     }
 
 }
 
-/* ==========================================
-   CONTAINER PADDING
-========================================== */
+/* ==========================================================
+   MOBILE LARGE
+   <=576px
+========================================================== */
 
-@media (max-width: 767px) {
+@media (max-width:576px){
 
-    #dashboard {
+    :root{
 
-        padding: var(--space-lg);
+        --content-padding:16px;
+
+        --card-radius:20px;
+
+    }
+
+    /* =====================================
+       MAIN
+    ===================================== */
+
+    #main-content{
+
+        padding:16px;
+
+    }
+
+    .content-wrapper{
+
+        gap:18px;
+
+    }
+
+    /* =====================================
+       SIDEBAR
+    ===================================== */
+
+    #sidebar{
+
+        width:280px;
+
+    }
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    #navbar{
+
+        padding:16px;
+
+        border-radius:18px;
+
+    }
+
+    .navbar-left{
+
+        gap:12px;
+
+    }
+
+    .navbar-right{
+
+        gap:8px;
+
+    }
+
+    .icon-button{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .user-button{
+
+        padding:6px 10px;
+
+    }
+
+    .user-button img{
+
+        width:36px;
+
+        height:36px;
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-content{
+
+        padding:22px;
+
+    }
+
+    .hero-badge{
+
+        font-size:.78rem;
+
+    }
+
+    .hero-title{
+
+        font-size:2rem;
+
+    }
+
+    .hero-description{
+
+        font-size:.90rem;
+
+        line-height:1.7;
+
+    }
+
+    .hero-widget{
+
+        padding:22px;
+
+        border-radius:22px;
+
+    }
+
+    .hero-widget h3{
+
+        font-size:1.25rem;
+
+    }
+
+    .hero-stat{
+
+        padding:16px;
+
+        border-radius:16px;
+
+    }
+
+    .hero-stat strong{
+
+        font-size:1.5rem;
+
+    }
+
+    /* =====================================
+       CARDS
+    ===================================== */
+
+    .card{
+
+        border-radius:20px;
+
+    }
+
+    .card-header{
+
+        padding:18px;
+
+    }
+
+    .card-body{
+
+        padding:18px;
+
+    }
+
+    /* =====================================
+       KPI
+    ===================================== */
+
+    .kpi-number{
+
+        font-size:2rem;
+
+    }
+
+    /* =====================================
+       CHART
+    ===================================== */
+
+    .chart-container{
+
+        height:240px;
+
+    }
+
+    .score-circle{
+
+        width:130px;
+
+        height:130px;
+
+    }
+
+    .score-circle strong{
+
+        font-size:1.8rem;
 
     }
 
 }
 
-@media (max-width: 480px) {
+/* ==========================================================
+   MOBILE SMALL
+   <=420px
+========================================================== */
 
-    #dashboard {
+@media (max-width:420px){
 
-        padding: var(--space-md);
+    :root{
+
+        --content-padding:12px;
+
+    }
+
+    /* =====================================
+       MAIN
+    ===================================== */
+
+    #main-content{
+
+        padding:12px;
+
+    }
+
+    /* =====================================
+       SIDEBAR
+    ===================================== */
+
+    #sidebar{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    #navbar{
+
+        padding:14px;
+
+        gap:14px;
+
+    }
+
+    .navbar-title h1{
+
+        font-size:1.25rem;
+
+    }
+
+    .navbar-title p{
+
+        display:none;
+
+    }
+
+    .icon-button{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+    .search-box{
+
+        height:46px;
+
+    }
+
+    .search-box input{
+
+        font-size:.88rem;
+
+    }
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero-content{
+
+        padding:18px;
+
+        border-radius:22px;
+
+    }
+
+    .hero-title{
+
+        font-size:1.75rem;
+
+        line-height:1.2;
+
+    }
+
+    .hero-description{
+
+        font-size:.88rem;
+
+    }
+
+    .hero-widget{
+
+        padding:18px;
+
+    }
+
+    .hero-widget h3{
+
+        font-size:1.1rem;
+
+    }
+
+    .hero-progress-info{
+
+        font-size:.78rem;
+
+    }
+
+    /* =====================================
+       HERO STATS
+    ===================================== */
+
+    .hero-stat{
+
+        padding:14px;
+
+    }
+
+    .hero-stat strong{
+
+        font-size:1.35rem;
+
+    }
+
+    .hero-stat span{
+
+        font-size:.78rem;
+
+    }
+
+    /* =====================================
+       CARDS
+    ===================================== */
+
+    .card-header{
+
+        padding:16px;
+
+    }
+
+    .card-body{
+
+        padding:16px;
+
+    }
+
+    .card-footer{
+
+        padding:16px;
+
+    }
+
+    .card-title{
+
+        font-size:1rem;
+
+    }
+
+    .card-subtitle{
+
+        font-size:.80rem;
+
+    }
+
+    /* =====================================
+       KPI
+    ===================================== */
+
+    .kpi-number{
+
+        font-size:1.8rem;
+
+    }
+
+    .kpi-text{
+
+        font-size:.82rem;
+
+    }
+
+    /* =====================================
+       CHART
+    ===================================== */
+
+    .chart-container{
+
+        height:220px;
+
+    }
+
+    .score-circle{
+
+        width:110px;
+
+        height:110px;
+
+    }
+
+    .score-circle strong{
+
+        font-size:1.5rem;
+
+    }
+
+    /* =====================================
+       WIDGETS
+    ===================================== */
+
+    .widget-item{
+
+        padding:14px;
+
+        gap:12px;
+
+    }
+
+    .summary-item{
+
+        padding:12px 14px;
+
+    }
+
+    .activity-item{
+
+        padding:12px 14px;
 
     }
 
 }
 
-/* ==========================================
-   TYPOGRAPHY SCALE
-========================================== */
+/* ==========================================================
+   LANDSCAPE MOBILE
+========================================================== */
 
-@media (max-width: 767px) {
+@media (max-height:700px){
 
-    h1 {
+    .hero-content{
 
-        font-size: 2rem;
+        min-height:auto;
 
-    }
-
-    h2 {
-
-        font-size: 1.75rem;
+        padding:24px;
 
     }
 
-    h3 {
+    .hero-right{
 
-        font-size: 1.25rem;
+        min-height:240px;
+
+    }
+
+    .hero-widget{
+
+        padding:20px;
+
+    }
+
+}
+
+/* ==========================================================
+   SHORT SCREENS
+========================================================== */
+
+@media (max-height:820px){
+
+    #sidebar{
+
+        overflow-y:auto;
+
+        scrollbar-width:thin;
+
+    }
+
+    .sidebar-top{
+
+        margin-bottom:20px;
+
+    }
+
+    .sidebar-nav{
+
+        padding-bottom:24px;
 
     }
 
 }
 
-@media (max-width: 480px) {
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
 
-    h1 {
+@media (min-width:1800px){
 
-        font-size: 1.75rem;
+    #main-content{
+
+        max-width:1700px;
+
+        margin:0 auto;
 
     }
 
-    h2 {
+    .content-wrapper{
 
-        font-size: 1.5rem;
+        gap:36px;
+
+    }
+
+    #dashboard-grid{
+
+        grid-template-columns:
+
+            2.2fr
+            1fr
+            1fr;
+
+    }
+
+    .hero-content{
+
+        padding:64px;
 
     }
 
 }
+
+/* ==========================================================
+   ULTRA WIDE
+========================================================== */
+
+@media (min-width:2200px){
+
+    #main-content{
+
+        max-width:1900px;
+
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE UTILITIES
+========================================================== */
+
+.hide-desktop{
+
+    display:none !important;
+
+}
+
+.show-desktop{
+
+    display:block !important;
+
+}
+
+@media (max-width:992px){
+
+    .hide-tablet{
+
+        display:none !important;
+
+    }
+
+    .show-tablet{
+
+        display:block !important;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hide-mobile{
+
+        display:none !important;
+
+    }
+
+    .show-mobile{
+
+        display:block !important;
+
+    }
+
+}
+
+/* ==========================================================
+   FLEX HELPERS
+========================================================== */
+
+@media (max-width:768px){
+
+    .mobile-column{
+
+        flex-direction:column !important;
+
+    }
+
+    .mobile-center{
+
+        justify-content:center !important;
+
+        align-items:center !important;
+
+    }
+
+    .mobile-full{
+
+        width:100% !important;
+
+    }
+
+}
+
+/* ==========================================================
+   SAFE AREA (iPhone Notch)
+========================================================== */
+
+@supports (padding:max(0px)){
+
+    body{
+
+        padding-left:max(0px,env(safe-area-inset-left));
+
+        padding-right:max(0px,env(safe-area-inset-right));
+
+        padding-top:max(0px,env(safe-area-inset-top));
+
+        padding-bottom:max(0px,env(safe-area-inset-bottom));
+
+    }
+
+}
+
+/* ==========================================================
+   TOUCH DEVICES
+========================================================== */
+
+@media (hover:none){
+
+    .card:hover,
+
+    .widget:hover,
+
+    .kpi-card:hover,
+
+    .hero-stat:hover,
+
+    .widget-item:hover,
+
+    .activity-item:hover{
+
+        transform:none;
+
+    }
+
+    .btn:hover{
+
+        transform:none;
+
+    }
+
+}
+
+/* ==========================================================
+   ACTIVE TOUCH FEEDBACK
+========================================================== */
+
+@media (pointer:coarse){
+
+    .btn:active,
+
+    .icon-button:active,
+
+    .widget-item:active,
+
+    .activity-item:active{
+
+        transform:scale(.98);
+
+    }
+
+}
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+@media (min-width:992px){
+
+    ::-webkit-scrollbar{
+
+        width:10px;
+
+        height:10px;
+
+    }
+
+    ::-webkit-scrollbar-track{
+
+        background:transparent;
+
+    }
+
+    ::-webkit-scrollbar-thumb{
+
+        background:rgba(255,255,255,.10);
+
+        border-radius:999px;
+
+        transition:background .25s ease;
+
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+
+        background:rgba(255,255,255,.18);
+
+    }
+
+}
+
+/* ==========================================================
+   IMAGE RESPONSIVE
+========================================================== */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+/* ==========================================================
+   TABLE RESPONSIVE
+========================================================== */
+
+table{
+
+    width:100%;
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+}
+
+/* ==========================================================
+   OVERFLOW FIX
+========================================================== */
+
+.card,
+
+.widget,
+
+.hero-content,
+
+.chart-card{
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+html{
+
+    -webkit-text-size-adjust:100%;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+canvas{
+
+    max-width:100%;
+
+}
+
+svg{
+
+    max-width:100%;
+
+}
+
+/* ==========================================================
+   PRINT MODE
+========================================================== */
+
+@media print{
+
+    html,
+    body{
+
+        background:#ffffff !important;
+
+        color:#000000 !important;
+
+    }
+
+    #sidebar,
+    #navbar,
+    #sidebar-overlay,
+    #page-loader,
+    #global-loader,
+    #toast-root,
+    #modal-root{
+
+        display:none !important;
+
+    }
+
+    #main-content{
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        width:100% !important;
+
+    }
+
+    .card{
+
+        box-shadow:none !important;
+
+        border:1px solid #dcdcdc !important;
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+    }
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+:focus-visible{
+
+    outline:3px solid rgba(99,102,241,.45);
+
+    outline-offset:3px;
+
+}
+
+button,
+a,
+input,
+textarea,
+select{
+
+    touch-action:manipulation;
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* ==========================================================
+   HIGH CONTRAST
+========================================================== */
+
+@media (prefers-contrast:more){
+
+    .card{
+
+        border-width:2px;
+
+    }
+
+    .btn{
+
+        border-width:2px;
+
+    }
+
+}
+
+/* ==========================================================
+   DARK / LIGHT PREPARATION
+========================================================== */
+
+html{
+
+    color-scheme:dark light;
+
+}
+
+/* ==========================================================
+   GLOBAL OVERFLOW FIXES
+========================================================== */
+
+*{
+
+    min-width:0;
+
+}
+
+.content-wrapper,
+.hero-content,
+#charts-section,
+#dashboard-grid,
+#kpi-grid{
+
+    min-width:0;
+
+}
+
+.chart-container,
+.widget,
+.card{
+
+    min-width:0;
+
+}
+
+/* ==========================================================
+   FINAL RESPONSIVE FIXES
+========================================================== */
+
+@media (max-width:768px){
+
+    iframe,
+    video{
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
