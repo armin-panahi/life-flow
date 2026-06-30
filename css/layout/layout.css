@@ -1,303 +1,979 @@
-/* ==========================================
-   LIFEOS LAYOUT SYSTEM
-========================================== */
+/* ==========================================================
+   LIFEOS LAYOUT
+   Version : 1.0
+========================================================== */
 
-/* ==========================================
+/* ==========================================================
    APP
-========================================== */
+========================================================== */
 
-#app {
+#app{
 
-    position: relative;
+    position:relative;
 
-    min-height: 100vh;
+    display:flex;
 
-    background: var(--bg-main);
+    width:100%;
+
+    min-height:100vh;
+
+    background:var(--bg-main);
+
+    overflow:hidden;
 
 }
 
-/* ==========================================
+/* ==========================================================
    MAIN CONTENT
-========================================== */
+========================================================== */
 
-#main-content {
+#main-content{
 
-    min-height: 100vh;
+    position:relative;
 
-    margin-left: calc(
-        var(--sidebar-width) + 32px
-    );
+    flex:1;
+
+    min-width:0;
+
+    min-height:100vh;
+
+    margin-left:290px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:var(--bg-main);
 
     transition:
-        margin-left var(--duration-normal) var(--ease-default);
+        margin-left .35s ease,
+        background .35s ease;
 
 }
 
-/* ==========================================
-   AUTO COLLAPSE SUPPORT
-========================================== */
+/* ==========================================================
+   PAGE VIEW
+========================================================== */
 
-#sidebar.collapsed ~ #main-content {
+.page-view{
 
-    margin-left: calc(
-        var(--sidebar-collapsed-width) + 32px
-    );
+    position:relative;
 
-}
+    width:100%;
 
-/* ==========================================
-   DASHBOARD
-========================================== */
+    flex:1;
 
-#dashboard {
+    display:flex;
 
-    padding: 24px 32px 40px;
+    flex-direction:column;
 
 }
 
-/* ==========================================
+/* ==========================================================
+   HIDDEN PAGE
+========================================================== */
+
+.page-view.hidden{
+
+    display:none;
+
+}
+
+/* ==========================================================
    CONTENT WRAPPER
-========================================== */
+========================================================== */
 
-.content-wrapper {
+.content-wrapper{
 
-    width: 100%;
+    width:100%;
 
-    max-width: 1440px;
+    max-width:1600px;
 
-    margin: 0 auto;
+    margin:0 auto;
 
-    display: flex;
+    padding:32px;
 
-    flex-direction: column;
+    display:flex;
 
-    gap: 24px;
+    flex-direction:column;
 
-}
-
-/* ==========================================
-   HERO
-========================================== */
-
-#hero-section {
-
-    width: 100%;
+    gap:28px;
 
 }
 
-/* ==========================================
-   KPI GRID
-========================================== */
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
 
-#kpi-grid {
+.page-header{
 
-    display: grid;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:24px;
+
+    margin-bottom:8px;
+
+}
+
+.page-header h2{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:var(--text-primary);
+
+}
+
+.page-header p{
+
+    margin-top:6px;
+
+    color:var(--text-muted);
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   MAIN SCROLL
+========================================================== */
+
+#main-content{
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================================
+   SECTION
+========================================================== */
+
+section{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   PAGE SPACING
+========================================================== */
+
+.page-view{
+
+    padding-bottom:40px;
+
+}
+
+/* ==========================================================
+   GRID HELPERS
+========================================================== */
+
+.grid{
+
+    display:grid;
+
+    gap:24px;
+
+}
+
+.grid-2{
+
+    display:grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(260px, 1fr));
 
-    gap: 20px;
+        repeat(2,minmax(0,1fr));
+
+    gap:24px;
 
 }
 
-/* ==========================================
-   CHARTS
-========================================== */
+.grid-3{
 
-#charts-section {
-
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(420px, 1fr));
 
-    gap: 20px;
+        repeat(3,minmax(0,1fr));
+
+    gap:24px;
 
 }
 
-/* ==========================================
-   DASHBOARD GRID
-========================================== */
+.grid-4{
 
-.dashboard-grid {
-
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        repeat(12, minmax(0, 1fr));
 
-    gap: 20px;
+        repeat(4,minmax(0,1fr));
 
-}
-
-/* ==========================================
-   COMMON CARD
-========================================== */
-
-.dashboard-card {
-
-    background: var(--bg-card);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: 24px;
-
-    padding: 24px;
-
-    box-shadow: var(--shadow-sm);
-
-    transition:
-        transform var(--duration-fast) var(--ease-default),
-        box-shadow var(--duration-fast) var(--ease-default);
+    gap:24px;
 
 }
 
-.dashboard-card:hover {
+/* ==========================================================
+   FLEX HELPERS
+========================================================== */
 
-    transform: translateY(-2px);
+.flex{
 
-    box-shadow: var(--shadow-md);
-
-}
-
-/* ==========================================
-   SECTION TITLE
-========================================== */
-
-.section-title {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    margin-bottom: 20px;
+    display:flex;
 
 }
 
-.section-title h2 {
+.flex-column{
 
-    font-size: 1.25rem;
+    display:flex;
 
-    font-weight: 700;
-
-    color: var(--text-primary);
+    flex-direction:column;
 
 }
 
-/* ==========================================
-   XXL
-========================================== */
+.flex-center{
 
-@media (min-width: 1800px) {
+    display:flex;
 
-    .content-wrapper {
+    align-items:center;
 
-        max-width: 1600px;
+    justify-content:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/* ==========================================================
+   CONTAINERS
+========================================================== */
+
+.container{
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:0 auto;
+
+}
+
+.container-sm{
+
+    max-width:960px;
+
+}
+
+.container-md{
+
+    max-width:1200px;
+
+}
+
+.container-lg{
+
+    max-width:1400px;
+
+}
+
+.container-xl{
+
+    max-width:1600px;
+
+}
+
+/* ==========================================================
+   OVERFLOW HELPERS
+========================================================== */
+
+.overflow-hidden{
+
+    overflow:hidden;
+
+}
+
+.overflow-auto{
+
+    overflow:auto;
+
+}
+
+.overflow-x{
+
+    overflow-x:auto;
+
+}
+
+.overflow-y{
+
+    overflow-y:auto;
+
+}
+
+/* ==========================================================
+   FULL HEIGHT
+========================================================== */
+
+.h-100{
+
+    height:100%;
+
+}
+
+.min-h-screen{
+
+    min-height:100vh;
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (max-width:1600px){
+
+    .content-wrapper{
+
+        max-width:1400px;
 
     }
 
 }
 
-/* ==========================================
-   DESKTOP
-========================================== */
+/* ==========================================================
+   LAPTOP
+========================================================== */
 
-@media (max-width: 1200px) {
+@media (max-width:1400px){
 
-    .dashboard-grid {
+    #main-content{
+
+        margin-left:290px;
+
+    }
+
+    .content-wrapper{
+
+        padding:28px;
+
+    }
+
+    .grid-4{
 
         grid-template-columns:
-            repeat(6, minmax(0, 1fr));
+
+            repeat(2,minmax(0,1fr));
 
     }
 
 }
 
-/* ==========================================
+/* ==========================================================
    TABLET
-========================================== */
+========================================================== */
 
-@media (max-width: 992px) {
+@media (max-width:1200px){
 
-    #main-content {
+    #main-content{
 
-        margin-left: 0;
-
-    }
-
-    #sidebar.collapsed ~ #main-content {
-
-        margin-left: 0;
+        margin-left:270px;
 
     }
 
-    #dashboard {
+    .content-wrapper{
 
-        padding: 24px;
+        padding:24px;
 
-    }
-
-    #charts-section {
-
-        grid-template-columns: 1fr;
+        gap:24px;
 
     }
 
-}
+    .grid-3{
 
-/* ==========================================
-   MOBILE
-========================================== */
+        grid-template-columns:
 
-@media (max-width: 768px) {
-
-    #dashboard {
-
-        padding: 18px;
+            repeat(2,minmax(0,1fr));
 
     }
 
-    .content-wrapper {
+    .grid-4{
 
-        gap: 18px;
+        grid-template-columns:
 
-    }
-
-    #kpi-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .dashboard-grid {
-
-        grid-template-columns: 1fr;
+            repeat(2,minmax(0,1fr));
 
     }
 
 }
 
-/* ==========================================
+/* ==========================================================
+   MOBILE LAYOUT
+========================================================== */
+
+@media (max-width:992px){
+
+    #main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+    .content-wrapper{
+
+        padding:22px;
+
+    }
+
+    .page-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .grid-2,
+
+    .grid-3,
+
+    .grid-4{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================================
    SMALL MOBILE
-========================================== */
+========================================================== */
 
-@media (max-width: 480px) {
+@media (max-width:768px){
 
-    #dashboard {
+    .content-wrapper{
 
-        padding: 14px;
+        padding:18px;
+
+        gap:20px;
 
     }
 
-    .dashboard-card {
+    .page-header h2{
 
-        padding: 18px;
-
-        border-radius: 18px;
+        font-size:1.7rem;
 
     }
 
 }
 
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+    .content-wrapper{
+
+        padding:16px;
+
+        gap:18px;
+
+    }
+
+    .page-header{
+
+        gap:16px;
+
+        margin-bottom:0;
+
+    }
+
+    .page-header h2{
+
+        font-size:1.45rem;
+
+    }
+
+    .page-header p{
+
+        font-size:.88rem;
+
+    }
+
+}
+
+/* ==========================================================
+   LANDSCAPE PHONES
+========================================================== */
+
+@media (max-height:600px){
+
+    .content-wrapper{
+
+        padding-top:18px;
+
+        padding-bottom:18px;
+
+    }
+
+}
+
+/* ==========================================================
+   SAFE AREA SUPPORT
+========================================================== */
+
+.content-wrapper{
+
+    padding-left:
+
+        max(32px, env(safe-area-inset-left));
+
+    padding-right:
+
+        max(32px, env(safe-area-inset-right));
+
+    padding-bottom:
+
+        max(32px, env(safe-area-inset-bottom));
+
+}
+
+@media (max-width:768px){
+
+    .content-wrapper{
+
+        padding-left:
+
+            max(18px, env(safe-area-inset-left));
+
+        padding-right:
+
+            max(18px, env(safe-area-inset-right));
+
+        padding-bottom:
+
+            max(18px, env(safe-area-inset-bottom));
+
+    }
+
+}
+
+/* ==========================================================
+   STICKY HELPERS
+========================================================== */
+
+.sticky{
+
+    position:sticky;
+
+    top:24px;
+
+    z-index:5;
+
+}
+
+.sticky-top{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:20;
+
+}
+
+/* ==========================================================
+   WIDTH HELPERS
+========================================================== */
+
+.w-100{
+
+    width:100%;
+
+}
+
+.w-auto{
+
+    width:auto;
+
+}
+
+.max-w-full{
+
+    max-width:100%;
+
+}
+
+.min-w-0{
+
+    min-width:0;
+
+}
+
+/* ==========================================================
+   HEIGHT HELPERS
+========================================================== */
+
+.h-auto{
+
+    height:auto;
+
+}
+
+.min-h-0{
+
+    min-height:0;
+
+}
+
+.flex-1{
+
+    flex:1;
+
+}
+
+/* ==========================================================
+   LAYOUT ANIMATIONS
+========================================================== */
+
+@keyframes layoutFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(16px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.layout-fade{
+
+    animation:layoutFade .45s ease both;
+
+}
+
+.layout-fade-delay-1{
+
+    animation-delay:.08s;
+
+}
+
+.layout-fade-delay-2{
+
+    animation-delay:.16s;
+
+}
+
+.layout-fade-delay-3{
+
+    animation-delay:.24s;
+
+}
+
+/* ==========================================================
+   VISIBILITY HELPERS
+========================================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.invisible{
+
+    visibility:hidden;
+
+}
+
+.visible{
+
+    visibility:visible;
+
+}
+
+.opacity-0{
+
+    opacity:0;
+
+}
+
+.opacity-100{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   RESPONSIVE HELPERS
+========================================================== */
+
+.desktop-only{
+
+    display:block;
+
+}
+
+.mobile-only{
+
+    display:none;
+
+}
+
+@media (max-width:992px){
+
+    .desktop-only{
+
+        display:none !important;
+
+    }
+
+    .mobile-only{
+
+        display:block !important;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    #sidebar,
+
+    #navbar,
+
+    .btn,
+
+    .card-action{
+
+        display:none !important;
+
+    }
+
+    #main-content{
+
+        margin-left:0 !important;
+
+    }
+
+    .content-wrapper{
+
+        max-width:none;
+
+        padding:0;
+
+    }
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+:focus-visible{
+
+    outline:2px solid rgba(99,102,241,.55);
+
+    outline-offset:2px;
+
+}
+
+[hidden]{
+
+    display:none !important;
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+#main-content::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+#main-content::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+#main-content::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    transition:background .25s ease;
+
+}
+
+#main-content::-webkit-scrollbar-thumb:hover{
+
+    background:rgba(255,255,255,.16);
+
+}
+
+/* ==========================================================
+   TEXT SELECTION
+========================================================== */
+
+::selection{
+
+    background:rgba(99,102,241,.28);
+
+    color:#ffffff;
+
+}
+
+::-moz-selection{
+
+    background:rgba(99,102,241,.28);
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
+
+/* ==========================================================
+   GPU OPTIMIZATION
+========================================================== */
+
+.card,
+.widget,
+.chart-card,
+.kpi-card{
+
+    will-change:transform;
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
+}
+
+/* ==========================================================
+   LAYOUT UTILITIES
+========================================================== */
+
+.relative{
+
+    position:relative;
+
+}
+
+.absolute{
+
+    position:absolute;
+
+}
+
+.fixed{
+
+    position:fixed;
+
+}
+
+.sticky{
+
+    position:sticky;
+
+}
+
+.z-1{
+
+    z-index:1;
+
+}
+
+.z-5{
+
+    z-index:5;
+
+}
+
+.z-10{
+
+    z-index:10;
+
+}
+
+.z-50{
+
+    z-index:50;
+
+}
+
+.rounded{
+
+    border-radius:var(--radius-lg);
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
