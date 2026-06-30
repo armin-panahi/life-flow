@@ -1,121 +1,40 @@
 /* ==========================================================
-   LIFEOS DASHBOARD
-   Version : 3.0
-   ========================================================== */
-
-
+   LIFEOS
+   DASHBOARD PAGE
+   Version : 1.0
+========================================================== */
 
 /* ==========================================================
    DASHBOARD
-   ========================================================== */
+========================================================== */
 
 #dashboard{
 
     position:relative;
 
-    padding:32px;
+    width:100%;
 
-    overflow:hidden;
-
-}
-
-
-
-/* ==========================================================
-   BACKGROUND
-   ========================================================== */
-
-#dashboard::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(circle at top right,
-        rgba(99,102,241,.12),
-        transparent 32%),
-
-        radial-gradient(circle at bottom left,
-        rgba(14,165,233,.08),
-        transparent 35%);
-
-    pointer-events:none;
+    min-height:100%;
 
 }
-
-
-
-#dashboard::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-
-        linear-gradient(
-
-            rgba(255,255,255,.02) 1px,
-
-            transparent 1px
-
-        ),
-
-        linear-gradient(
-
-            90deg,
-
-            rgba(255,255,255,.02) 1px,
-
-            transparent 1px
-
-        );
-
-    background-size:42px 42px;
-
-    opacity:.28;
-
-    pointer-events:none;
-
-}
-
-
 
 /* ==========================================================
    CONTENT WRAPPER
-   ========================================================== */
+========================================================== */
 
-.content-wrapper{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    max-width:1500px;
-
-    margin:auto;
+#dashboard .content-wrapper{
 
     display:flex;
 
     flex-direction:column;
 
-    gap:28px;
+    gap:32px;
 
 }
 
-
-
 /* ==========================================================
    HERO
-   ========================================================== */
+========================================================== */
 
 #hero-section{
 
@@ -123,7 +42,9 @@
 
 }
 
-
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
 
 .hero-content{
 
@@ -133,193 +54,139 @@
 
     display:grid;
 
-    grid-template-columns:1.4fr .8fr;
+    grid-template-columns:
+
+        minmax(0,1.4fr)
+
+        minmax(340px,.9fr);
+
+    gap:48px;
 
     align-items:center;
 
-    gap:40px;
+    padding:54px;
 
-    min-height:330px;
-
-    padding:48px;
-
-    border-radius:34px;
+    border-radius:36px;
 
     background:
 
         linear-gradient(
-
             135deg,
-
-            rgba(99,102,241,.20),
-
-            rgba(30,41,59,.85)
-
+            rgba(99,102,241,.16),
+            rgba(17,24,39,.95)
         );
 
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-
-        0 20px 60px rgba(0,0,0,.25);
+    border:1px solid rgba(255,255,255,.06);
 
 }
-
-
-
-/* ==========================================================
-   HERO LIGHT
-   ========================================================== */
-
-.hero-content::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:420px;
-
-    height:420px;
-
-    right:-160px;
-
-    top:-160px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            rgba(99,102,241,.55),
-
-            transparent 70%
-
-        );
-
-}
-
-
-
-.hero-content::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-
-    height:300px;
-
-    left:-120px;
-
-    bottom:-140px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            rgba(14,165,233,.25),
-
-            transparent 72%
-
-        );
-
-}
-
-
 
 /* ==========================================================
    HERO LEFT
-   ========================================================== */
+========================================================== */
 
 .hero-left{
-
-    position:relative;
-
-    z-index:2;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:24px;
+    gap:26px;
 
 }
 
-
-
 /* ==========================================================
-   BADGE
-   ========================================================== */
+   HERO BADGE
+========================================================== */
 
 .hero-badge{
 
     width:max-content;
 
-    padding:10px 18px;
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:8px 18px;
 
     border-radius:999px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
 
-    border:1px solid rgba(255,255,255,.10);
-
-    backdrop-filter:blur(10px);
+    color:var(--text-secondary);
 
     font-size:.82rem;
 
-    font-weight:700;
-
-    color:#fff;
+    font-weight:600;
 
 }
 
+/* ==========================================================
+   HERO BADGE DOT
+========================================================== */
 
+.hero-badge-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:
+
+        0 0 14px #22c55e;
+
+}
 
 /* ==========================================================
-   TITLE
-   ========================================================== */
+   HERO TITLE
+========================================================== */
 
 .hero-title{
 
-    font-size:3rem;
+    font-size:3.6rem;
+
+    line-height:1.05;
 
     font-weight:900;
 
-    line-height:1.1;
-
-    color:#fff;
-
-    letter-spacing:-1px;
+    color:var(--text-primary);
 
 }
 
+.hero-title span{
 
+    background:var(--gradient-primary);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
 
 /* ==========================================================
-   DESCRIPTION
-   ========================================================== */
+   HERO DESCRIPTION
+========================================================== */
 
 .hero-description{
 
-    max-width:620px;
+    max-width:640px;
 
     font-size:1.05rem;
 
     line-height:1.9;
 
-    color:rgba(255,255,255,.82);
+    color:var(--text-secondary);
 
 }
 
-
-
 /* ==========================================================
-   ACTIONS
-   ========================================================== */
+   HERO ACTIONS
+========================================================== */
 
 .hero-actions{
 
@@ -333,83 +200,65 @@
 
 }
 
-
-
-.hero-actions .btn{
-
-    min-width:170px;
-
-    height:52px;
-
-    border-radius:16px;
-
-    font-weight:700;
-
-}
-
-
-
 /* ==========================================================
    HERO STATS
-   ========================================================== */
+========================================================== */
 
 .hero-stats{
 
     display:flex;
 
-    gap:18px;
+    align-items:center;
 
-    margin-top:8px;
+    gap:18px;
 
     flex-wrap:wrap;
 
+    margin-top:12px;
+
 }
 
-
+/* ==========================================================
+   HERO STAT
+========================================================== */
 
 .hero-stat{
 
-    min-width:120px;
+    min-width:140px;
 
-    padding:18px;
+    padding:18px 22px;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.05);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.05);
 
-    backdrop-filter:blur(10px);
-
-    transition:.35s;
+    transition:
+        transform .30s ease,
+        background .30s ease;
 
 }
-
-
 
 .hero-stat:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-4px);
 
-    background:rgba(255,255,255,.10);
+    background:rgba(255,255,255,.08);
 
 }
-
-
 
 .hero-stat strong{
 
     display:block;
 
-    font-size:1.9rem;
+    font-size:1.8rem;
 
-    font-weight:900;
+    font-weight:800;
 
-    color:#fff;
+    color:var(--text-primary);
 
 }
-
-
 
 .hero-stat span{
 
@@ -417,17 +266,15 @@
 
     margin-top:6px;
 
-    font-size:.82rem;
+    font-size:.85rem;
 
-    color:rgba(255,255,255,.72);
+    color:var(--text-muted);
 
 }
 
-
-
 /* ==========================================================
    HERO RIGHT
-   ========================================================== */
+========================================================== */
 
 .hero-right{
 
@@ -435,842 +282,29 @@
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    height:100%;
+    justify-content:center;
+
+    min-height:420px;
 
 }
 
 /* ==========================================================
-   HERO VISUAL
-   ========================================================== */
+   HERO WIDGET
+========================================================== */
 
-.hero-circle{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    filter:blur(2px);
-
-    animation:float 7s ease-in-out infinite;
-
-}
-
-.hero-circle-1{
-
-    width:260px;
-
-    height:260px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(99,102,241,.55),
-        rgba(59,130,246,.18)
-    );
-
-    top:20px;
-
-    right:20px;
-
-}
-
-.hero-circle-2{
-
-    width:170px;
-
-    height:170px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(14,165,233,.40),
-        rgba(99,102,241,.15)
-    );
-
-    bottom:35px;
-
-    left:40px;
-
-    animation-delay:2s;
-
-}
-
-@keyframes float{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    50%{
-
-        transform:
-            translateY(-18px)
-            rotate(8deg);
-
-    }
-
-    100%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-}
-
-/* ==========================================================
-   KPI GRID
-   ========================================================== */
-
-#kpi-grid{
-
-    display:grid;
-
-    grid-template-columns:
-
-        repeat(
-            auto-fit,
-            minmax(260px,1fr)
-        );
-
-    gap:22px;
-
-}
-
-/* ==========================================================
-   KPI CARD
-   ========================================================== */
-
-.kpi-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:26px;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.04),
-            rgba(255,255,255,.02)
-        );
-
-    border:1px solid rgba(255,255,255,.06);
-
-    backdrop-filter:blur(18px);
-
-    transition:
-
-        transform .35s ease,
-
-        box-shadow .35s ease,
-
-        border-color .35s ease;
-
-}
-
-.kpi-card:hover{
-
-    transform:
-
-        translateY(-8px);
-
-    border-color:
-
-        rgba(99,102,241,.35);
-
-    box-shadow:
-
-        0 20px 45px rgba(0,0,0,.28);
-
-}
-
-.kpi-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(
-
-            circle at top right,
-
-            rgba(99,102,241,.18),
-
-            transparent 55%
-
-        );
-
-    opacity:0;
-
-    transition:.35s;
-
-}
-
-.kpi-card:hover::before{
-
-    opacity:1;
-
-}
-
-.kpi-card .card-body{
+.hero-widget{
 
     position:relative;
 
     z-index:2;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:22px;
-
-    padding:28px;
-
-}
-
-/* ==========================================================
-   KPI TOP
-   ========================================================== */
-
-.kpi-top{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-.card-icon{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:20px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(99,102,241,.20),
-            rgba(99,102,241,.08)
-        );
-
-    color:#8b5cf6;
-
-    font-size:24px;
-
-}
-
-.card-badge{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-width:72px;
-
-    height:34px;
-
-    padding:0 14px;
-
-    border-radius:999px;
-
-    background:
-
-        rgba(34,197,94,.12);
-
-    color:#22c55e;
-
-    font-size:.78rem;
-
-    font-weight:700;
-
-}
-
-/* ==========================================================
-   KPI NUMBER
-   ========================================================== */
-
-.kpi-number{
-
-    font-size:2.7rem;
-
-    font-weight:900;
-
-    color:var(--text-primary);
-
-    letter-spacing:-1px;
-
-}
-
-/* ==========================================================
-   KPI TEXT
-   ========================================================== */
-
-.kpi-text{
-
-    font-size:.95rem;
-
-    color:var(--text-muted);
-
-}
-
-/* ==========================================================
-   KPI FOOTER
-   ========================================================== */
-
-.kpi-footer{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-.trend{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    font-size:.82rem;
-
-    font-weight:600;
-
-}
-
-.trend-up{
-
-    color:#22c55e;
-
-}
-
-.trend-down{
-
-    color:#ef4444;
-
-}
-
-/* ==========================================================
-   KPI GLOW
-   ========================================================== */
-
-.kpi-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:140px;
-
-    height:140px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            rgba(99,102,241,.18),
-
-            transparent
-
-        );
-
-    right:-70px;
-
-    bottom:-70px;
-
-    transition:.35s;
-
-}
-
-.kpi-card:hover::after{
-
-    transform:scale(1.4);
-
-}
-
-/* ==========================================================
-   CHARTS SECTION
-   ========================================================== */
-
-#charts-section{
-
-    display:grid;
-
-    grid-template-columns:
-
-        minmax(0,2fr)
-
-        minmax(340px,1fr);
-
-    gap:24px;
-
-}
-
-
-
-/* ==========================================================
-   CHART CARD
-   ========================================================== */
-
-.chart-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:28px;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.04),
-            rgba(255,255,255,.02)
-        );
-
-    border:1px solid rgba(255,255,255,.06);
-
-    backdrop-filter:blur(20px);
-
-    transition:
-
-        transform .35s ease,
-
-        box-shadow .35s ease,
-
-        border-color .35s ease;
-
-}
-
-.chart-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:
-
-        rgba(99,102,241,.28);
-
-    box-shadow:
-
-        0 24px 60px rgba(0,0,0,.28);
-
-}
-
-
-
-/* ==========================================================
-   CARD HEADER
-   ========================================================== */
-
-.chart-card .card-header{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:28px 30px 18px;
-
-}
-
-
-
-.card-title{
-
-    font-size:1.2rem;
-
-    font-weight:800;
-
-    color:var(--text-primary);
-
-}
-
-
-
-.card-subtitle{
-
-    margin-top:6px;
-
-    font-size:.88rem;
-
-    color:var(--text-muted);
-
-}
-
-
-
-/* ==========================================================
-   CHART FILTERS
-   ========================================================== */
-
-.chart-filters{
-
-    display:flex;
-
-    gap:10px;
-
-}
-
-.chart-filter{
-
-    height:36px;
-
-    padding:0 16px;
-
-    border:none;
-
-    border-radius:999px;
-
-    cursor:pointer;
-
-    background:rgba(255,255,255,.04);
-
-    color:var(--text-muted);
-
-    transition:.25s;
-
-}
-
-.chart-filter:hover{
-
-    background:rgba(99,102,241,.12);
-
-    color:#fff;
-
-}
-
-.chart-filter.active{
-
-    background:var(--gradient-primary);
-
-    color:#fff;
-
-}
-
-
-
-/* ==========================================================
-   CARD BODY
-   ========================================================== */
-
-.chart-card .card-body{
-
-    padding:
-
-        0 26px
-
-        26px;
-
-}
-
-
-
-/* ==========================================================
-   CHART CONTAINER
-   ========================================================== */
-
-.chart-container{
-
-    position:relative;
-
     width:100%;
 
-    height:360px;
+    max-width:360px;
 
-}
-
-
-
-/* ==========================================================
-   FOCUS CARD
-   ========================================================== */
-
-#charts-section>.card:last-child{
-
-    position:relative;
-
-    overflow:hidden;
-
-    display:flex;
-
-    flex-direction:column;
-
-    border-radius:28px;
-
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            rgba(255,255,255,.04),
-
-            rgba(255,255,255,.02)
-
-        );
-
-    border:1px solid rgba(255,255,255,.06);
-
-    transition:.35s;
-
-}
-
-#charts-section>.card:last-child:hover{
-
-    transform:translateY(-6px);
-
-}
-
-
-
-/* ==========================================================
-   FOCUS BODY
-   ========================================================== */
-
-#charts-section>.card:last-child .card-body{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:18px;
-
-}
-
-
-
-/* ==========================================================
-   PROGRESS RING
-   ========================================================== */
-
-.focus-ring{
-
-    position:relative;
-
-    width:220px;
-
-    height:220px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-
-        conic-gradient(
-
-            #6366f1 0%,
-
-            #6366f1 86%,
-
-            rgba(255,255,255,.08) 86%
-
-        );
-
-}
-
-.focus-ring::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:18px;
-
-    border-radius:50%;
-
-    background:var(--bg-card);
-
-}
-
-
-
-/* ==========================================================
-   SCORE
-   ========================================================== */
-
-.focus-score{
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-
-.focus-score strong{
-
-    font-size:3.5rem;
-
-    font-weight:900;
-
-    color:var(--text-primary);
-
-}
-
-.focus-score span{
-
-    margin-top:6px;
-
-    color:var(--text-muted);
-
-}
-
-
-
-/* ==========================================================
-   STATS
-   ========================================================== */
-
-.focus-stats{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-around;
-
-    margin-top:12px;
-
-}
-
-.focus-stat{
-
-    text-align:center;
-
-}
-
-.focus-stat strong{
-
-    display:block;
-
-    font-size:1.2rem;
-
-    color:var(--text-primary);
-
-}
-
-.focus-stat span{
-
-    font-size:.8rem;
-
-    color:var(--text-muted);
-
-}
-
-
-
-/* ==========================================================
-   DECORATION
-   ========================================================== */
-
-#charts-section>.card:last-child::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:240px;
-
-    height:240px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            rgba(99,102,241,.18),
-
-            transparent
-
-        );
-
-    right:-120px;
-
-    top:-120px;
-
-}
-
-/* ==========================================================
-   DASHBOARD GRID
-   ========================================================== */
-
-#dashboard-grid{
-
-    display:grid;
-
-    grid-template-columns:
-
-        1.4fr
-
-        1fr
-
-        1fr;
-
-    gap:24px;
-
-    align-items:start;
-
-}
-
-/* ==========================================================
-   WIDGET CARD
-   ========================================================== */
-
-.widget{
-
-    position:relative;
-
-    overflow:hidden;
+    padding:30px;
 
     border-radius:28px;
 
@@ -1278,207 +312,79 @@
 
         linear-gradient(
             180deg,
-            rgba(255,255,255,.04),
-            rgba(255,255,255,.02)
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
         );
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
 
     backdrop-filter:blur(18px);
 
-    transition:
-
-        transform .35s ease,
-
-        border-color .35s ease,
-
-        box-shadow .35s ease;
-
-}
-
-.widget:hover{
-
-    transform:translateY(-6px);
-
-    border-color:rgba(99,102,241,.25);
-
     box-shadow:
 
-        0 18px 45px rgba(0,0,0,.25);
+        0 24px 60px rgba(0,0,0,.25);
 
 }
 
 /* ==========================================================
-   WIDGET HEADER
-   ========================================================== */
+   HERO WIDGET HEADER
+========================================================== */
 
-.widget .card-header{
+.hero-widget-header{
 
     display:flex;
-
-    justify-content:space-between;
 
     align-items:center;
 
-    padding:26px 26px 18px;
-
-    border-bottom:
-
-        1px solid rgba(255,255,255,.05);
-
-}
-
-.widget .card-title{
-
-    font-size:1.05rem;
-
-    font-weight:800;
-
-}
-
-.widget .card-body{
-
-    padding:22px 26px 26px;
-
-}
-
-/* ==========================================================
-   WIDGET LIST
-   ========================================================== */
-
-.widget-list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:16px;
-
-}
-
-/* ==========================================================
-   WIDGET ITEM
-   ========================================================== */
-
-.widget-item{
-
-    display:flex;
-
     justify-content:space-between;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:16px 18px;
-
-    border-radius:18px;
-
-    background:
-
-        rgba(255,255,255,.03);
-
-    transition:
-
-        background .25s ease,
-
-        transform .25s ease;
-
-}
-
-.widget-item:hover{
-
-    background:
-
-        rgba(99,102,241,.08);
-
-    transform:translateX(6px);
-
-}
-
-.widget-item span:first-child{
-
-    font-weight:600;
-
-    color:var(--text-primary);
-
-}
-
-.widget-item strong{
-
-    color:#22c55e;
-
-    font-size:.92rem;
-
-}
-
-/* ==========================================================
-   BADGE
-   ========================================================== */
-
-.widget-item .card-badge{
-
-    min-width:70px;
-
-    height:30px;
-
-    border-radius:999px;
-
-    background:
-
-        rgba(99,102,241,.12);
-
-    color:#8b5cf6;
-
-    font-size:.75rem;
-
-    font-weight:700;
-
-}
-
-/* ==========================================================
-   GOALS
-   ========================================================== */
-
-.goal-item{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
 
     margin-bottom:22px;
 
-}
+    color:var(--text-secondary);
 
-.goal-item:last-child{
-
-    margin-bottom:0;
-
-}
-
-.goal-top{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    font-size:.92rem;
+    font-size:.90rem;
 
     font-weight:600;
+
+}
+
+.hero-widget-header i{
+
+    color:#f59e0b;
+
+}
+
+/* ==========================================================
+   HERO WIDGET TITLE
+========================================================== */
+
+.hero-widget h3{
+
+    margin-bottom:12px;
+
+    font-size:1.45rem;
+
+    font-weight:800;
 
     color:var(--text-primary);
 
 }
 
-/* ==========================================================
-   PROGRESS
-   ========================================================== */
+.hero-widget p{
 
-.habit-progress{
+    margin-bottom:24px;
+
+    color:var(--text-muted);
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   HERO PROGRESS
+========================================================== */
+
+.hero-progress{
 
     width:100%;
 
@@ -1488,13 +394,11 @@
 
     border-radius:999px;
 
-    background:
-
-        rgba(255,255,255,.05);
+    background:rgba(255,255,255,.06);
 
 }
 
-.habit-progress-fill{
+.hero-progress-fill{
 
     height:100%;
 
@@ -1508,11 +412,115 @@
             #8b5cf6
         );
 
-    position:relative;
+}
+
+/* ==========================================================
+   HERO PROGRESS INFO
+========================================================== */
+
+.hero-progress-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:14px;
+
+    font-size:.85rem;
+
+    color:var(--text-muted);
 
 }
 
-.habit-progress-fill::after{
+.hero-progress-info strong{
+
+    color:var(--text-primary);
+
+}
+
+/* ==========================================================
+   HERO FLOATING CIRCLES
+========================================================== */
+
+.hero-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    filter:blur(2px);
+
+}
+
+.hero-circle-1{
+
+    width:180px;
+
+    height:180px;
+
+    top:20px;
+
+    right:10px;
+
+    background:radial-gradient(
+
+        rgba(99,102,241,.28),
+
+        transparent
+
+    );
+
+}
+
+.hero-circle-2{
+
+    width:120px;
+
+    height:120px;
+
+    bottom:30px;
+
+    left:20px;
+
+    background:radial-gradient(
+
+        rgba(139,92,246,.22),
+
+        transparent
+
+    );
+
+}
+
+.hero-circle-3{
+
+    width:80px;
+
+    height:80px;
+
+    top:140px;
+
+    right:180px;
+
+    background:radial-gradient(
+
+        rgba(34,197,94,.18),
+
+        transparent
+
+    );
+
+}
+
+/* ==========================================================
+   HERO BACKGROUND
+========================================================== */
+
+.hero-content::before{
 
     content:"";
 
@@ -1522,35 +530,33 @@
 
     background:
 
-        linear-gradient(
+        radial-gradient(
 
-            90deg,
+            circle at top right,
 
-            rgba(255,255,255,.35),
+            rgba(255,255,255,.08),
 
-            transparent
+            transparent 45%
 
         );
 
+    pointer-events:none;
+
 }
 
-/* ==========================================================
-   DECORATION
-   ========================================================== */
-
-.widget::before{
+.hero-content::after{
 
     content:"";
 
     position:absolute;
 
-    width:180px;
+    width:320px;
 
-    height:180px;
+    height:320px;
 
-    right:-80px;
+    right:-160px;
 
-    top:-80px;
+    bottom:-160px;
 
     border-radius:50%;
 
@@ -1558,7 +564,7 @@
 
         radial-gradient(
 
-            rgba(99,102,241,.12),
+            rgba(99,102,241,.14),
 
             transparent
 
@@ -1569,16 +575,76 @@
 }
 
 /* ==========================================================
-   DASHBOARD ANIMATIONS
-   ========================================================== */
+   KPI GRID
+========================================================== */
 
-@keyframes fadeUp{
+#kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(4,minmax(0,1fr));
+
+    gap:24px;
+
+}
+
+/* ==========================================================
+   KPI CARD FIX
+========================================================== */
+
+#kpi-grid .kpi-card{
+
+    min-width:0;
+
+}
+
+#kpi-grid .card-body{
+
+    height:100%;
+
+}
+
+/* ==========================================================
+   KPI ANIMATION
+========================================================== */
+
+#kpi-grid .kpi-card{
+
+    animation:dashboardFade .55s ease both;
+
+}
+
+#kpi-grid .kpi-card:nth-child(2){
+
+    animation-delay:.08s;
+
+}
+
+#kpi-grid .kpi-card:nth-child(3){
+
+    animation-delay:.16s;
+
+}
+
+#kpi-grid .kpi-card:nth-child(4){
+
+    animation-delay:.24s;
+
+}
+
+/* ==========================================================
+   DASHBOARD FADE
+========================================================== */
+
+@keyframes dashboardFade{
 
     from{
 
         opacity:0;
 
-        transform:translateY(24px);
+        transform:translateY(22px);
 
     }
 
@@ -1592,35 +658,536 @@
 
 }
 
-.content-wrapper > *{
+/* ==========================================================
+   CHARTS SECTION
+========================================================== */
 
-    animation:fadeUp .7s ease both;
+#charts-section{
 
-}
+    display:grid;
 
-.content-wrapper > *:nth-child(2){
+    grid-template-columns:
 
-    animation-delay:.08s;
+        minmax(0,2fr)
 
-}
+        minmax(320px,.9fr);
 
-.content-wrapper > *:nth-child(3){
+    gap:24px;
 
-    animation-delay:.16s;
-
-}
-
-.content-wrapper > *:nth-child(4){
-
-    animation-delay:.24s;
+    align-items:start;
 
 }
 
 /* ==========================================================
-   CARD TRANSITIONS
-   ========================================================== */
+   PRODUCTIVITY CARD
+========================================================== */
 
-.card{
+.chart-card{
+
+    min-height:520px;
+
+}
+
+.chart-card .card-header{
+
+    padding-bottom:20px;
+
+}
+
+.chart-card .card-body{
+
+    padding-top:0;
+
+}
+
+/* ==========================================================
+   CHART CONTAINER
+========================================================== */
+
+.chart-container{
+
+    position:relative;
+
+    width:100%;
+
+    height:380px;
+
+}
+
+.chart-container canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+/* ==========================================================
+   CHART SIDE
+========================================================== */
+
+.chart-side{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/* ==========================================================
+   MINI CARD
+========================================================== */
+
+.chart-side .mini-card{
+
+    flex:1;
+
+    min-height:240px;
+
+}
+
+/* ==========================================================
+   FOCUS SCORE
+========================================================== */
+
+.score-circle{
+
+    margin:24px auto;
+
+}
+
+.score-circle strong{
+
+    font-size:2.4rem;
+
+    font-weight:900;
+
+}
+
+/* ==========================================================
+   WEEKLY SUMMARY
+========================================================== */
+
+.summary-list{
+
+    margin-top:10px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.04);
+
+}
+
+.summary-item + .summary-item{
+
+    margin-top:12px;
+
+}
+
+.summary-item span{
+
+    color:var(--text-muted);
+
+    font-size:.9rem;
+
+}
+
+.summary-item strong{
+
+    color:var(--text-primary);
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   CHART CARD DECORATION
+========================================================== */
+
+.chart-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    top:-120px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(99,102,241,.18),
+
+            transparent
+
+        );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   CHART HOVER
+========================================================== */
+
+.chart-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.chart-side .mini-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ==========================================================
+   DASHBOARD GRID
+========================================================== */
+
+#dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr;
+
+    gap:24px;
+
+    align-items:start;
+
+}
+
+/* ==========================================================
+   LARGE WIDGET
+========================================================== */
+
+.widget-large{
+
+    grid-row:span 2;
+
+    min-height:640px;
+
+}
+
+/* ==========================================================
+   WIDGET
+========================================================== */
+
+.widget{
+
+    position:relative;
+
+    min-height:300px;
+
+}
+
+/* ==========================================================
+   WIDGET BODY
+========================================================== */
+
+.widget .card-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* ==========================================================
+   RECENT TASKS
+========================================================== */
+
+.widget-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.widget-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    transition:
+        background .30s ease,
+        transform .30s ease;
+
+}
+
+.widget-item:hover{
+
+    background:rgba(99,102,241,.08);
+
+    transform:translateX(6px);
+
+}
+
+.widget-item>div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    min-width:0;
+
+}
+
+.widget-item strong{
+
+    font-size:.96rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.widget-item small{
+
+    font-size:.80rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   GOALS
+========================================================== */
+
+.goal-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.goal-item + .goal-item{
+
+    margin-top:24px;
+
+}
+
+.goal-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:16px;
+
+}
+
+.goal-top span{
+
+    color:var(--text-primary);
+
+    font-weight:600;
+
+}
+
+.goal-top strong{
+
+    color:var(--primary-color);
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   HABIT WIDGET
+========================================================== */
+
+.widget .habit-progress{
+
+    margin-top:2px;
+
+}
+
+.widget .habit-progress-fill{
+
+    transition:width .45s ease;
+
+}
+
+.goal-item:hover .habit-progress-fill{
+
+    filter:brightness(1.08);
+
+}
+
+/* ==========================================================
+   ACTIVITY FEED
+========================================================== */
+
+.activity-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    color:var(--text-primary);
+
+    transition:
+        background .30s ease,
+        transform .30s ease;
+
+}
+
+.activity-item:hover{
+
+    background:rgba(99,102,241,.08);
+
+    transform:translateX(6px);
+
+}
+
+.activity-item + .activity-item{
+
+    margin-top:14px;
+
+}
+
+/* ==========================================================
+   AI WIDGET
+========================================================== */
+
+.ai-widget{
+
+    overflow:hidden;
+
+}
+
+.ai-widget .card-body{
+
+    justify-content:space-between;
+
+}
+
+.ai-widget h4{
+
+    margin-bottom:14px;
+
+    font-size:1.15rem;
+
+    font-weight:800;
+
+    color:var(--text-primary);
+
+}
+
+.ai-widget p{
+
+    margin-bottom:24px;
+
+    color:var(--text-muted);
+
+    line-height:1.8;
+
+}
+
+.ai-widget .btn{
+
+    align-self:flex-start;
+
+}
+
+/* ==========================================================
+   AI DECORATION
+========================================================== */
+
+.ai-widget::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    top:-90px;
+
+    right:-90px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(99,102,241,.18),
+
+            transparent
+
+        );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   DASHBOARD CARD EFFECTS
+========================================================== */
+
+#dashboard .card{
 
     transition:
 
@@ -1628,177 +1195,109 @@
 
         box-shadow .35s ease,
 
-        border-color .35s ease,
-
-        background .35s ease;
+        border-color .35s ease;
 
 }
 
-.card:hover{
+#dashboard .card:hover{
 
-    transform:translateY(-6px);
+    box-shadow:
 
-}
-
-/* ==========================================================
-   EMPTY STATE
-   ========================================================== */
-
-.empty-state{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:14px;
-
-    padding:50px 20px;
-
-    text-align:center;
-
-}
-
-.empty-state i{
-
-    font-size:48px;
-
-    color:var(--text-muted);
-
-}
-
-.empty-state h3{
-
-    color:var(--text-primary);
-
-}
-
-.empty-state p{
-
-    color:var(--text-muted);
-
-    max-width:300px;
+        0 20px 45px rgba(0,0,0,.22);
 
 }
 
 /* ==========================================================
-   SKELETON LOADING
-   ========================================================== */
+   STAGGER ANIMATION
+========================================================== */
 
-.skeleton{
+#dashboard-grid .widget{
 
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-
-        rgba(255,255,255,.05);
+    animation:dashboardWidgetFade .55s ease both;
 
 }
 
-.skeleton::after{
+#dashboard-grid .widget:nth-child(2){
 
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    transform:translateX(-100%);
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            transparent,
-
-            rgba(255,255,255,.10),
-
-            transparent
-
-        );
-
-    animation:skeleton 1.4s infinite;
+    animation-delay:.08s;
 
 }
 
-@keyframes skeleton{
+#dashboard-grid .widget:nth-child(3){
 
-    100%{
+    animation-delay:.16s;
 
-        transform:translateX(100%);
+}
+
+#dashboard-grid .widget:nth-child(4){
+
+    animation-delay:.24s;
+
+}
+
+#dashboard-grid .widget:nth-child(5){
+
+    animation-delay:.32s;
+
+}
+
+@keyframes dashboardWidgetFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
 
     }
 
-}
+    to{
 
-/* ==========================================================
-   SCROLLBAR
-   ========================================================== */
+        opacity:1;
 
-#dashboard::-webkit-scrollbar{
+        transform:translateY(0);
 
-    width:8px;
-
-}
-
-#dashboard::-webkit-scrollbar-thumb{
-
-    background:
-
-        rgba(255,255,255,.08);
-
-    border-radius:999px;
+    }
 
 }
 
 /* ==========================================================
    RESPONSIVE
-   ========================================================== */
+========================================================== */
 
 @media (max-width:1400px){
+
+    .hero-content{
+
+        grid-template-columns:
+            1fr
+            360px;
+
+        gap:36px;
+
+    }
 
     #dashboard-grid{
 
         grid-template-columns:
-
-            repeat(2,minmax(0,1fr));
+            1.6fr
+            1fr
+            1fr;
 
     }
 
 }
 
+/* ==========================================================
+   1200px
+========================================================== */
+
 @media (max-width:1200px){
 
-    .hero-content{
+    #kpi-grid{
 
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-    .hero-left{
-
-        align-items:center;
-
-    }
-
-    .hero-description{
-
-        max-width:100%;
-
-    }
-
-    .hero-right{
-
-        display:none;
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
 
     }
 
@@ -1808,19 +1307,85 @@
 
     }
 
-}
+    .chart-side{
 
-@media (max-width:992px){
+        display:grid;
 
-    #dashboard{
-
-        padding:24px;
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
 
     }
 
     #dashboard-grid{
 
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .widget-large{
+
+        grid-column:span 2;
+
+        grid-row:auto;
+
+        min-height:auto;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .hero-content{
+
         grid-template-columns:1fr;
+
+        padding:42px;
+
+    }
+
+    .hero-right{
+
+        min-height:320px;
+
+    }
+
+    .hero-widget{
+
+        max-width:100%;
+
+    }
+
+    .hero-title{
+
+        font-size:3rem;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    #dashboard .content-wrapper{
+
+        gap:24px;
+
+    }
+
+    .hero-content{
+
+        padding:28px;
+
+        border-radius:28px;
 
     }
 
@@ -1830,63 +1395,17 @@
 
     }
 
-}
+    .hero-description{
 
-@media (max-width:768px){
-
-    #dashboard{
-
-        padding:18px;
-
-    }
-
-    .hero-content{
-
-        padding:32px;
-
-    }
-
-    .hero-title{
-
-        font-size:2rem;
-
-    }
-
-    .hero-stats{
-
-        justify-content:center;
-
-    }
-
-    #kpi-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width:576px){
-
-    .hero-content{
-
-        padding:24px;
-
-        border-radius:24px;
-
-    }
-
-    .hero-title{
-
-        font-size:1.7rem;
+        font-size:.96rem;
 
     }
 
     .hero-actions{
 
-        width:100%;
-
         flex-direction:column;
+
+        align-items:stretch;
 
     }
 
@@ -1896,11 +1415,67 @@
 
     }
 
+    .hero-stats{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+    }
+
+    #kpi-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-side{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .widget-large{
+
+        grid-column:auto;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+    .hero-content{
+
+        padding:22px;
+
+    }
+
+    .hero-title{
+
+        font-size:2rem;
+
+    }
+
+    .hero-widget{
+
+        padding:22px;
+
+    }
+
     .hero-stat{
 
-        flex:1;
-
-        min-width:100px;
+        padding:16px;
 
     }
 
@@ -1910,26 +1485,214 @@
 
     }
 
-}
+    .score-circle{
 
-/* ==========================================================
-   REDUCED MOTION
-   ========================================================== */
+        width:130px;
 
-@media (prefers-reduced-motion:reduce){
+        height:130px;
 
-    *{
+    }
 
-        animation:none !important;
+    .score-circle strong{
 
-        transition:none !important;
-
-        scroll-behavior:auto !important;
+        font-size:2rem;
 
     }
 
 }
 
 /* ==========================================================
-   END OF DASHBOARD
-   ========================================================== */
+   HERO FLOATING ANIMATION
+========================================================== */
+
+.hero-widget{
+
+    animation:heroFloat 7s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ==========================================================
+   HERO CIRCLE ANIMATION
+========================================================== */
+
+.hero-circle{
+
+    animation:heroGlow 8s ease-in-out infinite;
+
+}
+
+.hero-circle-2{
+
+    animation-delay:1.5s;
+
+}
+
+.hero-circle-3{
+
+    animation-delay:3s;
+
+}
+
+@keyframes heroGlow{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:.7;
+
+    }
+
+}
+
+/* ==========================================================
+   CARD APPEAR
+========================================================== */
+
+#dashboard .card{
+
+    animation:cardAppear .45s ease both;
+
+}
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(16px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .hero-widget,
+
+    .hero-circle,
+
+    #dashboard .card,
+
+    .widget,
+
+    .kpi-card{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        transform:none !important;
+
+    }
+
+}
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print{
+
+    #hero-section{
+
+        break-inside:avoid;
+
+    }
+
+    #kpi-grid,
+
+    #charts-section,
+
+    #dashboard-grid{
+
+        display:block;
+
+    }
+
+    .card{
+
+        margin-bottom:20px;
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+    }
+
+}
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.hero-content,
+
+.kpi-card,
+
+.chart-card,
+
+.widget{
+
+    backface-visibility:hidden;
+
+    transform:translateZ(0);
+
+    will-change:transform;
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
