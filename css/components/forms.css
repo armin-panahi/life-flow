@@ -1,431 +1,1642 @@
 /* ==================================================
    LIFEOS DESIGN SYSTEM - FORMS
+   Version 1.0
 ================================================== */
 
-/* ==========================================
+/* ===========================
    FORM
-========================================== */
+=========================== */
 
-.form {
+.form{
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    gap: 20px;
+    gap:24px;
 
-}
-
-/* ==========================================
-   GROUP
-========================================== */
-
-.form-group {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
+    width:100%;
 
 }
 
-/* ==========================================
+/* ===========================
+   FORM GROUP
+=========================== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    width:100%;
+
+}
+
+/* ===========================
    LABEL
-========================================== */
+=========================== */
 
-.form-label {
+.form-label{
 
-    font-size: .9rem;
+    display:flex;
 
-    font-weight: 600;
+    align-items:center;
 
-    color: var(--text-primary);
+    gap:8px;
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    color:var(--text-primary);
 
 }
 
-/* ==========================================
-   INPUT
-========================================== */
+.form-label small{
+
+    color:var(--text-muted);
+
+    font-size:.78rem;
+
+    font-weight:500;
+
+}
+
+/* ===========================
+   INPUT BASE
+=========================== */
 
 .form-input,
-
 .form-select,
+.form-textarea{
 
-.form-textarea {
+    width:100%;
 
-    width: 100%;
+    border:none;
 
-    border: 1px solid var(--border-color);
+    outline:none;
 
-    background: var(--bg-main);
+    border-radius:16px;
 
-    color: var(--text-primary);
+    background:rgba(255,255,255,.04);
 
-    border-radius: 14px;
+    border:1px solid rgba(255,255,255,.08);
 
-    padding: 14px 16px;
+    color:var(--text-primary);
 
-    font-family: inherit;
+    font-family:inherit;
 
-    font-size: .95rem;
+    font-size:.95rem;
 
     transition:
 
-        border-color var(--duration-fast) var(--ease-default),
+        border-color .25s ease,
 
-        box-shadow var(--duration-fast) var(--ease-default);
+        background .25s ease,
+
+        box-shadow .25s ease;
 
 }
 
-/* ==========================================
+/* ===========================
+   INPUT HEIGHT
+=========================== */
+
+.form-input,
+.form-select{
+
+    height:52px;
+
+    padding:0 18px;
+
+}
+
+/* ===========================
    TEXTAREA
-========================================== */
+=========================== */
 
-.form-textarea {
+.form-textarea{
 
-    min-height: 120px;
+    resize:vertical;
 
-    resize: vertical;
+    min-height:140px;
+
+    padding:16px 18px;
+
+    line-height:1.7;
 
 }
 
-/* ==========================================
+/* ==================================================
    PLACEHOLDER
-========================================== */
+================================================== */
 
 .form-input::placeholder,
+.form-textarea::placeholder{
 
-.form-textarea::placeholder {
+    color:var(--text-muted);
 
-    color: var(--text-muted);
+    opacity:.85;
 
 }
 
-/* ==========================================
+.form-select{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    -moz-appearance:none;
+
+    cursor:pointer;
+
+}
+
+/* ==================================================
    FOCUS
-========================================== */
+================================================== */
 
 .form-input:focus,
-
 .form-select:focus,
+.form-textarea:focus{
 
-.form-textarea:focus {
+    border-color:var(--primary-color);
 
-    outline: none;
-
-    border-color: var(--primary-color);
+    background:rgba(255,255,255,.06);
 
     box-shadow:
 
-        0 0 0 4px rgba(99,102,241,.12);
+        0 0 0 4px rgba(99,102,241,.16);
 
 }
 
-/* ==========================================
+/* ==================================================
+   HOVER
+================================================== */
+
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover{
+
+    border-color:rgba(255,255,255,.14);
+
+}
+
+/* ==================================================
+   DISABLED
+================================================== */
+
+.form-input:disabled,
+.form-select:disabled,
+.form-textarea:disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+    background:rgba(255,255,255,.025);
+
+}
+
+/* ==================================================
+   READONLY
+================================================== */
+
+.form-input[readonly],
+.form-textarea[readonly]{
+
+    background:rgba(255,255,255,.025);
+
+    cursor:default;
+
+}
+
+/* ==================================================
+   INPUT SIZES
+================================================== */
+
+.form-input-sm{
+
+    height:40px;
+
+    padding:0 14px;
+
+    font-size:.82rem;
+
+}
+
+.form-input-lg{
+
+    height:60px;
+
+    padding:0 22px;
+
+    font-size:1rem;
+
+}
+
+/* ==================================================
+   SEARCH INPUT
+================================================== */
+
+.search-input{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.search-input i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--text-muted);
+
+    font-size:.92rem;
+
+    pointer-events:none;
+
+}
+
+.search-input .form-input{
+
+    padding-left:48px;
+
+}
+
+/* ==================================================
+   INPUT WITH ICON
+================================================== */
+
+.input-icon{
+
+    position:relative;
+
+}
+
+.input-icon i{
+
+    position:absolute;
+
+    top:50%;
+
+    left:18px;
+
+    transform:translateY(-50%);
+
+    color:var(--text-muted);
+
+    pointer-events:none;
+
+}
+
+.input-icon .form-input{
+
+    padding-left:48px;
+
+}
+
+.input-icon-right i{
+
+    left:auto;
+
+    right:18px;
+
+}
+
+.input-icon-right .form-input{
+
+    padding-left:18px;
+
+    padding-right:48px;
+
+}
+
+/* ==================================================
    INPUT GROUP
-========================================== */
+================================================== */
 
-.input-group {
+.input-group{
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:stretch;
 
-    background: var(--bg-main);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: 14px;
-
-    overflow: hidden;
+    width:100%;
 
 }
 
-.input-group:focus-within {
+.input-group .form-input{
 
-    border-color: var(--primary-color);
+    flex:1;
 
-}
-
-.input-group-icon {
-
-    width: 52px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: var(--text-muted);
+    border-radius:0;
 
 }
 
-.input-group input {
+.input-group .form-input:first-child{
 
-    flex: 1;
+    border-top-left-radius:16px;
 
-    border: none;
-
-    background: transparent;
-
-    color: var(--text-primary);
-
-    padding: 14px 16px;
-
-    outline: none;
+    border-bottom-left-radius:16px;
 
 }
 
-/* ==========================================
+.input-group .form-input:last-child{
+
+    border-top-right-radius:16px;
+
+    border-bottom-right-radius:16px;
+
+}
+
+.input-group .input-addon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:0 18px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--text-muted);
+
+    font-size:.9rem;
+
+    white-space:nowrap;
+
+}
+
+.input-group .input-addon:first-child{
+
+    border-top-left-radius:16px;
+
+    border-bottom-left-radius:16px;
+
+    border-right:none;
+
+}
+
+.input-group .input-addon:last-child{
+
+    border-top-right-radius:16px;
+
+    border-bottom-right-radius:16px;
+
+    border-left:none;
+
+}
+
+/* ==================================================
+   PREFIX / SUFFIX
+================================================== */
+
+.input-prefix,
+.input-suffix{
+
+    color:var(--text-muted);
+
+    font-weight:600;
+
+    user-select:none;
+
+}
+
+/* ==================================================
+   PASSWORD TOGGLE
+================================================== */
+
+.password-field{
+
+    position:relative;
+
+}
+
+.password-toggle{
+
+    position:absolute;
+
+    top:50%;
+
+    right:16px;
+
+    transform:translateY(-50%);
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    background:transparent;
+
+    color:var(--text-muted);
+
+    cursor:pointer;
+
+    transition:color .25s ease;
+
+}
+
+.password-toggle:hover{
+
+    color:var(--text-primary);
+
+}
+
+.password-field .form-input{
+
+    padding-right:56px;
+
+}
+
+/* ==================================================
+   HELPER TEXT
+================================================== */
+
+.form-helper{
+
+    font-size:.80rem;
+
+    line-height:1.5;
+
+    color:var(--text-muted);
+
+}
+
+/* ==================================================
+   VALIDATION STATES
+================================================== */
+
+.form-input.is-success,
+.form-select.is-success,
+.form-textarea.is-success{
+
+    border-color:var(--success-color);
+
+}
+
+.form-input.is-success:focus,
+.form-select.is-success:focus,
+.form-textarea.is-success:focus{
+
+    box-shadow:0 0 0 4px rgba(34,197,94,.18);
+
+}
+
+.form-input.is-error,
+.form-select.is-error,
+.form-textarea.is-error{
+
+    border-color:var(--danger-color);
+
+}
+
+.form-input.is-error:focus,
+.form-select.is-error:focus,
+.form-textarea.is-error:focus{
+
+    box-shadow:0 0 0 4px rgba(239,68,68,.18);
+
+}
+
+.form-input.is-warning,
+.form-select.is-warning,
+.form-textarea.is-warning{
+
+    border-color:var(--warning-color);
+
+}
+
+.form-input.is-warning:focus,
+.form-select.is-warning:focus,
+.form-textarea.is-warning:focus{
+
+    box-shadow:0 0 0 4px rgba(245,158,11,.18);
+
+}
+
+/* ==================================================
+   VALIDATION MESSAGE
+================================================== */
+
+.validation-message{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:.80rem;
+
+    margin-top:4px;
+
+}
+
+.validation-message.success{
+
+    color:var(--success-color);
+
+}
+
+.validation-message.error{
+
+    color:var(--danger-color);
+
+}
+
+.validation-message.warning{
+
+    color:var(--warning-color);
+
+}
+
+/* ==================================================
    CHECKBOX
-========================================== */
+================================================== */
 
-.checkbox {
+.checkbox{
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:flex-start;
 
-    gap: 10px;
+    gap:12px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-}
-
-.checkbox input {
-
-    width: 18px;
-
-    height: 18px;
-
-    accent-color: var(--primary-color);
+    user-select:none;
 
 }
 
-/* ==========================================
+.checkbox input{
+
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.checkbox-mark{
+
+    width:22px;
+
+    height:22px;
+
+    flex-shrink:0;
+
+    border-radius:8px;
+
+    border:2px solid rgba(255,255,255,.14);
+
+    background:rgba(255,255,255,.03);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.checkbox-mark i{
+
+    font-size:.72rem;
+
+    color:#fff;
+
+    opacity:0;
+
+    transform:scale(.5);
+
+    transition:all .25s ease;
+
+}
+
+.checkbox input:checked + .checkbox-mark{
+
+    background:var(--primary-color);
+
+    border-color:var(--primary-color);
+
+}
+
+.checkbox input:checked + .checkbox-mark i{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.checkbox:hover .checkbox-mark{
+
+    border-color:var(--primary-color);
+
+}
+
+/* ==================================================
    RADIO
-========================================== */
+================================================== */
 
-.radio {
+.radio{
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 10px;
+    gap:12px;
 
-    cursor: pointer;
-
-}
-
-.radio input {
-
-    accent-color: var(--primary-color);
+    cursor:pointer;
 
 }
 
-/* ==========================================
+.radio input{
+
+    position:absolute;
+
+    opacity:0;
+
+}
+
+.radio-mark{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.14);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:all .25s ease;
+
+}
+
+.radio-mark::after{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    transform:scale(0);
+
+    transition:transform .25s ease;
+
+}
+
+.radio input:checked + .radio-mark{
+
+    border-color:var(--primary-color);
+
+}
+
+.radio input:checked + .radio-mark::after{
+
+    transform:scale(1);
+
+}
+
+/* ==================================================
    SWITCH
-========================================== */
+================================================== */
 
-.switch {
+.switch{
 
-    position: relative;
+    display:flex;
 
-    display: inline-block;
+    align-items:center;
 
-    width: 56px;
+    gap:14px;
 
-    height: 30px;
-
-}
-
-.switch input {
-
-    display: none;
+    cursor:pointer;
 
 }
 
-.switch-slider {
+.switch input{
 
-    position: absolute;
-
-    inset: 0;
-
-    cursor: pointer;
-
-    border-radius: 999px;
-
-    background: #555;
-
-    transition: .3s;
+    display:none;
 
 }
 
-.switch-slider::before {
+.switch-slider{
 
-    content: "";
+    position:relative;
 
-    position: absolute;
+    width:52px;
 
-    width: 24px;
+    height:30px;
 
-    height: 24px;
+    border-radius:999px;
 
-    left: 3px;
+    background:rgba(255,255,255,.10);
 
-    top: 3px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    transition: .3s;
+    transition:background .3s ease;
 
 }
 
-.switch input:checked + .switch-slider {
+.switch-slider::before{
 
-    background: var(--primary-color);
+    content:"";
 
-}
+    position:absolute;
 
-.switch input:checked + .switch-slider::before {
+    top:3px;
 
-    transform: translateX(26px);
+    left:3px;
 
-}
+    width:24px;
 
-/* ==========================================
-   RANGE
-========================================== */
+    height:24px;
 
-.form-range {
+    border-radius:50%;
 
-    width: 100%;
+    background:#fff;
 
-    accent-color: var(--primary-color);
-
-    cursor: pointer;
+    transition:transform .3s ease;
 
 }
 
-/* ==========================================
-   HELP TEXT
-========================================== */
+.switch input:checked + .switch-slider{
 
-.form-help {
-
-    font-size: .8rem;
-
-    color: var(--text-muted);
+    background:var(--primary-color);
 
 }
 
-/* ==========================================
-   ERROR
-========================================== */
+.switch input:checked + .switch-slider::before{
 
-.form-error {
-
-    font-size: .8rem;
-
-    color: #ef4444;
+    transform:translateX(22px);
 
 }
 
-.is-invalid {
+/* ==================================================
+   INTERACTION
+================================================== */
 
-    border-color: #ef4444 !important;
+.checkbox:active .checkbox-mark,
 
-}
+.radio:active .radio-mark,
 
-.is-invalid:focus {
+.switch:active .switch-slider{
 
-    box-shadow:
-
-        0 0 0 4px rgba(239,68,68,.15);
-
-}
-
-/* ==========================================
-   SUCCESS
-========================================== */
-
-.is-valid {
-
-    border-color: #10b981 !important;
+    transform:scale(.95);
 
 }
 
-.is-valid:focus {
-
-    box-shadow:
-
-        0 0 0 4px rgba(16,185,129,.15);
-
-}
-
-/* ==========================================
+/* ==================================================
    FLOATING LABEL
-========================================== */
+================================================== */
 
-.floating-group {
+.floating-group{
 
-    position: relative;
-
-}
-
-.floating-group input {
-
-    width: 100%;
-
-    padding: 18px 16px 8px;
+    position:relative;
 
 }
 
-.floating-group label {
+.floating-group .form-input,
+.floating-group .form-textarea{
 
-    position: absolute;
-
-    top: 14px;
-
-    left: 16px;
-
-    color: var(--text-muted);
-
-    transition: .2s;
-
-    pointer-events: none;
+    padding-top:22px;
 
 }
 
-.floating-group input:focus + label,
+.floating-group label{
 
-.floating-group input:not(:placeholder-shown) + label {
+    position:absolute;
 
-    top: 6px;
+    top:50%;
 
-    font-size: .72rem;
+    left:18px;
+
+    transform:translateY(-50%);
+
+    color:var(--text-muted);
+
+    font-size:.92rem;
+
+    pointer-events:none;
+
+    transition:all .25s ease;
 
 }
 
-/* ==========================================
+.floating-group .form-textarea + label{
+
+    top:24px;
+
+    transform:none;
+
+}
+
+.floating-group .form-input:focus + label,
+.floating-group .form-input:not(:placeholder-shown) + label,
+.floating-group .form-textarea:focus + label,
+.floating-group .form-textarea:not(:placeholder-shown) + label{
+
+    top:10px;
+
+    transform:none;
+
+    font-size:.72rem;
+
+    color:var(--primary-color);
+
+}
+
+/* ==================================================
+   FILE UPLOAD
+================================================== */
+
+.file-upload{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    min-height:180px;
+
+    padding:24px;
+
+    border:2px dashed rgba(255,255,255,.12);
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.03);
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+.file-upload:hover{
+
+    border-color:var(--primary-color);
+
+    background:rgba(99,102,241,.05);
+
+}
+
+.file-upload input{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    cursor:pointer;
+
+}
+
+.file-upload i{
+
+    font-size:2rem;
+
+    color:var(--primary-color);
+
+}
+
+.file-upload-title{
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+.file-upload-subtitle{
+
+    font-size:.85rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==================================================
+   RANGE SLIDER
+================================================== */
+
+.form-range{
+
+    width:100%;
+
+    appearance:none;
+
+    background:transparent;
+
+}
+
+.form-range::-webkit-slider-runnable-track{
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.form-range::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    margin-top:-5px;
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+.form-range::-moz-range-track{
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.form-range::-moz-range-thumb{
+
+    width:18px;
+
+    height:18px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    cursor:pointer;
+
+}
+
+/* ==================================================
+   RANGE VALUE
+================================================== */
+
+.range-value{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:10px;
+
+    font-size:.82rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==================================================
+   NUMBER INPUT
+================================================== */
+
+.form-input[type="number"]{
+
+    -moz-appearance:textfield;
+
+}
+
+.form-input[type="number"]::-webkit-outer-spin-button,
+.form-input[type="number"]::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+/* ==================================================
+   DATE / TIME INPUT
+================================================== */
+
+.form-input[type="date"],
+.form-input[type="time"],
+.form-input[type="datetime-local"]{
+
+    cursor:pointer;
+
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator,
+.form-input[type="time"]::-webkit-calendar-picker-indicator,
+.form-input[type="datetime-local"]::-webkit-calendar-picker-indicator{
+
+    opacity:.7;
+
+    cursor:pointer;
+
+    transition:opacity .25s ease;
+
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.form-input[type="time"]::-webkit-calendar-picker-indicator:hover,
+.form-input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover{
+
+    opacity:1;
+
+}
+
+/* ==================================================
+   COLOR PICKER
+================================================== */
+
+.form-input[type="color"]{
+
+    width:64px;
+
+    height:52px;
+
+    padding:6px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+.form-input[type="color"]::-webkit-color-swatch{
+
+    border:none;
+
+    border-radius:10px;
+
+}
+
+.form-input[type="color"]::-webkit-color-swatch-wrapper{
+
+    padding:0;
+
+}
+
+.form-input[type="color"]::-moz-color-swatch{
+
+    border:none;
+
+    border-radius:10px;
+
+}
+
+/* ==================================================
+   SELECT ARROW
+================================================== */
+
+.select-wrapper{
+
+    position:relative;
+
+}
+
+.select-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    right:18px;
+
+    width:10px;
+
+    height:10px;
+
+    border-right:2px solid var(--text-muted);
+
+    border-bottom:2px solid var(--text-muted);
+
+    transform:translateY(-65%) rotate(45deg);
+
+    pointer-events:none;
+
+    transition:border-color .25s ease;
+
+}
+
+.select-wrapper:focus-within::after{
+
+    border-color:var(--primary-color);
+
+}
+
+.select-wrapper .form-select{
+
+    padding-right:48px;
+
+}
+
+/* ==================================================
+   MULTI SELECT
+================================================== */
+
+.form-select[multiple]{
+
+    min-height:160px;
+
+    padding:12px;
+
+}
+
+.form-select[multiple] option{
+
+    padding:10px 12px;
+
+    border-radius:8px;
+
+}
+
+.form-select[multiple] option:checked{
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+}
+
+/* ==================================================
+   FORM DIVIDER
+================================================== */
+
+.form-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin:8px 0;
+
+}
+
+/* ==================================================
+   FORM ACTIONS
+================================================== */
+
+.form-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:12px;
+
+}
+
+.form-actions.full{
+
+    justify-content:space-between;
+
+}
+
+.form-actions.center{
+
+    justify-content:center;
+
+}
+
+/* ==================================================
    RESPONSIVE
-========================================== */
+================================================== */
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width:992px){
+
+    .form{
+
+        gap:20px;
+
+    }
+
+    .form-group{
+
+        gap:8px;
+
+    }
+
+    .form-actions{
+
+        flex-wrap:wrap;
+
+    }
+
+    .input-group{
+
+        flex-wrap:wrap;
+
+    }
+
+    .input-group .form-input{
+
+        border-radius:16px;
+
+    }
+
+    .input-group .input-addon{
+
+        border-radius:16px;
+
+        border:1px solid rgba(255,255,255,.08);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
 
 @media (max-width:768px){
 
     .form-input,
 
-    .form-select,
+    .form-select{
+
+        height:50px;
+
+        font-size:.92rem;
+
+    }
 
     .form-textarea{
 
-        padding:12px 14px;
+        min-height:120px;
+
+    }
+
+    .form-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .form-actions .btn{
+
+        width:100%;
+
+    }
+
+    .checkbox,
+
+    .radio,
+
+    .switch{
+
+        align-items:flex-start;
+
+    }
+
+    .file-upload{
+
+        min-height:150px;
+
+        padding:20px;
 
     }
 
 }
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width:576px){
+
+    .form-input,
+
+    .form-select{
+
+        height:48px;
+
+        padding:0 16px;
+
+    }
+
+    .form-textarea{
+
+        padding:14px 16px;
+
+    }
+
+    .floating-group label{
+
+        left:16px;
+
+    }
+
+    .search-input i,
+
+    .input-icon i{
+
+        left:16px;
+
+    }
+
+    .search-input .form-input,
+
+    .input-icon .form-input{
+
+        padding-left:44px;
+
+    }
+
+    .input-icon-right i{
+
+        right:16px;
+
+    }
+
+    .input-icon-right .form-input{
+
+        padding-right:44px;
+
+    }
+
+    .password-toggle{
+
+        right:12px;
+
+    }
+
+}
+
+/* ===========================
+   FULL WIDTH HELPERS
+=========================== */
+
+.form-full{
+
+    width:100%;
+
+}
+
+.form-inline{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+@media (max-width:768px){
+
+    .form-inline{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
+
+/* ==================================================
+   INPUT ANIMATIONS
+================================================== */
+
+.form-input,
+.form-select,
+.form-textarea,
+.checkbox-mark,
+.radio-mark,
+.switch-slider{
+
+    transition:
+        background-color .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+
+}
+
+/* ==================================================
+   CHROME AUTOFILL FIX
+================================================== */
+
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active{
+
+    -webkit-box-shadow:0 0 0 1000px var(--surface-primary) inset !important;
+
+    -webkit-text-fill-color:var(--text-primary) !important;
+
+    transition:background-color 99999s ease-in-out 0s;
+
+}
+
+/* ==================================================
+   SELECTION
+================================================== */
+
+.form-input::selection,
+.form-textarea::selection{
+
+    background:rgba(99,102,241,.30);
+
+    color:var(--text-primary);
+
+}
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+.form-input:focus-visible,
+.form-select:focus-visible,
+.form-textarea:focus-visible{
+
+    outline:none;
+
+}
+
+.checkbox input:focus-visible + .checkbox-mark,
+.radio input:focus-visible + .radio-mark,
+.switch input:focus-visible + .switch-slider{
+
+    box-shadow:0 0 0 4px rgba(99,102,241,.18);
+
+}
+
+/* ==================================================
+   INVALID HTML STATE
+================================================== */
+
+.form-input:invalid,
+.form-select:invalid,
+.form-textarea:invalid{
+
+    box-shadow:none;
+
+}
+
+/* ==================================================
+   LOADING STATE
+================================================== */
+
+.form-loading{
+
+    position:relative;
+
+    pointer-events:none;
+
+    opacity:.75;
+
+}
+
+.form-loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    right:18px;
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:-9px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.18);
+
+    border-top-color:var(--primary-color);
+
+    animation:formSpinner .7s linear infinite;
+
+}
+
+@keyframes formSpinner{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .form-input,
+    .form-select,
+    .form-textarea,
+    .checkbox-mark,
+    .radio-mark,
+    .switch-slider,
+    .password-toggle{
+
+        transition:none !important;
+
+    }
+
+}
+
+/* ==================================================
+   PRINT
+================================================== */
+
+@media print{
+
+    .form-input,
+    .form-select,
+    .form-textarea{
+
+        border:1px solid #bdbdbd;
+
+        background:#ffffff;
+
+        color:#000000;
+
+    }
+
+}
+
+/* ==================================================
+   END OF FILE
+================================================== */
