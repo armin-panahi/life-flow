@@ -1,143 +1,1303 @@
-/* ==========================================
-   LIFEOS THEME SYSTEM
-   ------------------------------------------
-   Theme switching based on:
-   html[data-theme="dark"]
-   html[data-theme="light"]
-========================================== */
+/* ==================================================
+   LIFEOS DESIGN SYSTEM
+   THEME
+   Version 1.0
+================================================== */
 
-/* ==========================================
-   DARK THEME
-========================================== */
+/* ==================================================
+   ROOT
+================================================== */
 
-html[data-theme="dark"] {
+:root{
 
-    color-scheme: dark;
+    /* ==================================================
+       BRAND
+    ================================================== */
 
-    --bg-main: #0f172a;
+    --primary-color:#6366F1;
+    --primary-hover:#4F46E5;
+    --primary-light:#818CF8;
 
-    --bg-card: #1e293b;
+    --secondary-color:#06B6D4;
+    --secondary-hover:#0891B2;
 
-    --bg-sidebar: #111827;
+    --accent-color:#8B5CF6;
 
-    --bg-hover: #334155;
+    /* ==================================================
+       STATUS
+    ================================================== */
 
-    --text-primary: #f8fafc;
+    --success-color:#22C55E;
+    --warning-color:#F59E0B;
+    --danger-color:#EF4444;
+    --info-color:#3B82F6;
 
-    --text-secondary: #cbd5e1;
+    /* ==================================================
+       BACKGROUND
+    ================================================== */
 
-    --text-muted: #94a3b8;
+    --bg-primary:#09090B;
+    --bg-secondary:#111827;
+    --bg-tertiary:#1F2937;
 
-    --border-color: #334155;
+    /* ==================================================
+       SURFACE
+    ================================================== */
 
-}
+    --surface-primary:#141B2D;
+    --surface-secondary:#1B2438;
+    --surface-hover:#232F49;
 
-/* ==========================================
-   LIGHT THEME
-========================================== */
+    /* ==================================================
+       TEXT
+    ================================================== */
 
-html[data-theme="light"] {
+    --text-primary:#F9FAFB;
+    --text-secondary:#CBD5E1;
+    --text-muted:#94A3B8;
 
-    color-scheme: light;
+    /* ==================================================
+       BORDER
+    ================================================== */
 
-    --bg-main: #f8fafc;
-
-    --bg-card: #ffffff;
-
-    --bg-sidebar: #ffffff;
-
-    --bg-hover: #f1f5f9;
-
-    --text-primary: #0f172a;
-
-    --text-secondary: #475569;
-
-    --text-muted: #64748b;
-
-    --border-color: #e2e8f0;
-
-}
-
-/* ==========================================
-   GLOBAL TRANSITION
-========================================== */
-
-html,
-body,
-aside,
-main,
-section,
-article,
-div,
-button,
-input,
-textarea,
-select,
-nav,
-header,
-footer {
-
-    transition:
-
-        background-color var(--duration-normal) var(--ease-default),
-
-        color var(--duration-normal) var(--ease-default),
-
-        border-color var(--duration-normal) var(--ease-default),
-
-        box-shadow var(--duration-normal) var(--ease-default);
+    --border-color:rgba(255,255,255,.08);
+    --border-strong:rgba(255,255,255,.14);
 
 }
 
-/* ==========================================
-   CARD DEFAULT
-========================================== */
+/* ==================================================
+   GRAYSCALE
+================================================== */
 
-.card,
-.chart-card,
-.kpi-card {
+:root{
 
-    background: var(--bg-card);
-
-    border: 1px solid var(--border-color);
-
-}
-
-/* ==========================================
-   INPUT DEFAULT
-========================================== */
-
-input,
-textarea,
-select {
-
-    background: var(--bg-card);
-
-    color: var(--text-primary);
-
-    border: 1px solid var(--border-color);
+    --gray-50:#F8FAFC;
+    --gray-100:#F1F5F9;
+    --gray-200:#E2E8F0;
+    --gray-300:#CBD5E1;
+    --gray-400:#94A3B8;
+    --gray-500:#64748B;
+    --gray-600:#475569;
+    --gray-700:#334155;
+    --gray-800:#1E293B;
+    --gray-900:#0F172A;
+    --gray-950:#020617;
 
 }
 
-/* ==========================================
-   SIDEBAR DEFAULT
-========================================== */
+/* ==================================================
+   PRIMARY SCALE
+================================================== */
 
-#sidebar {
+:root{
 
-    background: var(--bg-sidebar);
-
-}
-
-/* ==========================================
-   BODY
-========================================== */
-
-body {
-
-    background: var(--bg-main);
-
-    color: var(--text-primary);
+    --primary-50:#EEF2FF;
+    --primary-100:#E0E7FF;
+    --primary-200:#C7D2FE;
+    --primary-300:#A5B4FC;
+    --primary-400:#818CF8;
+    --primary-500:#6366F1;
+    --primary-600:#4F46E5;
+    --primary-700:#4338CA;
+    --primary-800:#3730A3;
+    --primary-900:#312E81;
 
 }
 
+/* ==================================================
+   SUCCESS SCALE
+================================================== */
+
+:root{
+
+    --success-50:#F0FDF4;
+    --success-100:#DCFCE7;
+    --success-200:#BBF7D0;
+    --success-300:#86EFAC;
+    --success-400:#4ADE80;
+    --success-500:#22C55E;
+    --success-600:#16A34A;
+    --success-700:#15803D;
+    --success-800:#166534;
+
+}
+
+/* ==================================================
+   WARNING SCALE
+================================================== */
+
+:root{
+
+    --warning-50:#FFFBEB;
+    --warning-100:#FEF3C7;
+    --warning-200:#FDE68A;
+    --warning-300:#FCD34D;
+    --warning-400:#FBBF24;
+    --warning-500:#F59E0B;
+    --warning-600:#D97706;
+    --warning-700:#B45309;
+
+}
+
+/* ==================================================
+   DANGER SCALE
+================================================== */
+
+:root{
+
+    --danger-50:#FEF2F2;
+    --danger-100:#FEE2E2;
+    --danger-200:#FECACA;
+    --danger-300:#FCA5A5;
+    --danger-400:#F87171;
+    --danger-500:#EF4444;
+    --danger-600:#DC2626;
+    --danger-700:#B91C1C;
+
+}
+
+/* ==================================================
+   INFO SCALE
+================================================== */
+
+:root{
+
+    --info-50:#EFF6FF;
+    --info-100:#DBEAFE;
+    --info-200:#BFDBFE;
+    --info-300:#93C5FD;
+    --info-400:#60A5FA;
+    --info-500:#3B82F6;
+    --info-600:#2563EB;
+    --info-700:#1D4ED8;
+
+}
+
+/* ==================================================
+   SURFACE SYSTEM
+================================================== */
+
+:root{
+
+    /* Base Surfaces */
+
+    --surface-1:#111827;
+    --surface-2:#172033;
+    --surface-3:#1B2438;
+    --surface-4:#232F49;
+    --surface-5:#2B3754;
+
+    /* Elevated */
+
+    --surface-elevated:#26334E;
+    --surface-floating:#2D3A57;
+
+    /* Interactive */
+
+    --surface-hover:rgba(255,255,255,.05);
+    --surface-active:rgba(255,255,255,.08);
+    --surface-selected:rgba(99,102,241,.16);
+
+}
+
+/* ==================================================
+   GLASS SYSTEM
+================================================== */
+
+:root{
+
+    --glass-bg:rgba(20,27,45,.72);
+    --glass-bg-light:rgba(255,255,255,.06);
+    --glass-bg-dark:rgba(0,0,0,.28);
+
+    --glass-border:rgba(255,255,255,.10);
+    --glass-border-strong:rgba(255,255,255,.16);
+
+    --glass-blur:18px;
+    --glass-blur-lg:28px;
+
+}
+
+/* ==================================================
+   OVERLAYS
+================================================== */
+
+:root{
+
+    --overlay-light:rgba(15,23,42,.35);
+    --overlay-medium:rgba(15,23,42,.55);
+    --overlay-dark:rgba(0,0,0,.72);
+    --overlay-heavy:rgba(0,0,0,.86);
+
+}
+
+/* ==================================================
+   BORDER TOKENS
+================================================== */
+
+:root{
+
+    --border-subtle:rgba(255,255,255,.05);
+    --border-default:rgba(255,255,255,.08);
+    --border-medium:rgba(255,255,255,.12);
+    --border-strong:rgba(255,255,255,.18);
+
+}
+
+/* ==================================================
+   DIVIDERS
+================================================== */
+
+:root{
+
+    --divider-light:rgba(255,255,255,.06);
+    --divider-default:rgba(255,255,255,.08);
+    --divider-strong:rgba(255,255,255,.12);
+
+}
+
+/* ==================================================
+   BACKGROUND GRADIENTS
+================================================== */
+
+:root{
+
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #6366F1 0%,
+            #8B5CF6 100%
+        );
+
+    --gradient-secondary:
+        linear-gradient(
+            135deg,
+            #06B6D4 0%,
+            #3B82F6 100%
+        );
+
+    --gradient-success:
+        linear-gradient(
+            135deg,
+            #16A34A 0%,
+            #22C55E 100%
+        );
+
+    --gradient-danger:
+        linear-gradient(
+            135deg,
+            #DC2626 0%,
+            #EF4444 100%
+        );
+
+    --gradient-surface:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.03) 0%,
+            rgba(255,255,255,.01) 100%
+        );
+
+}
+
+/* ==================================================
+   TYPOGRAPHY
+================================================== */
+
+:root{
+
+    /* ==================================================
+       FONT FAMILY
+    ================================================== */
+
+    --font-sans:
+        "Vazirmatn",
+        "Inter",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-mono:
+        "JetBrains Mono",
+        "Fira Code",
+        monospace;
+
+    /* ==================================================
+       FONT WEIGHTS
+    ================================================== */
+
+    --font-thin:100;
+    --font-extralight:200;
+    --font-light:300;
+    --font-regular:400;
+    --font-medium:500;
+    --font-semibold:600;
+    --font-bold:700;
+    --font-extrabold:800;
+
+}
+
+/* ==================================================
+   FONT SIZES
+================================================== */
+
+:root{
+
+    --text-xs:.75rem;
+    --text-sm:.875rem;
+    --text-base:1rem;
+    --text-lg:1.125rem;
+    --text-xl:1.25rem;
+    --text-2xl:1.5rem;
+    --text-3xl:1.875rem;
+    --text-4xl:2.25rem;
+    --text-5xl:3rem;
+
+}
+
+/* ==================================================
+   LINE HEIGHT
+================================================== */
+
+:root{
+
+    --leading-tight:1.25;
+    --leading-snug:1.375;
+    --leading-normal:1.5;
+    --leading-relaxed:1.7;
+    --leading-loose:2;
+
+}
+
+/* ==================================================
+   LETTER SPACING
+================================================== */
+
+:root{
+
+    --tracking-tight:-0.02em;
+    --tracking-normal:0;
+    --tracking-wide:0.02em;
+    --tracking-wider:0.05em;
+
+}
+
+/* ==================================================
+   HEADING TOKENS
+================================================== */
+
+:root{
+
+    --heading-1-size:2.5rem;
+    --heading-2-size:2rem;
+    --heading-3-size:1.75rem;
+    --heading-4-size:1.5rem;
+    --heading-5-size:1.25rem;
+    --heading-6-size:1.125rem;
+
+    --heading-weight:700;
+
+    --heading-line-height:1.25;
+
+}
+
+/* ==================================================
+   BODY TOKENS
+================================================== */
+
+:root{
+
+    --body-size:1rem;
+
+    --body-line-height:1.7;
+
+    --body-weight:400;
+
+    --small-size:.875rem;
+
+    --caption-size:.75rem;
+
+}
+
+/* ==================================================
+   DISPLAY TOKENS
+================================================== */
+
+:root{
+
+    --display-1:4rem;
+    --display-2:3.5rem;
+    --display-3:3rem;
+
+    --display-weight:800;
+
+    --display-line-height:1.1;
+
+}
+
+/* ==================================================
+   SPACING SYSTEM
+================================================== */
+
+:root{
+
+    /* Base Scale */
+
+    --space-0:0;
+    --space-1:4px;
+    --space-2:8px;
+    --space-3:12px;
+    --space-4:16px;
+    --space-5:20px;
+    --space-6:24px;
+    --space-7:28px;
+    --space-8:32px;
+    --space-10:40px;
+    --space-12:48px;
+    --space-16:64px;
+    --space-20:80px;
+    --space-24:96px;
+    --space-32:128px;
+
+}
+
+/* ==================================================
+   COMPONENT SPACING
+================================================== */
+
+:root{
+
+    --spacing-xs:var(--space-2);
+    --spacing-sm:var(--space-3);
+    --spacing-md:var(--space-4);
+    --spacing-lg:var(--space-6);
+    --spacing-xl:var(--space-8);
+    --spacing-2xl:var(--space-12);
+    --spacing-3xl:var(--space-16);
+
+}
+
+/* ==================================================
+   LAYOUT GAPS
+================================================== */
+
+:root{
+
+    --layout-gap-xs:12px;
+    --layout-gap-sm:16px;
+    --layout-gap-md:24px;
+    --layout-gap-lg:32px;
+    --layout-gap-xl:48px;
+
+}
+
+/* ==================================================
+   SECTION SPACING
+================================================== */
+
+:root{
+
+    --section-padding-y:64px;
+    --section-padding-x:32px;
+
+    --page-padding-y:32px;
+    --page-padding-x:32px;
+
+    --card-padding:24px;
+    --modal-padding:30px;
+
+}
+
+/* ==================================================
+   CONTAINER WIDTHS
+================================================== */
+
+:root{
+
+    --container-sm:640px;
+    --container-md:768px;
+    --container-lg:1024px;
+    --container-xl:1280px;
+    --container-2xl:1440px;
+    --container-full:100%;
+
+}
+
+/* ==================================================
+   SIDEBAR / NAVBAR
+================================================== */
+
+:root{
+
+    --sidebar-width:280px;
+    --sidebar-width-collapsed:84px;
+
+    --navbar-height:72px;
+
+}
+
+/* ==================================================
+   Z-INDEX SCALE
+================================================== */
+
+:root{
+
+    --z-base:1;
+    --z-dropdown:100;
+    --z-sticky:500;
+    --z-fixed:1000;
+    --z-overlay:3000;
+    --z-modal:5000;
+    --z-toast:7000;
+    --z-tooltip:9000;
+
+}
+
+/* ==================================================
+   RADIUS SYSTEM
+================================================== */
+
+:root{
+
+    --radius-none:0;
+
+    --radius-xs:4px;
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+    --radius-xl:20px;
+    --radius-2xl:24px;
+    --radius-3xl:32px;
+    --radius-full:9999px;
+
+}
+
+/* ==================================================
+   SHADOW SYSTEM
+================================================== */
+
+:root{
+
+    --shadow-xs:
+        0 1px 2px rgba(0,0,0,.08);
+
+    --shadow-sm:
+        0 4px 10px rgba(0,0,0,.12);
+
+    --shadow-md:
+        0 8px 20px rgba(0,0,0,.18);
+
+    --shadow-lg:
+        0 16px 36px rgba(0,0,0,.25);
+
+    --shadow-xl:
+        0 24px 60px rgba(0,0,0,.32);
+
+    --shadow-2xl:
+        0 40px 100px rgba(0,0,0,.42);
+
+}
+
+/* ==================================================
+   ELEVATION
+================================================== */
+
+:root{
+
+    --elevation-1:var(--shadow-xs);
+    --elevation-2:var(--shadow-sm);
+    --elevation-3:var(--shadow-md);
+    --elevation-4:var(--shadow-lg);
+    --elevation-5:var(--shadow-xl);
+    --elevation-6:var(--shadow-2xl);
+
+}
+
+/* ==================================================
+   FOCUS RING
+================================================== */
+
+:root{
+
+    --focus-ring:
+        0 0 0 3px rgba(99,102,241,.18);
+
+    --focus-ring-strong:
+        0 0 0 4px rgba(99,102,241,.28);
+
+    --focus-ring-success:
+        0 0 0 3px rgba(34,197,94,.20);
+
+    --focus-ring-danger:
+        0 0 0 3px rgba(239,68,68,.20);
+
+}
+
+/* ==================================================
+   OUTLINE TOKENS
+================================================== */
+
+:root{
+
+    --outline-width:2px;
+    --outline-offset:2px;
+
+}
+
+/* ==================================================
+   COMPONENT TOKENS
+================================================== */
+
+:root{
+
+    --button-radius:var(--radius-lg);
+
+    --card-radius:var(--radius-xl);
+
+    --input-radius:var(--radius-lg);
+
+    --modal-radius:var(--radius-2xl);
+
+    --toast-radius:18px;
+
+    --avatar-radius:var(--radius-full);
+
+    --badge-radius:var(--radius-full);
+
+}
+
+/* ==================================================
+   ICON TOKENS
+================================================== */
+
+:root{
+
+    --icon-xs:14px;
+    --icon-sm:16px;
+    --icon-md:20px;
+    --icon-lg:24px;
+    --icon-xl:32px;
+    --icon-2xl:40px;
+
+}
+
+/* ==================================================
+   GLASS EFFECTS
+================================================== */
+
+:root{
+
+    /* Glass Backgrounds */
+
+    --glass-surface-1:rgba(255,255,255,.03);
+    --glass-surface-2:rgba(255,255,255,.05);
+    --glass-surface-3:rgba(255,255,255,.08);
+
+    /* Glass Borders */
+
+    --glass-border-light:rgba(255,255,255,.08);
+    --glass-border-medium:rgba(255,255,255,.12);
+    --glass-border-heavy:rgba(255,255,255,.18);
+
+}
+
+/* ==================================================
+   BLUR LEVELS
+================================================== */
+
+:root{
+
+    --blur-xs:4px;
+    --blur-sm:8px;
+    --blur-md:12px;
+    --blur-lg:18px;
+    --blur-xl:24px;
+    --blur-2xl:32px;
+
+}
+
+/* ==================================================
+   OPACITY TOKENS
+================================================== */
+
+:root{
+
+    --opacity-disabled:.45;
+    --opacity-muted:.65;
+    --opacity-medium:.80;
+    --opacity-full:1;
+
+}
+
+/* ==================================================
+   GLOW EFFECTS
+================================================== */
+
+:root{
+
+    --glow-primary:
+
+        0 0 24px rgba(99,102,241,.35);
+
+    --glow-success:
+
+        0 0 24px rgba(34,197,94,.30);
+
+    --glow-danger:
+
+        0 0 24px rgba(239,68,68,.30);
+
+    --glow-warning:
+
+        0 0 24px rgba(245,158,11,.30);
+
+}
+
+/* ==================================================
+   INTERACTIVE EFFECTS
+================================================== */
+
+:root{
+
+    --hover-scale:1.02;
+    --active-scale:.98;
+
+    --hover-opacity:.92;
+
+}
+
+/* ==================================================
+   GRADIENT OVERLAYS
+================================================== */
+
+:root{
+
+    --overlay-gradient-top:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,0)
+        );
+
+    --overlay-gradient-bottom:
+
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.28),
+            rgba(0,0,0,0)
+        );
+
+}
+
+/* ==================================================
+   CARD EFFECTS
+================================================== */
+
+:root{
+
+    --card-hover-shadow:
+
+        0 24px 56px rgba(0,0,0,.30);
+
+    --card-hover-border:
+
+        rgba(255,255,255,.14);
+
+}
+
+/* ==================================================
+   MODAL EFFECTS
+================================================== */
+
+:root{
+
+    --modal-shadow:
+
+        0 40px 120px rgba(0,0,0,.45);
+
+    --modal-backdrop:
+
+        rgba(8,12,22,.72);
+
+}
+
+/* ==================================================
+   TOAST EFFECTS
+================================================== */
+
+:root{
+
+    --toast-shadow:
+
+        0 18px 48px rgba(0,0,0,.30);
+
+}
+
+/* ==================================================
+   DROPDOWN EFFECTS
+================================================== */
+
+:root{
+
+    --dropdown-shadow:
+
+        0 18px 48px rgba(0,0,0,.24);
+
+}
+
+/* ==================================================
+   MOTION SYSTEM
+================================================== */
+
+:root{
+
+    /* ==================================================
+       DURATIONS
+    ================================================== */
+
+    --duration-instant:0ms;
+    --duration-fast:150ms;
+    --duration-normal:250ms;
+    --duration-slow:350ms;
+    --duration-slower:500ms;
+
+}
+
+/* ==================================================
+   EASING
+================================================== */
+
+:root{
+
+    --ease-linear:linear;
+
+    --ease-in:cubic-bezier(.4,0,1,1);
+
+    --ease-out:cubic-bezier(0,0,.2,1);
+
+    --ease-in-out:cubic-bezier(.4,0,.2,1);
+
+    --ease-smooth:cubic-bezier(.22,.61,.36,1);
+
+    --ease-bounce:cubic-bezier(.34,1.56,.64,1);
+
+}
+
+/* ==================================================
+   TRANSITIONS
+================================================== */
+
+:root{
+
+    --transition-fast:
+        all var(--duration-fast) var(--ease-out);
+
+    --transition-normal:
+        all var(--duration-normal) var(--ease-out);
+
+    --transition-slow:
+        all var(--duration-slow) var(--ease-out);
+
+    --transition-smooth:
+        all var(--duration-normal) var(--ease-smooth);
+
+}
+
+/* ==================================================
+   COMPONENT TRANSITIONS
+================================================== */
+
+:root{
+
+    --button-transition:
+        background-color var(--duration-normal) var(--ease-out),
+        color var(--duration-normal) var(--ease-out),
+        border-color var(--duration-normal) var(--ease-out),
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-normal) var(--ease-out);
+
+    --card-transition:
+        transform var(--duration-normal) var(--ease-smooth),
+        box-shadow var(--duration-normal) var(--ease-smooth),
+        border-color var(--duration-normal) var(--ease-out);
+
+    --input-transition:
+        border-color var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out),
+        background-color var(--duration-fast) var(--ease-out);
+
+    --modal-transition:
+        opacity var(--duration-normal) var(--ease-out),
+        transform var(--duration-normal) var(--ease-smooth);
+
+    --toast-transition:
+        opacity var(--duration-normal) var(--ease-out),
+        transform var(--duration-normal) var(--ease-smooth);
+
+}
+
+/* ==================================================
+   SCALE TOKENS
+================================================== */
+
+:root{
+
+    --scale-hover:1.02;
+    --scale-active:.98;
+    --scale-pressed:.96;
+
+}
+
+/* ==================================================
+   ROTATION TOKENS
+================================================== */
+
+:root{
+
+    --rotate-small:3deg;
+    --rotate-medium:6deg;
+    --rotate-full:180deg;
+
+}
+
+/* ==================================================
+   OPACITY ANIMATION
+================================================== */
+
+:root{
+
+    --fade-hidden:0;
+    --fade-visible:1;
+
+}
+
+/* ==================================================
+   DARK THEME (DEFAULT)
+================================================== */
+
+:root{
+
+    color-scheme:dark;
+
+    accent-color:var(--primary-color);
+
+    background-color:var(--bg-primary);
+
+    color:var(--text-primary);
+
+}
+
+/* ==================================================
+   LIGHT THEME (READY FOR FUTURE)
+================================================== */
+
+[data-theme="light"]{
+
+    color-scheme:light;
+
+    --bg-primary:#F8FAFC;
+    --bg-secondary:#F1F5F9;
+    --bg-tertiary:#E2E8F0;
+
+    --surface-primary:#FFFFFF;
+    --surface-secondary:#F8FAFC;
+    --surface-hover:#F1F5F9;
+
+    --text-primary:#0F172A;
+    --text-secondary:#334155;
+    --text-muted:#64748B;
+
+    --border-color:rgba(15,23,42,.08);
+    --border-strong:rgba(15,23,42,.14);
+
+}
+
+/* ==================================================
+   TEXT SELECTION
+================================================== */
+
+::selection{
+
+    background:rgba(99,102,241,.28);
+
+    color:#FFFFFF;
+
+}
+
+::-moz-selection{
+
+    background:rgba(99,102,241,.28);
+
+    color:#FFFFFF;
+
+}
+
+/* ==================================================
+   SCROLLBAR
+================================================== */
+
+*{
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+
+        rgba(255,255,255,.18)
+
+        transparent;
+
+}
+
+*::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+*::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+*::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.14);
+
+    border-radius:999px;
+
+}
+
+*::-webkit-scrollbar-thumb:hover{
+
+    background:rgba(255,255,255,.24);
+
+}
+
+/* ==================================================
+   FOCUS DEFAULT
+================================================== */
+
+:focus-visible{
+
+    outline:none;
+
+    box-shadow:var(--focus-ring);
+
+}
+
+/* ==================================================
+   DISABLED STATE
+================================================== */
+
+[disabled],
+
+.disabled{
+
+    opacity:var(--opacity-disabled);
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+/* ==================================================
+   PLACEHOLDER
+================================================== */
+
+::placeholder{
+
+    color:var(--text-muted);
+
+    opacity:1;
+
+}
+
+/* ==================================================
+   NATIVE ELEMENTS
+================================================== */
+
+html{
+
+    accent-color:var(--primary-color);
+
+    caret-color:var(--primary-color);
+
+}
+
+/* ==================================================
+   THEME UTILITIES
+================================================== */
+
+.theme-glass{
+
+    background:var(--glass-bg);
+
+    backdrop-filter:blur(var(--glass-blur));
+
+    -webkit-backdrop-filter:blur(var(--glass-blur));
+
+    border:1px solid var(--glass-border);
+
+}
+
+.theme-elevated{
+
+    background:var(--surface-elevated);
+
+    box-shadow:var(--elevation-4);
+
+}
+
+.theme-floating{
+
+    background:var(--surface-floating);
+
+    box-shadow:var(--elevation-5);
+
+}
+
+.theme-gradient{
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+}
+
+/* ==================================================
+   DEBUG HELPERS
+================================================== */
+
+.debug-grid{
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(255,255,255,.04) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.04) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:24px 24px;
+
+}
+
+.debug-outline *{
+
+    outline:1px dashed rgba(255,0,0,.15);
+
+}
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+
+    *::before,
+
+    *::after{
+
+        animation-duration:0.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:0.01ms !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+/* ==================================================
+   PRINT THEME
+================================================== */
+
+@media print{
+
+    :root{
+
+        --bg-primary:#FFFFFF;
+
+        --bg-secondary:#FFFFFF;
+
+        --surface-primary:#FFFFFF;
+
+        --surface-secondary:#FFFFFF;
+
+        --text-primary:#000000;
+
+        --text-secondary:#333333;
+
+        --border-color:#CCCCCC;
+
+    }
+
+    *{
+
+        box-shadow:none !important;
+
+        text-shadow:none !important;
+
+        background-image:none !important;
+
+    }
+
+}
+
+/* ==================================================
+   BROWSER DEFAULTS
+================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+body{
+
+    background:var(--bg-primary);
+
+    color:var(--text-primary);
+
+    font-family:var(--font-sans);
+
+    font-size:var(--body-size);
+
+    line-height:var(--body-line-height);
+
+    font-weight:var(--body-weight);
+
+}
+
+/* ==================================================
+   END OF FILE
+================================================== */
